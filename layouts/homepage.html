@@ -18,7 +18,7 @@
                     <ul class="d-flex">
                         <li><a>Trang chủ</a></li>
                         <li><a>Thư viện</a></li>
-                        <li><a>Tìm kiếm</a></li>
+                        <li><a href="./search.html">Tìm kiếm</a></li>
                         <li><a>Tin tức</a></li>
                         <li><a>Trợ giúp</a></li>
                     </ul>
@@ -29,22 +29,21 @@
                 </div>
                 <div class="modal fade" id="formLogin" role="dialog">
                         <div class="modal-dialog">
-                        
-                          <!-- Modal content-->
                           <div class="modal-content">
                             <div class="modal-header">
                               <h4 class="modal-title text-center">Login</h4>
                             </div>
                             <div class="modal-body">
-                              <input type="text" placeholder="Tên đăng nhập">
-                              <input type="password" placeholder="Mật khẩu">
-                              <input type="button" value="Đăng nhập">
+                              <input id="username" type="text" placeholder="Tên đăng nhập">
+                              <input id="password" type="password" placeholder="Mật khẩu">
+                              <input id="loginBtn" type="button" value="Đăng nhập">
+                              <a href="#" class="text-right">Quên mật khẩu?</a>
+                              <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                           </div>
-                          
                         </div>
                       </div>
             </div>
@@ -100,13 +99,16 @@
                 </div>
             </div>
         </div>
+        
     </section>
+
     <footer class="container">
         <div class="content">
             <p class="text-center">Thư viện trường Đại Học Khoa Học Tự Nhiên</p>
             <p class="text-center">227 Nguyễn Văn Cừ, phường 4, quận 5, thành phố Hồ Chí Minh</p>
         </div>
     </footer>
+    <script src="../assets/js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
