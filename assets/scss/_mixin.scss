@@ -1,0 +1,22 @@
+@mixin font($fontSize, $fontWeight, $spacingLetter, $lineHeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    letter-spacing: $spacingLetter;
+    line-height: $lineHeight;
+  }
+  
+  @mixin btn-style($colorBorder, $paddingSize, $colorBg, $fontColor) {
+    border: solid 1px $colorBorder;
+    padding: $paddingSize;
+    background-color: $colorBg;
+    color: $fontColor;
+    min-width: 262px;
+    cursor: pointer;
+  }
+  
+  @mixin flexCustom($display, $justifyContent,$alignItem) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+  }
+  
