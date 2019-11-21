@@ -337,4 +337,8 @@ html {
 * {
   font-family: "Muli", sans-serif;
 }
+
+.account-btn {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
