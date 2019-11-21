@@ -16,35 +16,30 @@
                     outline: none;
                 }
             }
-
             .filter {
                 .filter-btns {
-                    @include flexCustom(flex,center,center);
+                    @include flexCustom(flex, center, center);
                 }
             }
-
             .list-books {
                 .book {
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
                     padding: 5px 0 5px 0;
-
                     .book-info {
                         h1 {
                             @include font(35px, bold, normal, normal);
                         }
-
                         h3 {
                             @include font(16px, bold, normal, normal);
                             color: $blueDark;
                         }
-
                         .borrowBookBtn {
-                            padding:10px 20px;
+                            padding: 10px 20px;
                             background-color: $blueDark;
                             color: white;
-                            @include font(16px,bold, normal, normal);
+                            @include font(16px, bold, normal, normal);
                         }
                     }
                 }

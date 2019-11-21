@@ -321,6 +321,126 @@ table {
   line-height: normal;
 }
 
+#new .body .content .top {
+  margin-bottom: 20px;
+}
+
+#new .body .content .top .heading-title {
+  color: #131254;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+#new .body .content .top input {
+  padding: 10px 0px 10px 20px;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 15px;
+  outline: none;
+}
+
+#new .body .content .filter .filter-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#new .body .content .list-news .new {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 2px solid #131254;
+  padding: 5px 0 5px 0;
+}
+
+#new .body .content .list-news .new .new-info h1 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#new .body .content .list-news .new .new-info h3 {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+  color: #131254;
+}
+
+#new .body .content .list-news .new .new-info .detailNewBtn {
+  padding: 10px 20px;
+  background-color: #131254;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#rule .body .content .top {
+  margin-bottom: 20px;
+}
+
+#rule .body .content .top .heading-title {
+  color: #131254;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+#rule .body .content .top input {
+  padding: 10px 0px 10px 20px;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 15px;
+  outline: none;
+}
+
+#rule .body .content .filter .filter-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#rule .body .content .list-rules .rule {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #131254;
+  padding: 5px 0 5px 0;
+}
+
+#rule .body .content .list-rules .rule .rule-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+  color: #131254;
+}
+
+#rule .body .content .list-rules .rule .rule-info h5 {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
 .container {
   max-width: 1366px !important;
 }
