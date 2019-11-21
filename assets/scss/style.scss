@@ -3,7 +3,8 @@
 @import './variable';
 @import './Homepage/homepage';
 @import './Search/search';
-
+@import './News/news';
+@import './Rule/rule';
 .container {
     max-width: 1366px !important;
 }
@@ -16,6 +17,7 @@
 html {
     scroll-behavior: smooth;
 }
-*{
-  font-family: $fontFamily-Muli;
+
+* {
+    font-family: $fontFamily-Muli;
 }

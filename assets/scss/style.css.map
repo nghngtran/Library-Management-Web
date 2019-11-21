@@ -7,7 +7,9 @@
         "_reset.scss",
         "_variable.scss",
         "Homepage/_homepage.scss",
-        "Search/_search.scss"
+        "Search/_search.scss",
+        "News/_news.scss",
+        "Rule/_rule.scss"
     ],
     "names": [],
     "file": "style.css"
