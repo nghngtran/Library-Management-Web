@@ -80,10 +80,10 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 article,
@@ -97,34 +97,34 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 #homepage header, #search header, #new header {
@@ -244,121 +244,121 @@ table {
 }
 
 #formLogin input {
-  padding: 10px 0px 10px 20px;
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  outline: none;
+    padding: 10px 0px 10px 20px;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    outline: none;
 }
 
 #formLogin input:nth-child(3) {
-  background-color: #131254;
-  color: white;
+    background-color: #131254;
+    color: white;
 }
 
 #search .body .content .top {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #search .body .content .top .heading-title {
-  color: #131254;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
+    color: #131254;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 #search .body .content .top input {
-  padding: 10px 0px 10px 20px;
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 15px;
-  outline: none;
+    padding: 10px 0px 10px 20px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 15px;
+    outline: none;
 }
 
 #search .body .content .filter .filter-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 #search .body .content .list-books .book {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 2px solid #131254;
+    padding: 5px 0 5px 0;
 }
 
 #search .body .content .list-books .book .book-info h1 {
-  font-size: 35px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 #search .body .content .list-books .book .book-info h3 {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
-  color: #131254;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
+    color: #131254;
 }
 
 #search .body .content .list-books .book .book-info .borrowBookBtn {
-  padding: 10px 20px;
-  background-color: #131254;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+    padding: 10px 20px;
+    background-color: #131254;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 #new .body .content .top {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #new .body .content .top .heading-title {
-  color: #131254;
-  font-size: 50px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
+    color: #131254;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 #new .body .content .top input {
-  padding: 10px 0px 10px 20px;
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 15px;
-  outline: none;
+    padding: 10px 0px 10px 20px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 15px;
+    outline: none;
 }
 
 #new .body .content .filter .filter-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 #new .body .content .list-news .new {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 2px solid #131254;
+    padding: 5px 0 5px 0;
 }
 
 #new .body .content .list-news .new .new-img img {
@@ -366,103 +366,215 @@ table {
 }
 
 #new .body .content .list-news .new .new-info h1 {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 #new .body .content .list-news .new .new-info h3 {
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
-  color: #131254;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
+    color: #131254;
 }
 
 #new .body .content .list-news .new .new-info .detailNewBtn {
-  padding: 10px 20px;
-  background-color: #131254;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+    padding: 10px 20px;
+    background-color: #131254;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 #rule .body .content .top {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #rule .body .content .top .heading-title {
-  color: #131254;
-  font-size: 50px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
+    color: #131254;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 20px;
 }
 
 #rule .body .content .top input {
-  padding: 10px 0px 10px 20px;
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 15px;
-  outline: none;
+    padding: 10px 0px 10px 20px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 15px;
+    outline: none;
 }
 
 #rule .body .content .filter .filter-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 #rule .body .content .list-rules .rule {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #131254;
+    padding: 5px 0 5px 0;
 }
 
 #rule .body .content .list-rules .rule .rule-info h3 {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
-  color: #131254;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
+    color: #131254;
 }
 
 #rule .body .content .list-rules .rule .rule-info h5 {
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: normal;
 }
 
 .container {
-  max-width: 1366px !important;
+    max-width: 1366px !important;
 }
 
 .container-inner {
-  max-width: 1172px;
-  margin: 0 auto;
+    max-width: 1172px;
+    margin: 0 auto;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 * {
-  font-family: "Muli", sans-serif;
+    font-family: "Muli", sans-serif;
 }
 
 .account-btn {
-  display: none;
+    display: none;
 }
+
+#library .Tittle {
+    clear: both;
+    text-align: center;
+    margin-top: 5vw !important;
+    margin-bottom: 3vw;
+}
+
+#library h3 {
+    border-style: solid;
+    border-width: 1%;
+}
+
+#library .content {
+    display: grid;
+    grid-auto-columns: auto auto auto auto;
+    grid-auto-rows: auto auto;
+    height: 40vw;
+    margin: 0 auto;
+}
+
+#library .banner1 {
+    grid-area: 1/1/1/3;
+}
+
+#library .banner2 {
+    grid-area: 2/1/3/3;
+}
+
+#library .banner3 {
+    grid-area: 1/3/2/5;
+}
+
+#library .banner4 {
+    grid-area: 2/3/3/5;
+}
+
+#library .img1 {
+    width: 40vw;
+    height: 15vw;
+    padding: 2% 1%;
+}
+
+#library .img2 {
+    width: 19vw;
+    height: 20vw;
+}
+
+#library .banner3,
+.banner4 {
+    font-size: 1.5vw;
+    padding-left: 3%;
+}
+
+#response img {
+    height: 20vw;
+    width: 95vw;
+}
+
+#response p:not(.text-center),
+#response h6,
+#response h3 {
+    font-weight: bold;
+}
+
+#response #header {
+    text-align: center;
+    margin-top: 3vw;
+}
+
+#response h3 {
+    color: blue;
+}
+
+#response .form {
+    margin: 2vw 6vw;
+}
+
+#response .title-div {
+    margin: 2vw 0vw;
+}
+
+#response .title-box {
+    display: inline;
+    border-style: solid;
+    background-color: #4949f5;
+    color: white;
+    padding: 0.5vw 1vw;
+    margin: 2vw 0vw;
+}
+
+#response textarea {
+    width: 85%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+#response button {
+    margin-left: 1vw;
+}
+
+#response #button-group {
+    margin-left: 50vw;
+    margin-bottom: 3vw;
+}
+
+
 /*# sourceMappingURL=style.css.map */
