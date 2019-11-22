@@ -27,6 +27,11 @@
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
                     padding: 5px 0 5px 0;
+                    .new-img {
+                        img {
+                            width: 100%;
+                        }
+                    }
                     .new-info {
                         h1 {
                             @include font(16px, bold, normal, normal);

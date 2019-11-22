@@ -18,7 +18,7 @@ var listNews = [{
     }
 ]
 
-function loadData(data) {
+function loadNewsData(data) {
     data.forEach((newDetail) => {
         console.log(newDetail);
         var newInfo = $("<div class='new row'></div>");

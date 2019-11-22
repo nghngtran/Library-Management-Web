@@ -127,32 +127,32 @@ table {
   border-spacing: 0;
 }
 
-#homepage header, #search header {
+#homepage header, #search header, #new header {
   margin-bottom: 20px;
   background-color: white;
 }
 
-#homepage header nav, #search header nav {
+#homepage header nav, #search header nav, #new header nav {
   padding: 20px 0px;
   margin-bottom: 15px;
   background-color: #131254;
 }
 
-#homepage header nav .nav-left ul, #search header nav .nav-left ul {
+#homepage header nav .nav-left ul, #search header nav .nav-left ul, #new header nav .nav-left ul {
   list-style: none;
 }
 
-#homepage header nav .nav-left ul li, #search header nav .nav-left ul li {
+#homepage header nav .nav-left ul li, #search header nav .nav-left ul li, #new header nav .nav-left ul li {
   margin-right: 20px;
 }
 
-#homepage header nav .nav-left ul li a, #search header nav .nav-left ul li a {
+#homepage header nav .nav-left ul li a, #search header nav .nav-left ul li a, #new header nav .nav-left ul li a {
   font-size: 16px;
   color: white;
   font-weight: 600;
 }
 
-#homepage header nav .nav-right .login-btn, #search header nav .nav-right .login-btn {
+#homepage header nav .nav-right .login-btn, #search header nav .nav-right .login-btn, #new header nav .nav-right .login-btn {
   padding: 10px 20px;
   font-weight: bold;
   font-size: 20px;
@@ -161,20 +161,20 @@ table {
   color: white;
 }
 
-#homepage header .banner img, #search header .banner img {
+#homepage header .banner img, #search header .banner img, #new header .banner img {
   max-width: 1172px;
 }
 
-#homepage .body, #search .body {
+#homepage .body, #search .body, #new .body {
   margin-bottom: 20px;
 }
 
-#homepage .body .search, #homepage .body .info, #search .body .search, #search .body .info {
+#homepage .body .search, #homepage .body .info, #search .body .search, #search .body .info, #new .body .search, #new .body .info {
   padding-left: 20px;
   margin-bottom: 20px;
 }
 
-#homepage .body .search .heading-title, #homepage .body .info .heading-title, #search .body .search .heading-title, #search .body .info .heading-title {
+#homepage .body .search .heading-title, #homepage .body .info .heading-title, #search .body .search .heading-title, #search .body .info .heading-title, #new .body .search .heading-title, #new .body .info .heading-title {
   color: #131254;
   font-size: 20px;
   font-weight: 600;
@@ -183,15 +183,15 @@ table {
   margin-bottom: 20px;
 }
 
-#homepage .body .search input, #search .body .search input {
+#homepage .body .search input, #search .body .search input, #new .body .search input {
   width: 70%;
 }
 
-#homepage .body .info ul li, #search .body .info ul li {
+#homepage .body .info ul li, #search .body .info ul li, #new .body .info ul li {
   width: 40%;
 }
 
-#homepage .body .news .heading-title, #search .body .news .heading-title {
+#homepage .body .news .heading-title, #search .body .news .heading-title, #new .body .news .heading-title {
   color: #131254;
   font-size: 20px;
   font-weight: 600;
@@ -200,19 +200,19 @@ table {
   margin-bottom: 20px;
 }
 
-#homepage .body .news .post img, #search .body .news .post img {
+#homepage .body .news .post img, #search .body .news .post img, #new .body .news .post img {
   width: 100%;
   margin-bottom: 15px;
 }
 
-#homepage .body .news .post .title, #search .body .news .post .title {
+#homepage .body .news .post .title, #search .body .news .post .title, #new .body .news .post .title {
   font-size: 20px;
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
 }
 
-#homepage footer, #search footer {
+#homepage footer, #search footer, #new footer {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -227,7 +227,7 @@ table {
   color: white;
 }
 
-#homepage footer .content, #search footer .content {
+#homepage footer .content, #search footer .content, #new footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,6 +359,10 @@ table {
   margin-bottom: 20px;
   border: 2px solid #131254;
   padding: 5px 0 5px 0;
+}
+
+#new .body .content .list-news .new .new-img img {
+  width: 100%;
 }
 
 #new .body .content .list-news .new .new-info h1 {
