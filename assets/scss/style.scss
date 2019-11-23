@@ -16,7 +16,10 @@
 html {
     scroll-behavior: smooth;
 }
+*{
+  font-family: $fontFamily-Muli;
+}
 
-* {
-    font-family: $fontFamily-Muli;
+.account-btn {
+    display: none;
 }

@@ -44,8 +44,11 @@ window.onload = function() {
         if (password === 'admin' && username === 'admin') {
             alert("Đăng nhập thành công!!!");
             $('#formLogin').modal('hide');
-        } else {
-            $(".noti-err").css("display", "block");
+            $('.login-btn').css("display","none");
+            $(".account-btn").css("display","block");
+        }
+        else {
+            $(".noti-err").css("display","block");
             alert("Username :admin ; password : admin")
         }
     })

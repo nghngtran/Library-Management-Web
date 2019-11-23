@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/scss/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <title>Tìm kiếm</title>
 </head>
 
@@ -17,7 +18,7 @@
                 <div class="nav-left">
                     <ul class="d-flex">
                         <li><a href="../layouts/homepage.html">Trang chủ</a></li>
-                        <li><a>Thư viện</a></li>
+                        <li><a href="./library.html">Thư viện</a></li>
                         <li><a href="#">Tìm kiếm</a></li>
                         <li><a href="../layouts/news.html">Tin tức</a></li>
                         <li><a>Trợ giúp</a></li>
@@ -26,6 +27,16 @@
 
                 <div class="nav-right">
                     <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                    <div class="dropdown hide account-btn">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         1753014
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Quan ly tai khoan</a>
+                            <a class="dropdown-item" href="#">Lich su muon sach</a>
+                            <a class="dropdown-item logout-btn" href="#">Dang xuat</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal fade" id="formLogin" role="dialog">
                     <div class="modal-dialog">
@@ -127,7 +138,7 @@
             <p class="text-center">227 Nguyễn Văn Cừ, phường 4, quận 5, thành phố Hồ Chí Minh</p>
         </div>
     </footer>
-    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
