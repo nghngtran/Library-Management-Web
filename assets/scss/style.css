@@ -127,12 +127,11 @@ table {
   border-spacing: 0;
 }
 
-#homepage header, #search header, #new header, #library header, #rule header {
   margin-bottom: 20px;
-  background-color: white;
-}
-
-#homepage header nav, #search header nav, #new header nav, #library header nav, #rule header nav {
+#homepage header nav,
+#search header nav,
+#new header nav,
+#rule header nav {
   padding: 20px 0px;
   margin-bottom: 15px;
   background-color: #131254;

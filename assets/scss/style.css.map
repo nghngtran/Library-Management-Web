@@ -8,8 +8,7 @@
         "_variable.scss",
         "Homepage/_homepage.scss",
         "Search/_search.scss",
-        "News/_news.scss",
-        "Rule/_rule.scss"
+        "News/_news.scss"
     ],
     "names": [],
     "file": "style.css"
