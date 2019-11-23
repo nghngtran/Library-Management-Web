@@ -1,7 +1,10 @@
-#homepage, #search {
+#homepage,
+#search,
+#new,
+#rule {
     header {
         margin-bottom: 20px;
-        background-color: white; 
+        background-color: white;
         nav {
             padding: 20px 0px;
             margin-bottom: 15px;
@@ -30,18 +33,16 @@
                 }
             }
         }
-
         .banner {
             img {
                 max-width: 1172px;
-                
             }
         }
     }
-
     .body {
         margin-bottom: 20px;
-        .search, .info {
+        .search,
+        .info {
             padding-left: 20px;
             margin-bottom: 20px;
             .heading-title {
@@ -50,21 +51,18 @@
                 margin-bottom: 20px;
             }
         }
-
         .search {
             input {
                 width: 70%;
             }
         }
-
         .info {
-           ul {
-               li {
-                   width: 40%;
-               }
-           } 
+            ul {
+                li {
+                    width: 40%;
+                }
+            }
         }
-
         .news {
             .heading-title {
                 color: $blueDark;
@@ -74,24 +72,22 @@
             .post {
                 img {
                     width: 100%;
-                    margin-bottom: 15px;;
+                    margin-bottom: 15px;
+                    ;
                 }
                 .title {
                     @include font(20px, bold, normal, normal);
                 }
             }
-
-            
         }
     }
-
     footer {
         height: 100px;
-        @include flexCustom(flex,center,center);
+        @include flexCustom(flex, center, center);
         background-color: $blueDark;
         color: white;
         .content {
-            @include flexCustom(flex,center,center);
+            @include flexCustom(flex, center, center);
             flex-direction: column;
         }
     }
@@ -104,11 +100,9 @@
         border-radius: 15px;
         margin-bottom: 20px;
         outline: none;
-    
-        &:nth-child(3){
+        &:nth-child(3) {
             background-color: $blueDark;
             color: white;
         }
     }
-
 }
