@@ -61,17 +61,24 @@ function loadData(data) {
         col8.append("<h1 class='book-title'>" + book.name + "</h1>");
         col8.append("<h3 class='book-author'>" + book.author + "</h3>");
         col8.append("<p class='book-des'>" + book.des + "</p>");
-        col8.append("<a class='borrowBookBtn' href='#'>Mượn sách</a>")
+        col8.append("<a class='borrowBookBtn' id ='borrow' href='" + getData(count) + "'>Mượn sách</a>")
         bookInfo.append(col4);
         bookInfo.append(col8);
         $(".list-books").append(bookInfo);
+        count++;
     })
 }
 
 
 
-window.onload = function () {
-    //
+
+function getData(data) {
+    var s = "/layouts/borrow.html?" + "value=" + data;
+    return s;
+}
+
+
+window.onload = function() {
     var isLogin = localStorage.getItem('islogin');
     if (isLogin === "true"){
         this.console.log("Đawmh mnhap roi");
@@ -83,13 +90,10 @@ window.onload = function () {
         $(".account-btn").css("display", "none");
     }
     //Load Data
-    loadData(listBooks);
     loadNewsData(listNews);
-    
-    
-    
-    // Handle events
-    $('#loginBtn').click(function (e) {
+    loadData(listBooks);
+
+    $('#loginBtn').click(function(e) {
         var username = $('#username').val();
         var password = $("#password").val();
         if (password === 'admin' && username === 'admin') {
