@@ -1,0 +1,46 @@
+#library .Tittle {
+  clear: both;
+  text-align: center;
+  margin-top: 5vw !important;
+  margin-bottom: 3vw;
+}
+#library h4 {
+  border-style: solid;
+  border-width: 1%;
+}
+#library .content {
+  display: grid;
+  grid-auto-columns: auto auto auto auto;
+  grid-auto-rows: auto auto;
+  height: 40vw;
+}
+#library .banner1 {
+  grid-area: 1/1/1/3;
+}
+#library .banner2 {
+  grid-area: 2/1/3/3;
+}
+#library .banner3 {
+  grid-area: 1/3/2/5;
+}
+#library .banner4 {
+  grid-area: 2/3/3/5;
+}
+#library .img1 {
+  width: 40vw;
+  height: 15vw;
+  padding: 2% 1%;
+}
+#library .img2 {
+  width: 19vw;
+  height: 20vw;
+}
+#library p {
+  font-size: 1.5vw;
+  padding: 1% 3%;
+}
+#library a:hover {
+  color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -24,7 +24,7 @@ function loadData(data) {
         var newInfo = $("<div class='new row'></div>");
         var col4 = $("<div class='col-4 new-img'></div>");
         var col8 = $("<div class='col-8 new-info'></div>");
-        col4.append("<img class ='new-img' src=" + newDetail.image + ">");
+        col4.append("<img src=" + newDetail.image + ">");
         col8.append("<h1 class='new-title'>" + newDetail.title + "</h1>");
         col8.append("<h3 class='new-author'>" + newDetail.author + "</h3>");
         col8.append("<p class='new-des'>" + newDetail.des + "</p>");
