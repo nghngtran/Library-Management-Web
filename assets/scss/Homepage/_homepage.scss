@@ -1,4 +1,4 @@
-#homepage, #search ,#new, #library, #rule{
+#homepage, #search ,#new, #library, #rule, #response{
     header {
         margin-bottom: 20px;
         background-color: white;
@@ -7,6 +7,10 @@
             margin-bottom: 15px;
             background-color: $blueDark;
             .nav-left {
+                img {
+                    height: 60px;
+                    margin-right: 50px;
+                }
                 ul {
                     list-style: none;
                     li {
@@ -16,6 +20,10 @@
                             color: white;
                             font-weight: 600;
                         }
+                        .active {
+                            color: aqua !important;
+                        }  
+                        
                     }
                 }
             }
@@ -36,6 +44,18 @@
             }
         }
     }
+    footer {
+        height: 100px;
+        @include flexCustom(flex, center, center);
+        background-color: $blueDark;
+        color: white;
+        .content {
+            @include flexCustom(flex, center, center);
+            flex-direction: column;
+        }
+    }
+}
+#homepage {
     .body {
         margin-bottom: 20px;
         .search,
@@ -78,16 +98,7 @@
             }
         }
     }
-    footer {
-        height: 100px;
-        @include flexCustom(flex, center, center);
-        background-color: $blueDark;
-        color: white;
-        .content {
-            @include flexCustom(flex, center, center);
-            flex-direction: column;
-        }
-    }
+
 }
 
 #formLogin {

@@ -73,8 +73,6 @@ function loadData(data) {
 window.onload = function () {
     //
     var isLogin = localStorage.getItem('islogin');
-    console.log(isLogin);
-    //debugger
     if (isLogin === "true"){
         this.console.log("Đawmh mnhap roi");
         $('.login-btn').css("display", "none");

@@ -10,14 +10,14 @@
         border-width: 1%;
     }
     .content {
-        display: grid;
-        grid-auto-columns: auto auto auto auto;
-        grid-auto-rows: auto auto;
-        height: 40vw;
+        .banner1 {
+            grid-area: 1/1/1/3;
+            img {
+                width: 100%;
+            }
+        }
     }
-    .banner1 {
-        grid-area: 1/1/1/3;
-    }
+
     .banner2 {
         grid-area: 2/1/3/3;
     }
@@ -36,11 +36,18 @@
         width: 19vw;
         height: 20vw;
     }
-    p {
-        font-size: 1.5vw;
-        padding: 1% 3%;
-    }
     a:hover {
         color: blue;
+    }
+
+    footer {
+        height: 100px;
+        @include flexCustom(flex, center, center);
+        background-color: $blueDark;
+        color: white;
+        .content {
+            @include flexCustom(flex, center, center);
+            flex-direction: column;
+        }
     }
 }
