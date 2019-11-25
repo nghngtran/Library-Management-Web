@@ -5,6 +5,7 @@
             margin: 15px 15px;
             border : 2px solid $blueDark;
             .cancelRequestBtn {
+                cursor: pointer;
                 padding: 10px 20px;
                 background-color: #131254;
                 color: white;
@@ -21,6 +22,7 @@
             margin: 15px 15px;
             border : 2px solid $blueDark;
             .returnBookBtn {
+                cursor: pointer;
                 padding: 10px 20px;
                 background-color: #131254;
                 color: white;

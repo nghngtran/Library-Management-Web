@@ -280,12 +280,24 @@ table {
   margin-bottom: 20px;
 }
 
-#search .body .content .top input {
-  padding: 10px 0px 10px 20px;
+#search .body .content .top .search-box {
+  position: relative;
   width: 50%;
+}
+
+#search .body .content .top .search-box input {
+  padding: 10px 0px 10px 20px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 15px;
   outline: none;
+}
+
+#search .body .content .top .search-box a {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 #search .body .content .filter .filter-btns {
@@ -574,6 +586,7 @@ table {
 }
 
 #borrowing-history .pending .book-pending .cancelRequestBtn {
+  cursor: pointer;
   padding: 10px 20px;
   background-color: #131254;
   color: white;
@@ -590,6 +603,7 @@ table {
 }
 
 #borrowing-history .borrowing .book-borrowing .returnBookBtn {
+  cursor: pointer;
   padding: 10px 20px;
   background-color: #131254;
   color: white;
