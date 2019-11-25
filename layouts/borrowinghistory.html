@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Phản hồi</title>
+    <title>Quản lý sách mượn</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/scss/style.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body id="response">
+<body id="borrowing-history">
     <header>
         <nav class="container">
             <div class="container-inner d-flex justify-content-between">
                 <div class="nav-left d-flex align-items-center">
-                        <a href="./homepage.html"><img src="../assets/images/homepage/logokhtn.png"></a>
+                    <a href="./homepage.html"><img src="../assets/images/homepage/logokhtn.png"></a>
                     <ul class="d-flex">
                         <li class="active-class"><a href="./homepage.html">Trang chủ</a></li>
                         <li class="active-class"><a href="./library.html">Thư viện</a></li>
@@ -28,7 +29,6 @@
                     </ul>
                 </div>
 
- 
                 <div class="nav-right">
                         <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
                         <div class="dropdown hide account-btn">
@@ -42,6 +42,7 @@
                             </div>
                           </div>
                     </div>
+
                 <div class="modal fade" id="formLogin" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -63,57 +64,54 @@
                 </div>
             </div>
         </nav>
-        <div class="banner container">
-            <div class="container-inner">
-                <img src="../assets/images/response/thank.jpg">
-            </div>
+        <div class="banner container-inner">
+            <img style="width : 100%" src="../assets//images/search/banner.png" alt="">
         </div>
     </header>
     <div class="container-inner">
-        <div id="header">
-            <h3>Đóng góp và đề xuất</h3>
-        </div>
-
-        <div class="form">
-            <div class="title-div">
-                <p class="title-box">Đề xuất ý kiến</p>
-            </div>
-
-            <form action="idea">
-                <b>Ý kiến của bạn về chúng tôi: <br> <textarea rows="5" ,cols="50">
-        </textarea></b><br> <b>Bạn là ai ?</b>
-                <select name="user" id="" user>
-        <option value="user">User</option>
-        <option value="guest">Guest</option>
-        </select><br> <br>
-            </form>
-
-            <div class="title-div">
-                <p class="title-box">Thông tin cá nhân</p>
-            </div>
-
-            <form action="personal">
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label"><b>Họ và tên</b></label>
-                    <div class="col-sm-7">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <h4 style="text-decoration: underline;">Quản lý sách mượn</h4>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true">Yêu cầu đang chờ xét duyệt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">Sách đã mượn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                    aria-controls="contact" aria-selected="false">Sách đang mượn</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane pending fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="book-pending row">
+                    <div class="col-4 book-img">
+                        <img src="../assets/images/search/book1.png"></div>
+                    <div class="col-8 book-info">
+                        <h1 class="book-title">Agile Principles, Pattern and Practices in C#</h1>
+                        <h3 class="book-author">Ahmedt-Aristizabal, David ; Fookes, Clinton</h3>
+                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
+                            domination. A computer ensures you do not waste your time"</p>
+                        <a class="cancelRequestBtn" id="borrow">Hủy yêu cầu</a>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label"><b>Email</b></label>
-                    <div class="col-sm-7">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-            </form>
-            <div id="button-group">
-                <button type="button" class="btn btn-danger">Hủy bỏ</button>
-                <button type="button" class="btn btn-primary">Gửi</button>
+            </div>
+            <div class="tab-pane borrowed fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
             </div>
-
-            <div>
-                <h6>Cảm ơn bạn đã đóng góp ý kiến và ủng hộ chúng tôi</h6>
+            <div class="tab-pane borrowing fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="book-borrowing row">
+                    <div class="col-4 book-img"><img src="../assets/images/search/book2.png"></div>
+                    <div class="col-8 book-info">
+                        <h1 class="book-title">Introduction to Algorithms</h1>
+                        <h3 class="book-author">Thomas</h3>
+                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
+                            domination. A computer ensures you do not waste your time"</p><a class="returnBookBtn"
+                            id="borrow" >Trả sách</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -124,11 +122,18 @@
         </div>
     </footer>
 
-
+    <script src="../assets/js/account.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -35,7 +35,10 @@ var listNews = [{
 ]
 
 function loadNewsData(data) {
+    
+    console.log("Load news");
     data.forEach((newDetail) => {
+
         var newInfo = $("<div class='new row'></div>");
         var col4 = $("<div class='col-4 new-img'></div>");
         var col8 = $("<div class='col-8 new-info'></div>");
@@ -52,6 +55,7 @@ function loadNewsData(data) {
 
 }
 function loadData(data) {
+    var count = 0;
 
     data.forEach((book) => {
         var bookInfo = $("<div class='book row'></div>");
@@ -65,7 +69,7 @@ function loadData(data) {
         bookInfo.append(col4);
         bookInfo.append(col8);
         $(".list-books").append(bookInfo);
-        count++;
+        count ++;
     })
 }
 
@@ -81,7 +85,6 @@ function getData(data) {
 window.onload = function() {
     var isLogin = localStorage.getItem('islogin');
     if (isLogin === "true"){
-        this.console.log("Đawmh mnhap roi");
         $('.login-btn').css("display", "none");
         $(".account-btn").css("display", "block");
     }
@@ -89,9 +92,9 @@ window.onload = function() {
         $('.login-btn').css("display", "block");
         $(".account-btn").css("display", "none");
     }
-    //Load Data
-    loadNewsData(listNews);
-    loadData(listBooks);
+     //Load Data
+     loadNewsData(listNews);
+     loadData(listBooks);
 
     $('#loginBtn').click(function(e) {
         var username = $('#username').val();
