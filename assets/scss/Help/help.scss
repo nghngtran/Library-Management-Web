@@ -1,0 +1,35 @@
+@import '../mixin';
+@import '../reset';
+@import '../variable';
+#help {
+    .body {
+        .content {
+            .top {
+                margin-bottom: 20px;
+                .heading-title {
+                    color: $blueDark;
+                    @include font(20px, 600, normal, normal);
+                    margin-bottom: 20px;
+                }
+            }
+            .helpInfo {
+                .help {
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    padding: 5px 0 5px 0;
+                    .helpDetail {
+                        h1 {
+                            padding-top: 20px;
+                            @include font(20px, bold, normal, normal);
+                            color: $blueDark;
+                        }
+                        h3 {
+                            padding-top: 5px;
+                            @include font(14px, bold, normal, normal);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

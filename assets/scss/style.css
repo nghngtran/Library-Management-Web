@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900&display=swap");
 html,
 body,
 div,
@@ -130,7 +131,9 @@ table {
 #homepage header,
 #search header,
 #new header,
-#rule header {
+#rule header,
+#manageBookBorrow header,
+#help header {
   margin-bottom: 20px;
   background-color: white;
 }
@@ -138,7 +141,9 @@ table {
 #homepage header nav,
 #search header nav,
 #new header nav,
-#rule header nav {
+#rule header nav,
+#manageBookBorrow header nav,
+#help header nav {
   padding: 20px 0px;
   margin-bottom: 15px;
   background-color: #131254;
@@ -147,21 +152,27 @@ table {
 #homepage header nav .nav-left ul,
 #search header nav .nav-left ul,
 #new header nav .nav-left ul,
-#rule header nav .nav-left ul {
+#rule header nav .nav-left ul,
+#manageBookBorrow header nav .nav-left ul,
+#help header nav .nav-left ul {
   list-style: none;
 }
 
 #homepage header nav .nav-left ul li,
 #search header nav .nav-left ul li,
 #new header nav .nav-left ul li,
-#rule header nav .nav-left ul li {
+#rule header nav .nav-left ul li,
+#manageBookBorrow header nav .nav-left ul li,
+#help header nav .nav-left ul li {
   margin-right: 20px;
 }
 
 #homepage header nav .nav-left ul li a,
 #search header nav .nav-left ul li a,
 #new header nav .nav-left ul li a,
-#rule header nav .nav-left ul li a {
+#rule header nav .nav-left ul li a,
+#manageBookBorrow header nav .nav-left ul li a,
+#help header nav .nav-left ul li a {
   font-size: 16px;
   color: white;
   font-weight: 600;
@@ -170,7 +181,9 @@ table {
 #homepage header nav .nav-right .login-btn,
 #search header nav .nav-right .login-btn,
 #new header nav .nav-right .login-btn,
-#rule header nav .nav-right .login-btn {
+#rule header nav .nav-right .login-btn,
+#manageBookBorrow header nav .nav-right .login-btn,
+#help header nav .nav-right .login-btn {
   padding: 10px 20px;
   font-weight: bold;
   font-size: 20px;
@@ -182,14 +195,18 @@ table {
 #homepage header .banner img,
 #search header .banner img,
 #new header .banner img,
-#rule header .banner img {
+#rule header .banner img,
+#manageBookBorrow header .banner img,
+#help header .banner img {
   max-width: 1172px;
 }
 
 #homepage .body,
 #search .body,
 #new .body,
-#rule .body {
+#rule .body,
+#manageBookBorrow .body,
+#help .body {
   margin-bottom: 20px;
 }
 
@@ -200,7 +217,11 @@ table {
 #new .body .search,
 #new .body .info,
 #rule .body .search,
-#rule .body .info {
+#rule .body .info,
+#manageBookBorrow .body .search,
+#manageBookBorrow .body .info,
+#help .body .search,
+#help .body .info {
   padding-left: 20px;
   margin-bottom: 20px;
 }
@@ -212,7 +233,11 @@ table {
 #new .body .search .heading-title,
 #new .body .info .heading-title,
 #rule .body .search .heading-title,
-#rule .body .info .heading-title {
+#rule .body .info .heading-title,
+#manageBookBorrow .body .search .heading-title,
+#manageBookBorrow .body .info .heading-title,
+#help .body .search .heading-title,
+#help .body .info .heading-title {
   color: #131254;
   font-size: 20px;
   font-weight: 600;
@@ -224,21 +249,27 @@ table {
 #homepage .body .search input,
 #search .body .search input,
 #new .body .search input,
-#rule .body .search input {
+#rule .body .search input,
+#manageBookBorrow .body .search input,
+#help .body .search input {
   width: 70%;
 }
 
 #homepage .body .info ul li,
 #search .body .info ul li,
 #new .body .info ul li,
-#rule .body .info ul li {
+#rule .body .info ul li,
+#manageBookBorrow .body .info ul li,
+#help .body .info ul li {
   width: 40%;
 }
 
 #homepage .body .news .heading-title,
 #search .body .news .heading-title,
 #new .body .news .heading-title,
-#rule .body .news .heading-title {
+#rule .body .news .heading-title,
+#manageBookBorrow .body .news .heading-title,
+#help .body .news .heading-title {
   color: #131254;
   font-size: 20px;
   font-weight: 600;
@@ -250,7 +281,9 @@ table {
 #homepage .body .news .post img,
 #search .body .news .post img,
 #new .body .news .post img,
-#rule .body .news .post img {
+#rule .body .news .post img,
+#manageBookBorrow .body .news .post img,
+#help .body .news .post img {
   width: 100%;
   margin-bottom: 15px;
 }
@@ -258,7 +291,9 @@ table {
 #homepage .body .news .post .title,
 #search .body .news .post .title,
 #new .body .news .post .title,
-#rule .body .news .post .title {
+#rule .body .news .post .title,
+#manageBookBorrow .body .news .post .title,
+#help .body .news .post .title {
   font-size: 20px;
   font-weight: bold;
   letter-spacing: normal;
@@ -268,7 +303,9 @@ table {
 #homepage footer,
 #search footer,
 #new footer,
-#rule footer {
+#rule footer,
+#manageBookBorrow footer,
+#help footer {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,7 +323,9 @@ table {
 #homepage footer .content,
 #search footer .content,
 #new footer .content,
-#rule footer .content {
+#rule footer .content,
+#manageBookBorrow footer .content,
+#help footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,6 +480,233 @@ table {
   line-height: normal;
 }
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#manageBookBorrow .body .content .top {
+  margin-bottom: 20px;
+}
+
+#manageBookBorrow .body .content .top .heading-title {
+  color: #131254;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+#manageBookBorrow .body .content .list-booksBorrowed .book {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 2px solid #131254;
+  padding: 5px 0 5px 0;
+}
+
+#manageBookBorrow .body .content .list-booksBorrowed .book .book-info h1 {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+  color: #131254;
+}
+
+#manageBookBorrow .body .content .list-booksBorrowed .book .book-info h3 {
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#manageBookBorrow .body .content .list-booksBorrowed .book .book-info .returnBtn {
+  padding: 10px 20px;
+  background-color: #131254;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#help .body .content .top {
+  margin-bottom: 20px;
+}
+
+#help .body .content .top .heading-title {
+  color: #131254;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+#help .body .content .helpInfo .help {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 5px 0 5px 0;
+}
+
+#help .body .content .helpInfo .help .help-img {
+  width: 400px;
+  height: 300px;
+  padding: 5px;
+}
+
+#help .body .content .helpInfo .help .help-detail h1 {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+  color: #131254;
+}
+
+#help .body .content .helpInfo .help .help-detail h3 {
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#help .body .content .helpInfo .help .help-detail .detailNewBtn {
+  padding: 10px 20px;
+  background-color: #131254;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
 .container {
   max-width: 1366px !important;
 }
@@ -456,5 +722,9 @@ html {
 
 * {
   font-family: "Muli", sans-serif;
+}
+
+.account-btn {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

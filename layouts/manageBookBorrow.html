@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/scss/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Tin tức</title>
+</head>
+
+<body id="manageBookBorrow">
+    <header>
+        <nav class="container">
+            <div class="container-inner d-flex justify-content-between">
+                <div class="nav-left">
+                    <ul class="d-flex">
+                        <li><a href="../layouts/homepage.html">Trang chủ</a></li>
+                        <li><a>Thư viện</a></li>
+                        <li><a href="../layouts/search.html">Tìm kiếm</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a>Trợ giúp</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                </div>
+                <div class="modal fade" id="formLogin" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center">Login</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input id="username" type="text" placeholder="Tên đăng nhập">
+                                <input id="password" type="password" placeholder="Mật khẩu">
+                                <input id="loginBtn" type="button" value="Đăng nhập">
+                                <a href="#" class="text-right">Quên mật khẩu?</a>
+                                <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="banner container">
+            <div class="container-inner">
+                <img src="../assets/images/rule/banner.png">
+            </div>
+
+        </div>
+    </header>
+    <section class="body container">
+        <div class="content container-inner">
+            <div class="top">
+                <h5 class="heading-title">Quản lý sách mượn</h5>
+            </div>
+            <div class="list-booksBorrowed">
+            </div>
+        </div>
+    </section>
+    <footer class="container">
+        <div class="content">
+            <p class="text-center">Thư viện trường Đại Học Khoa Học Tự Nhiên</p>
+            <p class="text-center">227 Nguyễn Văn Cừ, phường 4, quận 5, thành phố Hồ Chí Minh</p>
+        </div>
+    </footer>
+    <script src="../assets/js/manageBookBorrow.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
