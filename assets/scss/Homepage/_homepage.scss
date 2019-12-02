@@ -1,25 +1,42 @@
 #homepage,
 #search,
 #new,
+#library,
 #rule,
-#manageBookBorrow,
+#borrow,
+#response,
+#borrowing-history,
 #help {
     header {
         margin-bottom: 20px;
         background-color: white;
         nav {
             padding: 20px 0px;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
             background-color: $blueDark;
             .nav-left {
+                img {
+                    height: 60px;
+                    margin-right: 50px;
+                }
                 ul {
                     list-style: none;
                     li {
+                        text-decoration: none;
                         margin-right: 20px;
                         a {
-                            font-size: 16px;
+                            font-size: 18px;
                             color: white;
-                            font-weight: 600;
+                            font-weight: bold;
+                            text-decoration: none;
+                        }
+                        .active {
+                            color: yellow !important;
+                            text-decoration: none;
+                        }
+                        .hover {
+                            text-decoration: none;
+                            color: #131542;
                         }
                     }
                 }
@@ -41,48 +58,6 @@
             }
         }
     }
-    .body {
-        margin-bottom: 20px;
-        .search,
-        .info {
-            padding-left: 20px;
-            margin-bottom: 20px;
-            .heading-title {
-                color: $blueDark;
-                @include font(20px, 600, normal, normal);
-                margin-bottom: 20px;
-            }
-        }
-        .search {
-            input {
-                width: 70%;
-            }
-        }
-        .info {
-            ul {
-                li {
-                    width: 40%;
-                }
-            }
-        }
-        .news {
-            .heading-title {
-                color: $blueDark;
-                @include font(20px, 600, normal, normal);
-                margin-bottom: 20px;
-            }
-            .post {
-                img {
-                    width: 100%;
-                    margin-bottom: 15px;
-                    ;
-                }
-                .title {
-                    @include font(20px, bold, normal, normal);
-                }
-            }
-        }
-    }
     footer {
         height: 100px;
         @include flexCustom(flex, center, center);
@@ -91,6 +66,98 @@
         .content {
             @include flexCustom(flex, center, center);
             flex-direction: column;
+        }
+    }
+}
+
+#homepage {
+    .bannerImg {
+        margin-left: 150px;
+        background-image: url('../images/news/bg.png');
+        background-repeat: no-repeat;
+        height: 450px;
+        .containerImg {
+            padding: 100px 50px 20px 50px;
+            .h1 {
+                margin-top: 100px;
+                font-family: 'Paytone One', sans-serif;
+                font-weight: bold;
+                font-size: 54px;
+                color: #5c0099;
+                line-height: 60px;
+                letter-spacing: 2px;
+            }
+            .h3 {
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: bold;
+                line-height: 60px;
+                color: #131254;
+                font-size: 34px;
+            }
+        }
+    }
+    .body {
+        margin-bottom: 20px;
+        .search,
+        .info {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            .heading-title {
+                margin-top: 20px;
+                color: $blueDark;
+                @include font(20px,
+                600,
+                normal,
+                normal);
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+        }
+        .search {
+            input {
+                width: 70%;
+            }
+        }
+        .info {
+            a {
+                text-decoration: none;
+                font-weight: 600;
+                .hover {
+                    color: #520063;
+                }
+            }
+            ul {
+                li {
+                    width: 40%;
+                    font-size: 16px;
+                    line-height: 40px;
+                    color: black;
+                }
+            }
+        }
+        .news {
+            .heading-title {
+                color: $blueDark;
+                @include font(20px,
+                600,
+                normal,
+                normal);
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+            .post {
+                img {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    ;
+                }
+                .title {
+                    @include font(20px,
+                    bold,
+                    normal,
+                    normal);
+                }
+            }
         }
     }
 }

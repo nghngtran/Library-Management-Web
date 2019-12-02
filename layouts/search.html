@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../assets/scss/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Francois+One|Paytone+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <title>Tìm kiếm</title>
 </head>
 
@@ -32,9 +35,9 @@
                          1753014
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Quan ly tai khoan</a>
-                            <a class="dropdown-item" href="#">Lich su muon sach</a>
-                            <a class="dropdown-item logout-btn" href="#">Dang xuat</a>
+                            <a class="dropdown-item" href="#">Quản lý tài khoản</a>
+                            <a class="dropdown-item" href="#">Lịch sử mượn sách</a>
+                            <a class="dropdown-item logout-btn" href="#">Đăng xuất</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +45,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title text-center">Login</h4>
+                                <h4 class="modal-title text-center">Đăng nhập</h4>
                             </div>
                             <div class="modal-body">
                                 <input id="username" type="text" placeholder="Tên đăng nhập">
@@ -52,7 +55,7 @@
                                 <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                             </div>
                         </div>
                     </div>
@@ -77,38 +80,38 @@
                 <div class="filter-btns btn-group" role="group" aria-label="Button group with nested dropdown">
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sort by
+                            Sắp xếp
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Quantity</a>
-                            <a class="dropdown-item" href="#">Price</a>
+                            <a class="dropdown-item" href="#">Chữ cái</a>
+                            <a class="dropdown-item" href="#">Mượn nhiều nhất</a>
                         </div>
                     </div>
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Genre
+                            Thể loại
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Dropdown link</a>
-                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Tài liệu môn học</a>
+                            <a class="dropdown-item" href="#">Ngành sinh học</a>
                         </div>
                     </div>
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Language
+                            Ngôn ngữ
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Dropdown link</a>
-                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Việt</a>
+                            <a class="dropdown-item" href="#">Anh</a>
                         </div>
                     </div>
                     <div class="btn-group" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Course name
+                            Theo khoá học
                         </button>
                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <a class="dropdown-item" href="#">Dropdown link</a>
-                            <a class="dropdown-item" href="#">Dropdown link</a>
+                            <a class="dropdown-item" href="#">Lập trình C/C++</a>
+                            <a class="dropdown-item" href="#">Thị giác máy tính</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +121,7 @@
             <nav aria-label="...">
                 <ul class="pagination">
                     <li class="page-item ">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        <a class="page-link" href="#" tabindex="-1">Trước</a>
                     </li>
                     <li class="page-item active"><a class="page-link" href="#">1</a></li>
                     <li class="page-item ">
@@ -126,7 +129,7 @@
                     </li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link" href="#">Sau</a>
                     </li>
                 </ul>
             </nav>

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900&display=swap");
 html,
 body,
 div,
@@ -131,8 +132,11 @@ table {
 #homepage header,
 #search header,
 #new header,
+#library header,
 #rule header,
-#manageBookBorrow header,
+#borrow header,
+#response header,
+#borrowing-history header,
 #help header {
   margin-bottom: 20px;
   background-color: white;
@@ -141,19 +145,38 @@ table {
 #homepage header nav,
 #search header nav,
 #new header nav,
+#library header nav,
 #rule header nav,
-#manageBookBorrow header nav,
+#borrow header nav,
+#response header nav,
+#borrowing-history header nav,
 #help header nav {
   padding: 20px 0px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   background-color: #131254;
+}
+
+#homepage header nav .nav-left img,
+#search header nav .nav-left img,
+#new header nav .nav-left img,
+#library header nav .nav-left img,
+#rule header nav .nav-left img,
+#borrow header nav .nav-left img,
+#response header nav .nav-left img,
+#borrowing-history header nav .nav-left img,
+#help header nav .nav-left img {
+  height: 60px;
+  margin-right: 50px;
 }
 
 #homepage header nav .nav-left ul,
 #search header nav .nav-left ul,
 #new header nav .nav-left ul,
+#library header nav .nav-left ul,
 #rule header nav .nav-left ul,
-#manageBookBorrow header nav .nav-left ul,
+#borrow header nav .nav-left ul,
+#response header nav .nav-left ul,
+#borrowing-history header nav .nav-left ul,
 #help header nav .nav-left ul {
   list-style: none;
 }
@@ -161,28 +184,65 @@ table {
 #homepage header nav .nav-left ul li,
 #search header nav .nav-left ul li,
 #new header nav .nav-left ul li,
+#library header nav .nav-left ul li,
 #rule header nav .nav-left ul li,
-#manageBookBorrow header nav .nav-left ul li,
+#borrow header nav .nav-left ul li,
+#response header nav .nav-left ul li,
+#borrowing-history header nav .nav-left ul li,
 #help header nav .nav-left ul li {
+  text-decoration: none;
   margin-right: 20px;
 }
 
 #homepage header nav .nav-left ul li a,
 #search header nav .nav-left ul li a,
 #new header nav .nav-left ul li a,
+#library header nav .nav-left ul li a,
 #rule header nav .nav-left ul li a,
-#manageBookBorrow header nav .nav-left ul li a,
+#borrow header nav .nav-left ul li a,
+#response header nav .nav-left ul li a,
+#borrowing-history header nav .nav-left ul li a,
 #help header nav .nav-left ul li a {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
-  font-weight: 600;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#homepage header nav .nav-left ul li .active,
+#search header nav .nav-left ul li .active,
+#new header nav .nav-left ul li .active,
+#library header nav .nav-left ul li .active,
+#rule header nav .nav-left ul li .active,
+#borrow header nav .nav-left ul li .active,
+#response header nav .nav-left ul li .active,
+#borrowing-history header nav .nav-left ul li .active,
+#help header nav .nav-left ul li .active {
+  color: yellow !important;
+  text-decoration: none;
+}
+
+#homepage header nav .nav-left ul li .hover,
+#search header nav .nav-left ul li .hover,
+#new header nav .nav-left ul li .hover,
+#library header nav .nav-left ul li .hover,
+#rule header nav .nav-left ul li .hover,
+#borrow header nav .nav-left ul li .hover,
+#response header nav .nav-left ul li .hover,
+#borrowing-history header nav .nav-left ul li .hover,
+#help header nav .nav-left ul li .hover {
+  text-decoration: none;
+  color: #131542;
 }
 
 #homepage header nav .nav-right .login-btn,
 #search header nav .nav-right .login-btn,
 #new header nav .nav-right .login-btn,
+#library header nav .nav-right .login-btn,
 #rule header nav .nav-right .login-btn,
-#manageBookBorrow header nav .nav-right .login-btn,
+#borrow header nav .nav-right .login-btn,
+#response header nav .nav-right .login-btn,
+#borrowing-history header nav .nav-right .login-btn,
 #help header nav .nav-right .login-btn {
   padding: 10px 20px;
   font-weight: bold;
@@ -195,116 +255,23 @@ table {
 #homepage header .banner img,
 #search header .banner img,
 #new header .banner img,
+#library header .banner img,
 #rule header .banner img,
-#manageBookBorrow header .banner img,
+#borrow header .banner img,
+#response header .banner img,
+#borrowing-history header .banner img,
 #help header .banner img {
   max-width: 1172px;
-}
-
-#homepage .body,
-#search .body,
-#new .body,
-#rule .body,
-#manageBookBorrow .body,
-#help .body {
-  margin-bottom: 20px;
-}
-
-#homepage .body .search,
-#homepage .body .info,
-#search .body .search,
-#search .body .info,
-#new .body .search,
-#new .body .info,
-#rule .body .search,
-#rule .body .info,
-#manageBookBorrow .body .search,
-#manageBookBorrow .body .info,
-#help .body .search,
-#help .body .info {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-#homepage .body .search .heading-title,
-#homepage .body .info .heading-title,
-#search .body .search .heading-title,
-#search .body .info .heading-title,
-#new .body .search .heading-title,
-#new .body .info .heading-title,
-#rule .body .search .heading-title,
-#rule .body .info .heading-title,
-#manageBookBorrow .body .search .heading-title,
-#manageBookBorrow .body .info .heading-title,
-#help .body .search .heading-title,
-#help .body .info .heading-title {
-  color: #131254;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
-}
-
-#homepage .body .search input,
-#search .body .search input,
-#new .body .search input,
-#rule .body .search input,
-#manageBookBorrow .body .search input,
-#help .body .search input {
-  width: 70%;
-}
-
-#homepage .body .info ul li,
-#search .body .info ul li,
-#new .body .info ul li,
-#rule .body .info ul li,
-#manageBookBorrow .body .info ul li,
-#help .body .info ul li {
-  width: 40%;
-}
-
-#homepage .body .news .heading-title,
-#search .body .news .heading-title,
-#new .body .news .heading-title,
-#rule .body .news .heading-title,
-#manageBookBorrow .body .news .heading-title,
-#help .body .news .heading-title {
-  color: #131254;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
-}
-
-#homepage .body .news .post img,
-#search .body .news .post img,
-#new .body .news .post img,
-#rule .body .news .post img,
-#manageBookBorrow .body .news .post img,
-#help .body .news .post img {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-#homepage .body .news .post .title,
-#search .body .news .post .title,
-#new .body .news .post .title,
-#rule .body .news .post .title,
-#manageBookBorrow .body .news .post .title,
-#help .body .news .post .title {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
 }
 
 #homepage footer,
 #search footer,
 #new footer,
+#library footer,
 #rule footer,
-#manageBookBorrow footer,
+#borrow footer,
+#response footer,
+#borrowing-history footer,
 #help footer {
   height: 100px;
   display: -webkit-box;
@@ -323,8 +290,11 @@ table {
 #homepage footer .content,
 #search footer .content,
 #new footer .content,
+#library footer .content,
 #rule footer .content,
-#manageBookBorrow footer .content,
+#borrow footer .content,
+#response footer .content,
+#borrowing-history footer .content,
 #help footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -339,6 +309,99 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#homepage .bannerImg {
+  margin-left: 150px;
+  background-image: url("../images/news/bg.png");
+  background-repeat: no-repeat;
+  height: 450px;
+}
+
+#homepage .bannerImg .containerImg {
+  padding: 100px 50px 20px 50px;
+}
+
+#homepage .bannerImg .containerImg .h1 {
+  margin-top: 100px;
+  font-family: 'Paytone One', sans-serif;
+  font-weight: bold;
+  font-size: 54px;
+  color: #5c0099;
+  line-height: 60px;
+  letter-spacing: 2px;
+}
+
+#homepage .bannerImg .containerImg .h3 {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+  line-height: 60px;
+  color: #131254;
+  font-size: 34px;
+}
+
+#homepage .body {
+  margin-bottom: 20px;
+}
+
+#homepage .body .search,
+#homepage .body .info {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#homepage .body .search .heading-title,
+#homepage .body .info .heading-title {
+  margin-top: 20px;
+  color: #131254;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#homepage .body .search input {
+  width: 70%;
+}
+
+#homepage .body .info a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#homepage .body .info a .hover {
+  color: #520063;
+}
+
+#homepage .body .info ul li {
+  width: 40%;
+  font-size: 16px;
+  line-height: 40px;
+  color: black;
+}
+
+#homepage .body .news .heading-title {
+  color: #131254;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#homepage .body .news .post img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#homepage .body .news .post .title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
 }
 
 #formLogin input {
@@ -359,12 +422,11 @@ table {
 }
 
 #search .body .content .top .heading-title {
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 60px;
   color: #131254;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 #search .body .content .top input {
@@ -387,15 +449,28 @@ table {
           align-items: center;
 }
 
+#search .body .content .list-books {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 150px;
+}
+
 #search .body .content .list-books .book {
+  width: 90%;
   margin-top: 30px;
   margin-bottom: 20px;
-  border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 40px 5px 40px;
+}
+
+#search .body .content .list-books .book .book-info {
+  padding-top: 30px;
 }
 
 #search .body .content .list-books .book .book-info h1 {
-  font-size: 35px;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
@@ -424,12 +499,11 @@ table {
 }
 
 #new .body .content .top .heading-title {
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 60px;
   color: #131254;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 #new .body .content .top input {
@@ -440,20 +514,26 @@ table {
   outline: none;
 }
 
+#new .body .content .list-news {
+  margin-left: 150px;
+}
+
 #new .body .content .list-news .new {
+  width: 100%;
   margin-top: 30px;
   margin-bottom: 20px;
-  border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 #new .body .content .list-news .new .new-img {
   width: 400px;
   height: 300px;
-  padding: 5px;
+  padding: 10px 20px 30px 5px;
 }
 
 #new .body .content .list-news .new .new-info h1 {
+  margin-left: 70px;
   padding-top: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -463,14 +543,27 @@ table {
 }
 
 #new .body .content .list-news .new .new-info h3 {
+  margin-left: 70px;
   padding-top: 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
 }
 
+#new .body .content .list-news .new .new-info p {
+  margin-left: 70px;
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
 #new .body .content .list-news .new .new-info .detailNewBtn {
+  margin-top: 20px;
+  margin-left: 70px;
   padding: 10px 20px;
   background-color: #131254;
   color: white;
@@ -478,6 +571,9 @@ table {
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-decoration: none;
 }
 
 html,
@@ -655,6 +751,134 @@ table {
   line-height: normal;
 }
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 #help .body .content .top {
   margin-bottom: 20px;
 }
@@ -670,17 +894,11 @@ table {
 
 #help .body .content .helpInfo .help {
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 5px 0 5px 0;
 }
 
-#help .body .content .helpInfo .help .help-img {
-  width: 400px;
-  height: 300px;
-  padding: 5px;
-}
-
-#help .body .content .helpInfo .help .help-detail h1 {
+#help .body .content .helpInfo .help .helpDetail h1 {
   padding-top: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -689,19 +907,9 @@ table {
   color: #131254;
 }
 
-#help .body .content .helpInfo .help .help-detail h3 {
+#help .body .content .helpInfo .help .helpDetail h3 {
   padding-top: 5px;
   font-size: 14px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
-}
-
-#help .body .content .helpInfo .help .help-detail .detailNewBtn {
-  padding: 10px 20px;
-  background-color: #131254;
-  color: white;
-  font-size: 16px;
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;

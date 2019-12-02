@@ -4,9 +4,11 @@
             .top {
                 margin-bottom: 20px;
                 .heading-title {
-                    color: $blueDark;
-                    @include font(20px, 600, normal, normal);
-                    margin-bottom: 20px;
+                    font-family: 'Noto Sans', sans-serif;
+                    line-height: 60px;
+                    color: #131254;
+                    font-size: 26px;
+                    font-weight: bold;
                 }
                 input {
                     padding: 10px 0px 10px 20px;
@@ -22,14 +24,19 @@
                 }
             }
             .list-books {
+                align-items: center;
+                margin-left: 150px;
                 .book {
+                    width: 90%;
                     margin-top: 30px;
                     margin-bottom: 20px;
-                    border: 2px solid $blueDark;
-                    padding: 5px 0 5px 0;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    padding: 5px 40px 5px 40px;
                     .book-info {
+                        padding-top: 30px;
                         h1 {
-                            @include font(35px, bold, normal, normal);
+                            @include font(24px, bold, normal, normal);
                         }
                         h3 {
                             @include font(16px, bold, normal, normal);
