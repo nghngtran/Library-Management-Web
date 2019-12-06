@@ -27,10 +27,10 @@ col4.append("<img src=" + book.image + ">");
 col8.append("<h1 class='book-title'>" + book.name + "</h1>");
 col8.append("<h3 class='book-author'>" + book.author + "</h3>");
 col8.append("<p class='book-des'>" + book.des + "</p>");
-cer.append("<div class= 'note'><textarea rows = '5' cols = '30' placeholder='Note'></textarea></div>")
+cer.append("<div class= 'note'><textarea rows = '5' cols = '30' placeholder='Ghi chú'></textarea></div>")
 cer.append("<div class='g-recaptcha' data-sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'></div>");
-cer.append("<div class='appointment'><b>Appointment Date:</b> <input type='date'></div>");
-cer.append("<a class='borrowBookBtn btn btn-primary' href='#'><b>Mượn sách</b></a>");
+cer.append("<div class='appointment'><b>Ngày hẹn mượn:</b> <input type='date'></div>");
+cer.append("<a class='confirmBookBtn btn btn-primary'  href='./search.html'>Mượn sách</a>");
 col8.append(cer);
 bookInfo.append(col4);
 bookInfo.append(col8);
@@ -69,5 +69,8 @@ $(".log-out-btn").click((e)=>{
     $('.login-btn').css("display", "block");
     $(".account-btn").css("display", "none");
     this.localStorage.removeItem('islogin');
+})
+$(".confirmBookBtn").click((e)=>{
+    this.alert("Mượn sách thành công!")
 })
 }

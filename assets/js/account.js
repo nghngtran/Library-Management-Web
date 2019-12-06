@@ -23,6 +23,12 @@ window.onload = function() {
 
     $('.cancelRequestBtn').on('click', function(){
         $('.cancelRequestBtn').parent().parent().css("display","none");
+    })   
+
+    $('.confirmReturn').on('click', function(){
+        console.log("Clicked");
+        $('#returnBookModal').modal("hide");
+        $('.book-borrowing').css("display","none");
     })
     var newPhoneNumber = $('.change-phone').val();
     
