@@ -47,6 +47,11 @@ app.get("/response", (req, res) => {
     res.render("response");
 })
 
+app.get("/help",(req,res)=>{
+    res.locals.item = 'help';
+    res.render('help');
+})
+
 
 //ACTIVATE SERVER
 app.set('port', process.env.PORT || 3000);

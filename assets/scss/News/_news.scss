@@ -23,10 +23,17 @@
             }
             .list-news {
                 .new {
+                    box-shadow: 10px 10px 8px #888888;
+                    background-color: #c0d8db;
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
                     padding: 5px 0 5px 0;
+                    .new-img {
+                        img {
+                            width: 90%;
+                        }
+                    }
                     .new-info {
                         h1 {
                             @include font(16px, bold, normal, normal);

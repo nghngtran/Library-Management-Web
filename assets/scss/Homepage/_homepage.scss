@@ -1,6 +1,9 @@
 #homepage,
 #search,
-#library {
+#library,
+#rule,
+#help,
+#new{
     header {
         margin-bottom: 20px;
         background-color: white;
@@ -9,6 +12,10 @@
             margin-bottom: 15px;
             background-color: $blueDark;
             .nav-left {
+                img {
+                    height: 60px;
+                    margin-right: 50px;
+                }
                 ul {
                     list-style: none;
                     li {
@@ -23,12 +30,12 @@
             }
             .nav-right {
                 .login-btn {
-                    padding: 10px 20px;
+                    padding: 5px 15px;
                     font-weight: bold;
                     font-size: 20px;
-                    border-radius: 15px;
-                    border: 1px solid white;
-                    color: white;
+                    border-radius: 5px;
+                    border: 2px solid white;
+                    color: white !important;
                 }
             }
         }
@@ -38,6 +45,18 @@
             }
         }
     }
+    footer {
+        height: 100px;
+        @include flexCustom(flex, center, center);
+        background-color: $blueDark;
+        color: white;
+        .content {
+            @include flexCustom(flex, center, center);
+            flex-direction: column;
+        }
+    }
+}
+#homepage{
     .body {
         margin-bottom: 20px;
         .search,
@@ -80,16 +99,7 @@
             }
         }
     }
-    footer {
-        height: 100px;
-        @include flexCustom(flex, center, center);
-        background-color: $blueDark;
-        color: white;
-        .content {
-            @include flexCustom(flex, center, center);
-            flex-direction: column;
-        }
-    }
+
 }
 
 #formLogin {
