@@ -13,7 +13,6 @@ var listBooks = [{
 ]
 
 function loadData(data) {
-
     data.forEach((
         book) => {
         console.log(book);
@@ -33,7 +32,10 @@ function loadData(data) {
 
 }
 
-
+function getData(data) {
+    var s = "/layouts/borrow.html?" + "value=" + data;
+    return s;
+}
 
 window.onload = function() {
     loadData(listBooks);
@@ -44,11 +46,10 @@ window.onload = function() {
         if (password === 'admin' && username === 'admin') {
             alert("Đăng nhập thành công!!!");
             $('#formLogin').modal('hide');
-            $('.login-btn').css("display","none");
-            $(".account-btn").css("display","block");
-        }
-        else {
-            $(".noti-err").css("display","block");
+            $('.login-btn').css("display", "none");
+            $(".account-btn").css("display", "block");
+        } else {
+            $(".noti-err").css("display", "block");
             alert("Username :admin ; password : admin")
         }
     })

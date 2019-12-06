@@ -1,0 +1,54 @@
+<header class="">
+        <nav class="container">
+            <div class="container-inner d-flex justify-content-between">
+                <div class="nav-left">
+                    <ul class="d-flex">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a href="/library">Thư viện</a></li>
+                        <li><a href="/search">Tìm kiếm</a></li>
+                        <li><a href="/news">Tin tức</a></li>
+                        <li><a>Trợ giúp</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                    <div class="dropdown hide account-btn">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         1753014
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Quan ly tai khoan</a>
+                            <a class="dropdown-item" href="#">Lich su muon sach</a>
+                            <a class="dropdown-item" href="#">Dang xuat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="formLogin" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center">Login</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input id="username" type="text" placeholder="Tên đăng nhập">
+                                <input id="password" type="password" placeholder="Mật khẩu">
+                                <input id="loginBtn" type="button" value="Đăng nhập">
+                                <a href="#" class="text-right">Quên mật khẩu?</a>
+                                <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="banner container">
+            <div class="container-inner">
+                <img src="/images/homepage/banner.png">
+            </div>
+        </div>
+    </header>
