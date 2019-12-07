@@ -1,0 +1,36 @@
+#borrowwingmanagement {
+    .pending {
+        .book-pending {
+            padding: 15px 15px;
+            margin: 15px 15px;
+            border : 2px solid $blueDark;
+            .cancelRequestBtn {
+                cursor: pointer;
+                padding: 10px 20px;
+                background-color: #131254;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: normal;
+                line-height: normal;
+            }
+        }
+    }
+    .borrowing {
+        .book-borrowing {
+            padding: 15px 15px;
+            margin: 15px 15px;
+            border : 2px solid $blueDark;
+            .returnBookBtn {
+                cursor: pointer;
+                padding: 10px 20px;
+                background-color: #131254;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: normal;
+                line-height: normal;
+            }
+        }
+    }
+}

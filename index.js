@@ -16,41 +16,8 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs');
 
 
-app.get("/", (req, res) => {
-    res.locals.item = "homepage";
-    res.render("homepage");
-})
-
-app.get("/library", (req, res) => {
-    res.locals.item = "library";
-    res.render("library");
-})
-
-app.get("/search", (req, res) => {
-    res.locals.item = "search";
-    res.render("search");
-})
-
-app.get("/rule", (req, res) => {
-    res.locals.item = "rule";
-    res.render("rule");
-})
-
-
-app.get("/news", (req, res) => {
-    res.locals.item = "new";
-    res.render("news");
-})
-
-app.get("/response", (req, res) => {
-    res.locals.item = "response";
-    res.render("response");
-})
-
-app.get("/help",(req,res)=>{
-    res.locals.item = 'help';
-    res.render('help');
-})
+app.use("/",require('./routes/indexRouter'));
+app.use("/user", require('./routes/userRouter'));
 
 
 //ACTIVATE SERVER

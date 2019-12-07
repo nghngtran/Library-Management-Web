@@ -127,130 +127,6 @@ table {
   border-spacing: 0;
 }
 
-#homepage header,
-#search header,
-#library header,
-#rule header,
-#help header,
-#new header {
-  margin-bottom: 20px;
-  background-color: white;
-}
-
-#homepage header nav,
-#search header nav,
-#library header nav,
-#rule header nav,
-#help header nav,
-#new header nav {
-  padding: 20px 0px;
-  margin-bottom: 15px;
-  background-color: #131254;
-}
-
-#homepage header nav .nav-left img,
-#search header nav .nav-left img,
-#library header nav .nav-left img,
-#rule header nav .nav-left img,
-#help header nav .nav-left img,
-#new header nav .nav-left img {
-  height: 60px;
-  margin-right: 50px;
-}
-
-#homepage header nav .nav-left ul,
-#search header nav .nav-left ul,
-#library header nav .nav-left ul,
-#rule header nav .nav-left ul,
-#help header nav .nav-left ul,
-#new header nav .nav-left ul {
-  list-style: none;
-}
-
-#homepage header nav .nav-left ul li,
-#search header nav .nav-left ul li,
-#library header nav .nav-left ul li,
-#rule header nav .nav-left ul li,
-#help header nav .nav-left ul li,
-#new header nav .nav-left ul li {
-  margin-right: 20px;
-}
-
-#homepage header nav .nav-left ul li a,
-#search header nav .nav-left ul li a,
-#library header nav .nav-left ul li a,
-#rule header nav .nav-left ul li a,
-#help header nav .nav-left ul li a,
-#new header nav .nav-left ul li a {
-  font-size: 16px;
-  color: white;
-  font-weight: 600;
-}
-
-#homepage header nav .nav-right .login-btn,
-#search header nav .nav-right .login-btn,
-#library header nav .nav-right .login-btn,
-#rule header nav .nav-right .login-btn,
-#help header nav .nav-right .login-btn,
-#new header nav .nav-right .login-btn {
-  padding: 5px 15px;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 2px solid white;
-  color: white !important;
-}
-
-#homepage header .banner img,
-#search header .banner img,
-#library header .banner img,
-#rule header .banner img,
-#help header .banner img,
-#new header .banner img {
-  max-width: 1172px;
-}
-
-#homepage footer,
-#search footer,
-#library footer,
-#rule footer,
-#help footer,
-#new footer {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #131254;
-  color: white;
-}
-
-#homepage footer .content,
-#search footer .content,
-#library footer .content,
-#rule footer .content,
-#help footer .content,
-#new footer .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 #homepage .body {
   margin-bottom: 20px;
 }
@@ -387,8 +263,8 @@ table {
 
 #new .body .content .top .heading-title {
   color: #131254;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
   letter-spacing: normal;
   line-height: normal;
   margin-bottom: 20px;
@@ -522,6 +398,112 @@ table {
   line-height: normal;
 }
 
+.form-dark .font-small {
+  font-size: 0.8rem;
+}
+
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+  font-size: 0.8rem;
+}
+
+.form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.form-dark .md-form label {
+  color: #fff;
+}
+
+.form-dark input[type=email]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851;
+}
+
+.form-dark input[type=email]:focus:not([readonly]) + label {
+  color: #fff;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851;
+}
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: #fff;
+}
+
+.form-dark input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  border: 1.5px solid #fff;
+  border-radius: 1px;
+  margin-top: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.form-dark input[type="checkbox"]:checked + label:before {
+  top: -4px;
+  left: -3px;
+  width: 12px;
+  height: 22px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent #00c851 #00c851 transparent;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+.form-dark .modal-header {
+  border-bottom: none;
+}
+
+#borrowwingmanagement .pending .book-pending {
+  padding: 15px 15px;
+  margin: 15px 15px;
+  border: 2px solid #131254;
+}
+
+#borrowwingmanagement .pending .book-pending .cancelRequestBtn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #131254;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+#borrowwingmanagement .borrowing .book-borrowing {
+  padding: 15px 15px;
+  margin: 15px 15px;
+  border: 2px solid #131254;
+}
+
+#borrowwingmanagement .borrowing .book-borrowing .returnBookBtn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #131254;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
 .container {
   max-width: 1366px !important;
 }
@@ -541,5 +523,139 @@ html {
 
 .account-btn {
   display: none;
+}
+
+#homepage header,
+#search header,
+#library header,
+#rule header,
+#help header,
+#new header,
+#response header, #accountmanagement header, #borrowwingmanagement header {
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+#homepage header nav,
+#search header nav,
+#library header nav,
+#rule header nav,
+#help header nav,
+#new header nav,
+#response header nav, #accountmanagement header nav, #borrowwingmanagement header nav {
+  padding: 20px 0px;
+  margin-bottom: 15px;
+  background-color: #131254;
+}
+
+#homepage header nav .nav-left img,
+#search header nav .nav-left img,
+#library header nav .nav-left img,
+#rule header nav .nav-left img,
+#help header nav .nav-left img,
+#new header nav .nav-left img,
+#response header nav .nav-left img, #accountmanagement header nav .nav-left img, #borrowwingmanagement header nav .nav-left img {
+  height: 60px;
+  margin-right: 50px;
+}
+
+#homepage header nav .nav-left ul,
+#search header nav .nav-left ul,
+#library header nav .nav-left ul,
+#rule header nav .nav-left ul,
+#help header nav .nav-left ul,
+#new header nav .nav-left ul,
+#response header nav .nav-left ul, #accountmanagement header nav .nav-left ul, #borrowwingmanagement header nav .nav-left ul {
+  list-style: none;
+}
+
+#homepage header nav .nav-left ul li,
+#search header nav .nav-left ul li,
+#library header nav .nav-left ul li,
+#rule header nav .nav-left ul li,
+#help header nav .nav-left ul li,
+#new header nav .nav-left ul li,
+#response header nav .nav-left ul li, #accountmanagement header nav .nav-left ul li, #borrowwingmanagement header nav .nav-left ul li {
+  margin-right: 20px;
+}
+
+#homepage header nav .nav-left ul li a,
+#search header nav .nav-left ul li a,
+#library header nav .nav-left ul li a,
+#rule header nav .nav-left ul li a,
+#help header nav .nav-left ul li a,
+#new header nav .nav-left ul li a,
+#response header nav .nav-left ul li a, #accountmanagement header nav .nav-left ul li a, #borrowwingmanagement header nav .nav-left ul li a {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+#homepage header nav .nav-right .login-btn,
+#search header nav .nav-right .login-btn,
+#library header nav .nav-right .login-btn,
+#rule header nav .nav-right .login-btn,
+#help header nav .nav-right .login-btn,
+#new header nav .nav-right .login-btn,
+#response header nav .nav-right .login-btn, #accountmanagement header nav .nav-right .login-btn, #borrowwingmanagement header nav .nav-right .login-btn {
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white !important;
+}
+
+#homepage header .banner img,
+#search header .banner img,
+#library header .banner img,
+#rule header .banner img,
+#help header .banner img,
+#new header .banner img,
+#response header .banner img, #accountmanagement header .banner img, #borrowwingmanagement header .banner img {
+  max-width: 1172px;
+}
+
+#homepage footer,
+#search footer,
+#library footer,
+#rule footer,
+#help footer,
+#new footer,
+#response footer, #accountmanagement footer, #borrowwingmanagement footer {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #131254;
+  color: white;
+}
+
+#homepage footer .content,
+#search footer .content,
+#library footer .content,
+#rule footer .content,
+#help footer .content,
+#new footer .content,
+#response footer .content, #accountmanagement footer .content, #borrowwingmanagement footer .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */

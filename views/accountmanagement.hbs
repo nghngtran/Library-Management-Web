@@ -1,0 +1,82 @@
+<div class="container-inner">
+        <h4 style="text-decoration: underline;">Quản lý tài khoản</h4>
+        <form action="" method="post" style="margin-bottom : 20px">
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input  type="text" class="form-control" id="uname" value="1753014" readonly="readonly" name="uname">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">Phone number:</label>
+                <input  type="text" class="form-control change-phone" id="uname" value="0949684530" name="uname">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">Address:</label>
+                <input  type="text" class="form-control change-address" id="uname" placeholder="869 Âu Cơ, Thành Phố Hồ Chí Minh"
+                    name="uname">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a style="color: black;" class="card-link" data-toggle="collapse" href="#collapseOne">
+                            Change Password
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse hide" data-parent="#accordion">
+                        <div class="card-body">
+                            <form action="/action_page.php">
+                                <div class="form-group">
+                                    <label for="email">Current Password:</label>
+                                    <input type="password" class="form-control" id="Password"
+                                        placeholder="Enter Current Password" name="pswd">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">New Password:</label>
+                                    <input type="password" class="form-control" id="pwd"
+                                        placeholder="Enter New Password" name="pswd">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Comfirm Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Confirm Password"
+                                        name="pswd">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="update-account" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                style="margin-bottom : 20px">Cập nhật tài khoản</button>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông báo</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Cập nhật thông tin tài khoản thành công!
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="/js/account.js"></script>

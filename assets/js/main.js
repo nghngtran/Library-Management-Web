@@ -86,6 +86,7 @@ window.onload = function() {
     if (isLogin === "true"){
         $('.login-btn').css("display", "none");
         $(".account-btn").css("display", "block");
+        $('.bell').css('display',"block");
     }
     else {
         $('.login-btn').css("display", "block");
