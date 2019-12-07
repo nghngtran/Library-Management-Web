@@ -4,12 +4,10 @@
 @import './Homepage/homepage';
 @import './Search/search';
 @import './News/news';
-@import './Library/library';
 @import './Rule/rule';
 @import './Help/help';
-@import './Borrow/borrowinghistory';
-
-
+@import './form-style';
+@import './Account/borrowingmanagement';
 .container {
     max-width: 1366px !important;
 }
@@ -29,3 +27,63 @@ html {
 .account-btn {
     display: none;
 }
+#homepage,
+#search,
+#library,
+#rule,
+#help,
+#new,
+#response,#accountmanagement,#borrowwingmanagement{
+    header {
+        margin-bottom: 20px;
+        background-color: white;
+        nav {
+            padding: 20px 0px;
+            margin-bottom: 15px;
+            background-color: $blueDark;
+            .nav-left {
+                img {
+                    height: 60px;
+                    margin-right: 50px;
+                }
+                ul {
+                    list-style: none;
+                    li {
+                        margin-right: 20px;
+                        a {
+                            font-size: 16px;
+                            color: white;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .nav-right {
+                .login-btn {
+                    padding: 5px 15px;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 5px;
+                    border: 2px solid white;
+                    color: white !important;
+                }
+            }
+        }
+        .banner {
+            img {
+                max-width: 1172px;
+            }
+        }
+    }
+    footer {
+        height: 100px;
+        @include flexCustom(flex, center, center);
+        background-color: $blueDark;
+        color: white;
+        .content {
+            @include flexCustom(flex, center, center);
+            flex-direction: column;
+        }
+    }
+}
+

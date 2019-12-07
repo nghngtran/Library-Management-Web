@@ -4,16 +4,19 @@ window.onload = function() {
     if (isLogin === "true"){
         $('.login-btn').css("display", "none");
         $(".account-btn").css("display", "block");
+        $('.bell').css('display',"block");
     }
     else {
         $('.login-btn').css("display", "block");
         $(".account-btn").css("display", "none");
+        $('.bell').css('display',"none");
     }
 
     $(".log-out-btn").click((e)=>{
         this.console.log("Hello");
         $('.login-btn').css("display", "block");
         $(".account-btn").css("display", "none");
+        $('.bell').css('display',"none");
         this.localStorage.removeItem('islogin');
     })
 

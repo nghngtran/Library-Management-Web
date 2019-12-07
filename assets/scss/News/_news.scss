@@ -5,7 +5,7 @@
                 margin-bottom: 20px;
                 .heading-title {
                     color: $blueDark;
-                    @include font(50px, 600, normal, normal);
+                    @include font(30px, 700, normal, normal);
                     margin-bottom: 20px;
                 }
                 input {
@@ -23,13 +23,15 @@
             }
             .list-news {
                 .new {
+                    box-shadow: 10px 10px 8px #888888;
+                    background-color: #c0d8db;
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
                     padding: 5px 0 5px 0;
                     .new-img {
                         img {
-                            width: 100%;
+                            width: 90%;
                         }
                     }
                     .new-info {

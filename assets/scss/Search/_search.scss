@@ -8,33 +8,28 @@
                     @include font(20px, 600, normal, normal);
                     margin-bottom: 20px;
                 }
-                .search-box {
-                    position: relative;
-                    width: 50%;
+                
+                form {
                     input {
-                        padding: 10px 0px 10px 20px;
-                        width: 100%;
-                        margin: 0 auto;
-                        border-radius: 15px;
-                        outline: none;
-                    }
-
-                    a {
-                        cursor: pointer;
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
+                        width: 40%;
                     }
                 }
-            }
-
+                
             .filter {
                 .filter-btns {
                     @include flexCustom(flex, center, center);
+                    .btn-group {
+                        button {
+                        color: #2096ff !important;
+                        }
+                    }
                 }
+            }
             }
             .list-books {
                 .book {
+                    box-shadow: 10px 10px 8px #888888;
+                    background-color: #c0d8db;
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;

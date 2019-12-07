@@ -48,6 +48,7 @@ window.onload = function() {
             $('#formLogin').modal('hide');
             $('.login-btn').css("display", "none");
             $(".account-btn").css("display", "block");
+            $('.bell').css('display',"block");
         } else {
             $(".noti-err").css("display", "block");
             alert("Username :admin ; password : admin")
