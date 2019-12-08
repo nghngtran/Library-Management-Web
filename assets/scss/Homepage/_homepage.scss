@@ -1,13 +1,14 @@
-
-#homepage{
+#homepage {
     .body {
         margin-bottom: 20px;
         .search,
         .info {
             padding-left: 20px;
             margin-bottom: 20px;
+            line-height: 30px;
             .heading-title {
-                color: $blueDark;
+                color: #0E00A6;
+                font-family: 'Noto Sans', sans-serif;
                 @include font(20px, 600, normal, normal);
                 margin-bottom: 20px;
             }
@@ -26,23 +27,31 @@
         }
         .news {
             .heading-title {
-                color: $blueDark;
+                color: #0E00A6;
+                font-family: 'Noto Sans', sans-serif;
                 @include font(20px, 600, normal, normal);
                 margin-bottom: 20px;
             }
             .post {
+                border: 1px solid;
+                border-radius: 2px;
+                padding: 5px;
+                box-shadow: 5px 5px #888888;
                 img {
                     width: 100%;
                     margin-bottom: 15px;
                     ;
                 }
                 .title {
-                    @include font(20px, bold, normal, normal);
+                    // @include font(20px, bold, normal, normal);
+                    color: #5D26F0;
+                    font-weight: 500;
+                    font-family: 'Alatsi', sans-serif;
+                    font-size: 18px;
                 }
             }
         }
     }
-
 }
 
 #formLogin {

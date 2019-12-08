@@ -8,23 +8,21 @@
                     @include font(20px, 600, normal, normal);
                     margin-bottom: 20px;
                 }
-                
                 form {
                     input {
                         width: 40%;
                     }
                 }
-                
-            .filter {
-                .filter-btns {
-                    @include flexCustom(flex, center, center);
-                    .btn-group {
-                        button {
-                        color: #2096ff !important;
+                .filter {
+                    .filter-btns {
+                        @include flexCustom(flex, center, center);
+                        .btn-group {
+                            button {
+                                color: #2096ff !important;
+                            }
                         }
                     }
                 }
-            }
             }
             .list-books {
                 .book {
@@ -33,7 +31,7 @@
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
-                    padding: 5px 0 5px 0;
+                    padding: 20px 0 5px 0;
                     .book-info {
                         h1 {
                             @include font(35px, bold, normal, normal);
@@ -47,6 +45,7 @@
                             background-color: $blueDark;
                             color: white;
                             @include font(16px, bold, normal, normal);
+                            text-decoration: none;
                         }
                     }
                 }

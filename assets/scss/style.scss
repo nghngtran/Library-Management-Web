@@ -20,40 +20,59 @@
 html {
     scroll-behavior: smooth;
 }
-*{
-  font-family: $fontFamily-Muli;
+
+* {
+    font-family: $fontFamily-Muli;
 }
 
 .account-btn {
     display: none;
 }
+
 #homepage,
 #search,
 #library,
 #rule,
 #help,
 #new,
-#response,#accountmanagement,#borrowwingmanagement{
+#response,
+#accountmanagement,
+#borrowwingmanagement {
     header {
         margin-bottom: 20px;
-        background-color: white;
+        background-image: linear-gradient(#A543FF, #7B00FF);
         nav {
-            padding: 20px 0px;
+            padding: 10px 0px;
             margin-bottom: 15px;
-            background-color: $blueDark;
+            background-image: linear-gradient(#A543FF, #7B00FF);
             .nav-left {
                 img {
                     height: 60px;
+                    width: 70px;
                     margin-right: 50px;
                 }
                 ul {
                     list-style: none;
+                    text-decoration: none;
                     li {
                         margin-right: 20px;
                         a {
+                            text-decoration: none;
                             font-size: 16px;
                             color: white;
                             font-weight: 600;
+                            &:hover {
+                                color: $blueDark;
+                                text-decoration: none;
+                            }
+                            &.active {
+                                color: $blueDark;
+                                &::before {
+                                    opacity: 1;
+                                    transform: scaleX(1);
+                                    text-decoration: none;
+                                }
+                            }
                         }
                     }
                 }
@@ -62,10 +81,15 @@ html {
                 .login-btn {
                     padding: 5px 15px;
                     font-weight: bold;
-                    font-size: 20px;
-                    border-radius: 5px;
-                    border: 2px solid white;
+                    font-size: 16px;
+                    border-radius: 10px;
+                    border: 2px solid $blueDark;
                     color: white !important;
+                    text-decoration: none;
+                    &:hover {
+                        // background-image: linear-gradient(#FFD39A, #E46BFF);
+                        background-color: #5945FF;
+                    }
                 }
             }
         }
@@ -76,9 +100,9 @@ html {
         }
     }
     footer {
-        height: 100px;
+        height: 150px;
         @include flexCustom(flex, center, center);
-        background-color: $blueDark;
+        background-image: linear-gradient(#A543FF, #7B00FF);
         color: white;
         .content {
             @include flexCustom(flex, center, center);
@@ -86,4 +110,3 @@ html {
         }
     }
 }
-

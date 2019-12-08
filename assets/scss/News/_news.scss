@@ -24,7 +24,7 @@
             .list-news {
                 .new {
                     box-shadow: 10px 10px 8px #888888;
-                    background-color: #c0d8db;
+                    background-color: white;
                     margin-top: 30px;
                     margin-bottom: 20px;
                     border: 2px solid $blueDark;
@@ -36,7 +36,8 @@
                     }
                     .new-info {
                         h1 {
-                            @include font(16px, bold, normal, normal);
+                            margin-top: 20px;
+                            @include font(18px, bold, normal, normal);
                         }
                         h3 {
                             @include font(14px, bold, normal, normal);
@@ -47,6 +48,9 @@
                             background-color: $blueDark;
                             color: white;
                             @include font(16px, bold, normal, normal);
+                            &:hover {
+                                text-decoration: none;
+                            }
                         }
                     }
                 }

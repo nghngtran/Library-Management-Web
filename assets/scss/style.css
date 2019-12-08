@@ -135,11 +135,13 @@ table {
 #homepage .body .info {
   padding-left: 20px;
   margin-bottom: 20px;
+  line-height: 30px;
 }
 
 #homepage .body .search .heading-title,
 #homepage .body .info .heading-title {
-  color: #131254;
+  color: #0E00A6;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: normal;
@@ -156,12 +158,21 @@ table {
 }
 
 #homepage .body .news .heading-title {
-  color: #131254;
+  color: #0E00A6;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: normal;
   line-height: normal;
   margin-bottom: 20px;
+}
+
+#homepage .body .news .post {
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 5px;
+  -webkit-box-shadow: 5px 5px #888888;
+          box-shadow: 5px 5px #888888;
 }
 
 #homepage .body .news .post img {
@@ -170,10 +181,10 @@ table {
 }
 
 #homepage .body .news .post .title {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: normal;
-  line-height: normal;
+  color: #5D26F0;
+  font-weight: 500;
+  font-family: 'Alatsi', sans-serif;
+  font-size: 18px;
 }
 
 #formLogin input {
@@ -229,7 +240,7 @@ table {
   margin-top: 30px;
   margin-bottom: 20px;
   border: 2px solid #131254;
-  padding: 5px 0 5px 0;
+  padding: 20px 0 5px 0;
 }
 
 #search .body .content .list-books .book .book-info h1 {
@@ -255,6 +266,7 @@ table {
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
+  text-decoration: none;
 }
 
 #new .body .content .top {
@@ -293,7 +305,7 @@ table {
 #new .body .content .list-news .new {
   -webkit-box-shadow: 10px 10px 8px #888888;
           box-shadow: 10px 10px 8px #888888;
-  background-color: #c0d8db;
+  background-color: white;
   margin-top: 30px;
   margin-bottom: 20px;
   border: 2px solid #131254;
@@ -305,7 +317,8 @@ table {
 }
 
 #new .body .content .list-news .new .new-info h1 {
-  font-size: 16px;
+  margin-top: 20px;
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
@@ -327,6 +340,10 @@ table {
   font-weight: bold;
   letter-spacing: normal;
   line-height: normal;
+}
+
+#new .body .content .list-news .new .new-info .detailNewBtn:hover {
+  text-decoration: none;
 }
 
 #rule .body .content .top {
@@ -531,9 +548,12 @@ html {
 #rule header,
 #help header,
 #new header,
-#response header, #accountmanagement header, #borrowwingmanagement header {
+#response header,
+#accountmanagement header,
+#borrowwingmanagement header {
   margin-bottom: 20px;
-  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
+  background-image: linear-gradient(#A543FF, #7B00FF);
 }
 
 #homepage header nav,
@@ -542,10 +562,13 @@ html {
 #rule header nav,
 #help header nav,
 #new header nav,
-#response header nav, #accountmanagement header nav, #borrowwingmanagement header nav {
-  padding: 20px 0px;
+#response header nav,
+#accountmanagement header nav,
+#borrowwingmanagement header nav {
+  padding: 10px 0px;
   margin-bottom: 15px;
-  background-color: #131254;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
+  background-image: linear-gradient(#A543FF, #7B00FF);
 }
 
 #homepage header nav .nav-left img,
@@ -554,8 +577,11 @@ html {
 #rule header nav .nav-left img,
 #help header nav .nav-left img,
 #new header nav .nav-left img,
-#response header nav .nav-left img, #accountmanagement header nav .nav-left img, #borrowwingmanagement header nav .nav-left img {
+#response header nav .nav-left img,
+#accountmanagement header nav .nav-left img,
+#borrowwingmanagement header nav .nav-left img {
   height: 60px;
+  width: 70px;
   margin-right: 50px;
 }
 
@@ -565,8 +591,11 @@ html {
 #rule header nav .nav-left ul,
 #help header nav .nav-left ul,
 #new header nav .nav-left ul,
-#response header nav .nav-left ul, #accountmanagement header nav .nav-left ul, #borrowwingmanagement header nav .nav-left ul {
+#response header nav .nav-left ul,
+#accountmanagement header nav .nav-left ul,
+#borrowwingmanagement header nav .nav-left ul {
   list-style: none;
+  text-decoration: none;
 }
 
 #homepage header nav .nav-left ul li,
@@ -575,7 +604,9 @@ html {
 #rule header nav .nav-left ul li,
 #help header nav .nav-left ul li,
 #new header nav .nav-left ul li,
-#response header nav .nav-left ul li, #accountmanagement header nav .nav-left ul li, #borrowwingmanagement header nav .nav-left ul li {
+#response header nav .nav-left ul li,
+#accountmanagement header nav .nav-left ul li,
+#borrowwingmanagement header nav .nav-left ul li {
   margin-right: 20px;
 }
 
@@ -585,10 +616,53 @@ html {
 #rule header nav .nav-left ul li a,
 #help header nav .nav-left ul li a,
 #new header nav .nav-left ul li a,
-#response header nav .nav-left ul li a, #accountmanagement header nav .nav-left ul li a, #borrowwingmanagement header nav .nav-left ul li a {
+#response header nav .nav-left ul li a,
+#accountmanagement header nav .nav-left ul li a,
+#borrowwingmanagement header nav .nav-left ul li a {
+  text-decoration: none;
   font-size: 16px;
   color: white;
   font-weight: 600;
+}
+
+#homepage header nav .nav-left ul li a:hover,
+#search header nav .nav-left ul li a:hover,
+#library header nav .nav-left ul li a:hover,
+#rule header nav .nav-left ul li a:hover,
+#help header nav .nav-left ul li a:hover,
+#new header nav .nav-left ul li a:hover,
+#response header nav .nav-left ul li a:hover,
+#accountmanagement header nav .nav-left ul li a:hover,
+#borrowwingmanagement header nav .nav-left ul li a:hover {
+  color: #131254;
+  text-decoration: none;
+}
+
+#homepage header nav .nav-left ul li a.active,
+#search header nav .nav-left ul li a.active,
+#library header nav .nav-left ul li a.active,
+#rule header nav .nav-left ul li a.active,
+#help header nav .nav-left ul li a.active,
+#new header nav .nav-left ul li a.active,
+#response header nav .nav-left ul li a.active,
+#accountmanagement header nav .nav-left ul li a.active,
+#borrowwingmanagement header nav .nav-left ul li a.active {
+  color: #131254;
+}
+
+#homepage header nav .nav-left ul li a.active::before,
+#search header nav .nav-left ul li a.active::before,
+#library header nav .nav-left ul li a.active::before,
+#rule header nav .nav-left ul li a.active::before,
+#help header nav .nav-left ul li a.active::before,
+#new header nav .nav-left ul li a.active::before,
+#response header nav .nav-left ul li a.active::before,
+#accountmanagement header nav .nav-left ul li a.active::before,
+#borrowwingmanagement header nav .nav-left ul li a.active::before {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  text-decoration: none;
 }
 
 #homepage header nav .nav-right .login-btn,
@@ -597,13 +671,28 @@ html {
 #rule header nav .nav-right .login-btn,
 #help header nav .nav-right .login-btn,
 #new header nav .nav-right .login-btn,
-#response header nav .nav-right .login-btn, #accountmanagement header nav .nav-right .login-btn, #borrowwingmanagement header nav .nav-right .login-btn {
+#response header nav .nav-right .login-btn,
+#accountmanagement header nav .nav-right .login-btn,
+#borrowwingmanagement header nav .nav-right .login-btn {
   padding: 5px 15px;
   font-weight: bold;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 2px solid white;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #131254;
   color: white !important;
+  text-decoration: none;
+}
+
+#homepage header nav .nav-right .login-btn:hover,
+#search header nav .nav-right .login-btn:hover,
+#library header nav .nav-right .login-btn:hover,
+#rule header nav .nav-right .login-btn:hover,
+#help header nav .nav-right .login-btn:hover,
+#new header nav .nav-right .login-btn:hover,
+#response header nav .nav-right .login-btn:hover,
+#accountmanagement header nav .nav-right .login-btn:hover,
+#borrowwingmanagement header nav .nav-right .login-btn:hover {
+  background-color: #5945FF;
 }
 
 #homepage header .banner img,
@@ -612,7 +701,9 @@ html {
 #rule header .banner img,
 #help header .banner img,
 #new header .banner img,
-#response header .banner img, #accountmanagement header .banner img, #borrowwingmanagement header .banner img {
+#response header .banner img,
+#accountmanagement header .banner img,
+#borrowwingmanagement header .banner img {
   max-width: 1172px;
 }
 
@@ -622,8 +713,10 @@ html {
 #rule footer,
 #help footer,
 #new footer,
-#response footer, #accountmanagement footer, #borrowwingmanagement footer {
-  height: 100px;
+#response footer,
+#accountmanagement footer,
+#borrowwingmanagement footer {
+  height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -633,7 +726,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #131254;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
+  background-image: linear-gradient(#A543FF, #7B00FF);
   color: white;
 }
 
@@ -643,7 +737,9 @@ html {
 #rule footer .content,
 #help footer .content,
 #new footer .content,
-#response footer .content, #accountmanagement footer .content, #borrowwingmanagement footer .content {
+#response footer .content,
+#accountmanagement footer .content,
+#borrowwingmanagement footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
