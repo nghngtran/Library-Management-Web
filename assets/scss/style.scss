@@ -40,11 +40,13 @@ html {
 #borrowwingmanagement {
     header {
         margin-bottom: 20px;
-        background-image: linear-gradient(#A543FF, #7B00FF);
+        background-image: linear-gradient(#7A00B3, #0E0EB3);
+        //#A543FF
+        // #7B00FF
         nav {
             padding: 10px 0px;
             margin-bottom: 15px;
-            background-image: linear-gradient(#A543FF, #7B00FF);
+            background-image: linear-gradient(#7A00B3, #0E0EB3);
             .nav-left {
                 img {
                     height: 60px;
@@ -65,19 +67,61 @@ html {
                                 color: $blueDark;
                                 text-decoration: none;
                             }
-                            &.active {
-                                color: $blueDark;
-                                &::before {
-                                    opacity: 1;
-                                    transform: scaleX(1);
-                                    text-decoration: none;
-                                }
-                            }
+                            // &:active {
+                            //     color: $blueDark;
+                            //     &::before {
+                            //         opacity: 1;
+                            //         transform: scaleX(1);
+                            //         text-decoration: none;
+                            //     }
+                            // }
                         }
                     }
                 }
             }
+            .active {
+                color: $blueDark;
+            }
             .nav-right {
+                #my-form input::-webkit-search-decoration,
+                #my-form input::-webkit-search-cancel-button {
+                    display: none;
+                }
+                #my-form input[type=search] {
+                    width: 15px;
+                    padding-left: 10px;
+                    color: transparent;
+                    cursor: pointer;
+                    background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+                    border: solid 1px #ccc;
+                    padding: 9px 10px 9px 32px;
+                    width: 55px;
+                    -webkit-border-radius: 10em;
+                    -moz-border-radius: 10em;
+                    border-radius: 10em;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    transition: all .5s;
+                    -webkit-appearance: textfield;
+                    font-family: inherit;
+                    font-size: 100%;
+                }
+                #my-form input[type=search]:hover {
+                    background-color: #fff;
+                }
+                #my-form input[type=search]:focus {
+                    width: 200px;
+                    padding-left: 32px;
+                    color: #000;
+                    background-color: #fff;
+                    cursor: auto;
+                }
+                #my-form input:-moz-placeholder {
+                    color: transparent;
+                }
+                #my-form input::-webkit-input-placeholder {
+                    color: transparent;
+                }
                 .login-btn {
                     padding: 5px 15px;
                     font-weight: bold;
@@ -102,7 +146,7 @@ html {
     footer {
         height: 150px;
         @include flexCustom(flex, center, center);
-        background-image: linear-gradient(#A543FF, #7B00FF);
+        background-image: linear-gradient(#7A00B3, #0E0EB3);
         color: white;
         .content {
             @include flexCustom(flex, center, center);

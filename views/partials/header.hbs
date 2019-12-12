@@ -2,30 +2,36 @@
 <header class="">
     <nav class="container-fluid">
         <div class="container-inner d-flex justify-content-between align-items-center">
-            <div class="nav-left d-flex align-items-center">
+            <div class="nav-left d-flex align-items-center" id="myNav">
                 <a href="/"><img src="/images/logo.png"></a>
                 <ul style="margin-bottom:8px" class="d-flex align-items-center">
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/library">Thư viện</a></li>
-                    <li><a href="/search">Tìm kiếm</a></li>
-                    <li><a href="/news">Tin tức</a></li>
-                    <li><a href="/help">Trợ giúp</a></li>
+                    <li><a class="tab active" href="/">Trang chủ</a></li>
+                    <li><a class="tab" href="/library">Thư viện</a></li>
+                    <li><a class="tab" href="/search">Tìm kiếm</a></li>
+                    <li><a class="tab" href="/news">Tin tức</a></li>
+                    <li><a class="tab" href="/help">Trợ giúp</a></li>
                 </ul>
             </div>
 
             <div class="nav-right d-flex align-items-center">
-                <form class="form-inline" style="margin-right:20px">
-                    <div class="md-form my-0">
-                        <input class="form-control mr-sm-2" type="text" style="color: white;" placeholder="Search" aria-label="Search">
-                    </div>
+                <form id="my-form" style="margin-right:20px">
+                    <input type="search" style="color: black;" placeholder="Tìm nhanh">
                 </form>
-                <a class="bell" style="margin-right:20px;margin-left:20px;display:none"><i
-                        style="color:#e4b3b3;font-size:25px" class="fa fa-bell"></i></a>
+                <div class="bell" style="margin-right:10px;margin-left:10px;">
+                    <a  href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;color:aliceblue;">
+                        <i style="margin-right:7px; font-size:23px;" class="fa fa-bell"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Đặt sách thành công.</a>
+                        <a class="dropdown-item" href="#">Mượn sách đã được duyệt.</a>
+                    </div>
+                </div>
                 <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
                 <div class="dropdown hide account-btn">
                     <a class="btn  blue accent-4 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i style="margin-right:7px" class="fa fa-user"></i> 1753014
+                        <i style="margin-right:7px " class="fa fa-user"></i> 1753014
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="/user">Quản lý tài khoản</a>

@@ -552,8 +552,8 @@ html {
 #accountmanagement header,
 #borrowwingmanagement header {
   margin-bottom: 20px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
-  background-image: linear-gradient(#A543FF, #7B00FF);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7A00B3), to(#0E0EB3));
+  background-image: linear-gradient(#7A00B3, #0E0EB3);
 }
 
 #homepage header nav,
@@ -567,8 +567,8 @@ html {
 #borrowwingmanagement header nav {
   padding: 10px 0px;
   margin-bottom: 15px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
-  background-image: linear-gradient(#A543FF, #7B00FF);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7A00B3), to(#0E0EB3));
+  background-image: linear-gradient(#7A00B3, #0E0EB3);
 }
 
 #homepage header nav .nav-left img,
@@ -638,31 +638,114 @@ html {
   text-decoration: none;
 }
 
-#homepage header nav .nav-left ul li a.active,
-#search header nav .nav-left ul li a.active,
-#library header nav .nav-left ul li a.active,
-#rule header nav .nav-left ul li a.active,
-#help header nav .nav-left ul li a.active,
-#new header nav .nav-left ul li a.active,
-#response header nav .nav-left ul li a.active,
-#accountmanagement header nav .nav-left ul li a.active,
-#borrowwingmanagement header nav .nav-left ul li a.active {
+#homepage header nav .active,
+#search header nav .active,
+#library header nav .active,
+#rule header nav .active,
+#help header nav .active,
+#new header nav .active,
+#response header nav .active,
+#accountmanagement header nav .active,
+#borrowwingmanagement header nav .active {
   color: #131254;
 }
 
-#homepage header nav .nav-left ul li a.active::before,
-#search header nav .nav-left ul li a.active::before,
-#library header nav .nav-left ul li a.active::before,
-#rule header nav .nav-left ul li a.active::before,
-#help header nav .nav-left ul li a.active::before,
-#new header nav .nav-left ul li a.active::before,
-#response header nav .nav-left ul li a.active::before,
-#accountmanagement header nav .nav-left ul li a.active::before,
-#borrowwingmanagement header nav .nav-left ul li a.active::before {
-  opacity: 1;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  text-decoration: none;
+#homepage header nav .nav-right #my-form input::-webkit-search-decoration,
+#homepage header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#search header nav .nav-right #my-form input::-webkit-search-decoration,
+#search header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#library header nav .nav-right #my-form input::-webkit-search-decoration,
+#library header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#rule header nav .nav-right #my-form input::-webkit-search-decoration,
+#rule header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#help header nav .nav-right #my-form input::-webkit-search-decoration,
+#help header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#new header nav .nav-right #my-form input::-webkit-search-decoration,
+#new header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#response header nav .nav-right #my-form input::-webkit-search-decoration,
+#response header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#accountmanagement header nav .nav-right #my-form input::-webkit-search-decoration,
+#accountmanagement header nav .nav-right #my-form input::-webkit-search-cancel-button,
+#borrowwingmanagement header nav .nav-right #my-form input::-webkit-search-decoration,
+#borrowwingmanagement header nav .nav-right #my-form input::-webkit-search-cancel-button {
+  display: none;
+}
+
+#homepage header nav .nav-right #my-form input[type=search],
+#search header nav .nav-right #my-form input[type=search],
+#library header nav .nav-right #my-form input[type=search],
+#rule header nav .nav-right #my-form input[type=search],
+#help header nav .nav-right #my-form input[type=search],
+#new header nav .nav-right #my-form input[type=search],
+#response header nav .nav-right #my-form input[type=search],
+#accountmanagement header nav .nav-right #my-form input[type=search],
+#borrowwingmanagement header nav .nav-right #my-form input[type=search] {
+  width: 15px;
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  width: 55px;
+  border-radius: 10em;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-appearance: textfield;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+#homepage header nav .nav-right #my-form input[type=search]:hover,
+#search header nav .nav-right #my-form input[type=search]:hover,
+#library header nav .nav-right #my-form input[type=search]:hover,
+#rule header nav .nav-right #my-form input[type=search]:hover,
+#help header nav .nav-right #my-form input[type=search]:hover,
+#new header nav .nav-right #my-form input[type=search]:hover,
+#response header nav .nav-right #my-form input[type=search]:hover,
+#accountmanagement header nav .nav-right #my-form input[type=search]:hover,
+#borrowwingmanagement header nav .nav-right #my-form input[type=search]:hover {
+  background-color: #fff;
+}
+
+#homepage header nav .nav-right #my-form input[type=search]:focus,
+#search header nav .nav-right #my-form input[type=search]:focus,
+#library header nav .nav-right #my-form input[type=search]:focus,
+#rule header nav .nav-right #my-form input[type=search]:focus,
+#help header nav .nav-right #my-form input[type=search]:focus,
+#new header nav .nav-right #my-form input[type=search]:focus,
+#response header nav .nav-right #my-form input[type=search]:focus,
+#accountmanagement header nav .nav-right #my-form input[type=search]:focus,
+#borrowwingmanagement header nav .nav-right #my-form input[type=search]:focus {
+  width: 200px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #fff;
+  cursor: auto;
+}
+
+#homepage header nav .nav-right #my-form input:-moz-placeholder,
+#search header nav .nav-right #my-form input:-moz-placeholder,
+#library header nav .nav-right #my-form input:-moz-placeholder,
+#rule header nav .nav-right #my-form input:-moz-placeholder,
+#help header nav .nav-right #my-form input:-moz-placeholder,
+#new header nav .nav-right #my-form input:-moz-placeholder,
+#response header nav .nav-right #my-form input:-moz-placeholder,
+#accountmanagement header nav .nav-right #my-form input:-moz-placeholder,
+#borrowwingmanagement header nav .nav-right #my-form input:-moz-placeholder {
+  color: transparent;
+}
+
+#homepage header nav .nav-right #my-form input::-webkit-input-placeholder,
+#search header nav .nav-right #my-form input::-webkit-input-placeholder,
+#library header nav .nav-right #my-form input::-webkit-input-placeholder,
+#rule header nav .nav-right #my-form input::-webkit-input-placeholder,
+#help header nav .nav-right #my-form input::-webkit-input-placeholder,
+#new header nav .nav-right #my-form input::-webkit-input-placeholder,
+#response header nav .nav-right #my-form input::-webkit-input-placeholder,
+#accountmanagement header nav .nav-right #my-form input::-webkit-input-placeholder,
+#borrowwingmanagement header nav .nav-right #my-form input::-webkit-input-placeholder {
+  color: transparent;
 }
 
 #homepage header nav .nav-right .login-btn,
@@ -726,8 +809,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#A543FF), to(#7B00FF));
-  background-image: linear-gradient(#A543FF, #7B00FF);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7A00B3), to(#0E0EB3));
+  background-image: linear-gradient(#7A00B3, #0E0EB3);
   color: white;
 }
 
