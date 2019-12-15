@@ -2,6 +2,7 @@
 const express = require('express');
 var app = express();
 const hbs = require('express-handlebars');
+var models = require('./models');
 
 //SET FOLDER
 app.use(express.static(__dirname + '/assets'));
@@ -15,10 +16,14 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
-
 app.use("/",require('./routes/indexRouter'));
 app.use("/user", require('./routes/userRouter'));
 
+app.get('/sync', function(req, res){
+	models.sequelize.sync().then(function(){
+		res.send('database sync completed!');
+	});
+});
 
 //ACTIVATE SERVER
 app.set('port', process.env.PORT || 3000);
