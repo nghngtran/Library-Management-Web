@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   RequestBook.associate = function(models) {
+    RequestBook.belongsTo(models.User);
+    RequestBook.hasMany(models.Book);
     // associations can be defined here
   };
   return RequestBook;

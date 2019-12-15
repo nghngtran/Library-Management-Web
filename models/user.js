@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     role:DataTypes.STRING
   }, {});
   User.associate = function(models) {
+    User.hasMany(models.RequestBook);
     // associations can be defined here
   };
   return User;

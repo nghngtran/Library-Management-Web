@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     imglink:DataTypes.STRING
   }, {});
   Image.associate = function(models) {
-    // associations can be defined here
+    //Image.hasOne(models.Book);
   };
   return Image;
 };
