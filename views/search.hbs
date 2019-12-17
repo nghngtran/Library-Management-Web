@@ -52,8 +52,23 @@
             </div>
         </div>
         <div class="list-books">
+            {{#each books}}
+                <div class='book row'>
+                    <div class='col-4 book-img'>
+                        <img src={{imgID}}>
+
+                    </div>
+                    <div class='col-8 book-info'>
+                        <h1 class='book-title'>{{title}}</h1>
+                        <h3 class='book-author'>{{author}}</h3>
+                        <p class='book-des'>{{description}}</p>
+                        <a href="/search/{{@index}}" class='borrowBookBtn' id ='borrow'>Mượn sách</a>
+                    </div>
+                </div>
+            {{/each}}
         </div>
-        <nav aria-label="...">
+        {{{createPagination pagination }}}
+        {{!-- <nav aria-label="...">
             <ul class="pagination">
                 <li class="page-item ">
                     <a class="page-link" href="#" tabindex="-1">Trước</a>
@@ -67,7 +82,7 @@
                     <a class="page-link" href="#">Sau</a>
                 </li>
             </ul>
-        </nav>
+        </nav> --}}
     </div>
 </section> 
 <script src="/js/main.js"></script>

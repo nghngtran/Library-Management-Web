@@ -1,0 +1,23 @@
+<div class="container-inner">
+    <form>
+        <div class="list-borrow">
+        {{#with book}}
+        <div style='margin: 15px 15px; padding: 15px 15px ; border : 2px solid #131354' class='book row'>
+            <div class='col-4 book-img'>
+                <img src={{imgID}}>
+            </div>
+            <div class='col-8 book-info'>
+                <h1 class='book-title'> {{title}}</h1>
+                <h3 class='book-author'>{{author}}</h3>
+                <p class='book-des'>{{decription}}</p>
+            </div>
+            <div class='certificate-container'>
+                <div class='note'><textarea rows='5' cols='30' placeholder='Ghi chú'></textarea></div>
+                <div class='appointment'><b>Ngày hẹn mượn:</b> <input type='date'></div>
+                <a class='confirmBookBtn btn btn-primary' href='./search.html'>Mượn sách</a>
+            </div>
+        </div>
+        {{/with}}
+        </div>
+    </form>
+</div>

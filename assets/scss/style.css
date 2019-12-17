@@ -243,6 +243,11 @@ table {
   padding: 20px 0 5px 0;
 }
 
+#search .body .content .list-books .book .book-img img {
+  width: 215px;
+  height: 300px;
+}
+
 #search .body .content .list-books .book .book-info h1 {
   font-size: 35px;
   font-weight: bold;

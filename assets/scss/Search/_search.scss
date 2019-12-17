@@ -26,6 +26,12 @@
             }
             .list-books {
                 .book {
+                    .book-img {
+                        img {
+                            width: 215px;
+                            height: 300px;
+                        }
+                    }
                     box-shadow: 10px 10px 8px #888888;
                     background-color: #c0d8db;
                     margin-top: 30px;

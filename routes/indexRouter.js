@@ -17,13 +17,7 @@ indexRouter.get("/library", (req, res) => {
     res.render("library");
 })
 
-indexRouter.get("/search", (req, res) => {
-    res.locals.item = {
-        id: "search",
-        title:"Tìm kiếm"
-    };
-    res.render("search");
-})
+
 
 indexRouter.get("/rule", (req, res) => {
     res.locals.item = {

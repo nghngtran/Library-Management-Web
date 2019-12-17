@@ -95,8 +95,8 @@ window.onload = function() {
         $('.bell').css('display',"none");
     }
      //Load Data
-     loadNewsData(listNews);
-     loadData(listBooks);
+     //loadNewsData(listNews);
+     //loadData(listBooks);
 
     $('#loginBtn').click(function(e) {
         var username = $('#username').val();
