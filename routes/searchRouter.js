@@ -2,6 +2,7 @@ let express = require('express');
 let searchRouter = express.Router();
 searchRouter.get("/:id", (req, res, next) => {
     const index = req.params.id;
+    console.log(index)
     let bookController = require('../controllers/bookController');
     bookController
         .getAll()
@@ -11,7 +12,7 @@ searchRouter.get("/:id", (req, res, next) => {
                 title:"Mượn sách"
             };
             var context = {
-                book : data[index]
+                book : data.rows[index]
             }
             res.render("detailBook", context);
         })
@@ -19,26 +20,24 @@ searchRouter.get("/:id", (req, res, next) => {
 
 })
 searchRouter.get("/", (req, res, next) => {
+    var request = req.query;
     let bookController = require('../controllers/bookController');
     bookController
-        .getAll(req.querry)
+        .getAll(request)
         .then(data=>{
             res.locals.item = {
                 id: "search",
                 title:"Tìm kiếm"
             };
             res.locals.books = data.rows;
-            console.log(data.rows);
-            console.log(data.count);
             res.locals.pagination = {
-                page : parseInt(req.query.page),
-                limit : parseInt(req.query.limit),
+                page : 1,
+                limit : 4,
                 totalRows : data.count
             }
             res.render("search");
         })
         .catch(err => next(err))
 })
-
 
 module.exports = searchRouter;

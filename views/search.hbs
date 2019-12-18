@@ -25,8 +25,8 @@
                         Thể loại
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="#">Văn học</a>
-                        <a class="dropdown-item" href="#">Chuyên ngành CNTT</a>
+                        <a class="dropdown-item" onclick="selectParam('kind','4')" >Văn học</a>
+                        <a class="dropdown-item" onclick="selectParam('kind','1')">Chuyên ngành CNTT</a>
                     </div>
                 </div>
                 <div class="btn-group" role="group">
@@ -35,8 +35,8 @@
                         Ngôn ngữ
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="#">Tiếng Việt</a>
-                        <a class="dropdown-item" href="#">Tiếng Anh</a>
+                        <a class="dropdown-item" onclick="selectParam('language','vn')" >Tiếng Việt</a>
+                        <a class="dropdown-item" onclick="selectParam('language','en')">Tiếng Anh</a>
                     </div>
                 </div>
                 <div class="btn-group" role="group">
@@ -67,7 +67,7 @@
                 </div>
             {{/each}}
         </div>
-        {{{createPagination pagination }}}
+        {{{createPagination  pagination }}}
         {{!-- <nav aria-label="...">
             <ul class="pagination">
                 <li class="page-item ">
@@ -86,3 +86,25 @@
     </div>
 </section> 
 <script src="/js/main.js"></script>
+
+<script>    
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+        limit: 4,
+        page : 1,
+        language : '',
+        kind : ''
+    }
+
+    for (let key in params) {
+        if (!urlParams.has(key)) {
+            urlParams.append(key, params[key]);
+        }
+    }
+
+    function selectParam(key, value) {
+        urlParams.set(key,value)
+        let url = '/search?' + urlParams.toString();
+        location.href = url;
+    }
+</script>

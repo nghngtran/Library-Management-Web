@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Book.associate = function(models) {
     //Book.belongsTo(models.RequestBook);
     //Book.hasOne(models.Image);
-    //Book.belongsTo(models.Kind);
+    //Book.hasOne(models.Kind);
     // associations can be defined here
   };
   return Book;
