@@ -5,16 +5,16 @@ searchRouter.get("/:id", (req, res, next) => {
     console.log(index)
     let bookController = require('../controllers/bookController');
     bookController
-        .getAll()
+        .getById(index)
+
         .then(data=>{
+            
             res.locals.item = {
                 id: "search",
                 title:"Mượn sách"
             };
-            var context = {
-                book : data.rows[index]
-            }
-            res.render("detailBook", context);
+            res.locals.book = data;
+            res.render("detailBook");
         })
         .catch(err => next(err))
 
@@ -27,6 +27,12 @@ searchRouter.get("/", (req, res, next) => {
     if(req.query.page == null || isNaN(req.query.page))
     {
         req.query.page = 1;
+    }
+    if (req.query.sort==null){
+        req.query.sort = 'ratings';
+    }
+    if (req.query.search == null){
+        req.query.search = '';
     }
     var request = req.query;
     let bookController = require('../controllers/bookController');

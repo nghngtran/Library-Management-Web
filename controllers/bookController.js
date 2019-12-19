@@ -2,9 +2,20 @@ var controller = {};
 var models = require('../models');
 
 
+controller.getById = (id)=>{
+    return new Promise((resolve,reject)=>{
+		models.Book
+			.findOne({
+				where: {id : id}
+			})
+			.then(data=>resolve(data))
+			.catch(error =>reject(new Error(error)))
+	})
+};
 
 controller.getAll = (query)=>{
     return new Promise((resolve,reject)=>{
+		console.log("Vao get all quẻy")
 		let options = {
 			//include : [{model: models.Kind}],
 			attribute : ['id', 'title', 'description', 'kindid','author','quantity','available','ratings','imgID'],
@@ -13,7 +24,6 @@ controller.getAll = (query)=>{
 			}
 			
 		}
-		console.log(query);
 		if (query.limit > 0){
 		    	options.limit = query.limit,
 		    	options.offset = query.limit * (query.page -1)
@@ -24,6 +34,32 @@ controller.getAll = (query)=>{
 
 		if (query.kind){
 			options.where.kindid = query.kind;
+		}
+		var Sequelize = require('sequelize');
+		if (query.search != ''){
+			options.where.title  = {
+				[Sequelize.Op.iLike] : `%${query.search}%`
+			}
+		}
+		
+		if (query.sort){
+			switch (query.sort){
+				case 'ratings': 
+					options.order = [
+						['ratings','DESC']
+					];
+					break;
+				case 'available':
+					options.order = [
+						['available','DESC']
+					];
+					break;
+				default:
+					options.order = [
+						['title','ASC']
+					]
+		
+			}
 		}
 		
 		models.Book

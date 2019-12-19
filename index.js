@@ -4,6 +4,7 @@ var app = express();
 const expressHbs  = require('express-handlebars');
 var models = require('./models');
 
+
 //SET FOLDER
 app.use(express.static(__dirname + '/assets'));
 

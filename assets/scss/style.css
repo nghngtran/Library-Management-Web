@@ -625,7 +625,7 @@ html {
 #accountmanagement header nav .nav-left ul li a,
 #borrowwingmanagement header nav .nav-left ul li a {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   font-weight: 600;
 }
@@ -652,7 +652,7 @@ html {
 #response header nav .active,
 #accountmanagement header nav .active,
 #borrowwingmanagement header nav .active {
-  color: #131254;
+  color: #ffef2d !important;
 }
 
 #homepage header nav .nav-right #my-form input::-webkit-search-decoration,

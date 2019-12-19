@@ -60,7 +60,7 @@ html {
                         margin-right: 20px;
                         a {
                             text-decoration: none;
-                            font-size: 16px;
+                            font-size: 18px;
                             color: white;
                             font-weight: 600;
                             &:hover {
@@ -79,8 +79,8 @@ html {
                     }
                 }
             }
-            .active {
-                color: $blueDark;
+            .active{
+                color: #ffef2d !important;
             }
             .nav-right {
                 #my-form input::-webkit-search-decoration,
