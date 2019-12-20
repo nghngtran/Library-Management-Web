@@ -2,6 +2,8 @@ let express = require('express');
 let indexRouter = express.Router();
 
 indexRouter.get("/", (req, res) => {
+debugger
+    console.log("INDEX");
     res.locals.item = {
         id: "homepage",
         title:"Trang chủ"

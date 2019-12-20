@@ -555,8 +555,7 @@ html {
 #new header,
 #response header,
 #accountmanagement header,
-#borrowwingmanagement header {
-  margin-bottom: 20px;
+#borrowwingmanagement header, #login header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#7A00B3), to(#0E0EB3));
   background-image: linear-gradient(#7A00B3, #0E0EB3);
 }
@@ -569,9 +568,8 @@ html {
 #new header nav,
 #response header nav,
 #accountmanagement header nav,
-#borrowwingmanagement header nav {
+#borrowwingmanagement header nav, #login header nav {
   padding: 10px 0px;
-  margin-bottom: 15px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#7A00B3), to(#0E0EB3));
   background-image: linear-gradient(#7A00B3, #0E0EB3);
 }
@@ -584,7 +582,7 @@ html {
 #new header nav .nav-left img,
 #response header nav .nav-left img,
 #accountmanagement header nav .nav-left img,
-#borrowwingmanagement header nav .nav-left img {
+#borrowwingmanagement header nav .nav-left img, #login header nav .nav-left img {
   height: 60px;
   width: 70px;
   margin-right: 50px;
@@ -598,7 +596,7 @@ html {
 #new header nav .nav-left ul,
 #response header nav .nav-left ul,
 #accountmanagement header nav .nav-left ul,
-#borrowwingmanagement header nav .nav-left ul {
+#borrowwingmanagement header nav .nav-left ul, #login header nav .nav-left ul {
   list-style: none;
   text-decoration: none;
 }
@@ -611,7 +609,7 @@ html {
 #new header nav .nav-left ul li,
 #response header nav .nav-left ul li,
 #accountmanagement header nav .nav-left ul li,
-#borrowwingmanagement header nav .nav-left ul li {
+#borrowwingmanagement header nav .nav-left ul li, #login header nav .nav-left ul li {
   margin-right: 20px;
 }
 
@@ -623,7 +621,7 @@ html {
 #new header nav .nav-left ul li a,
 #response header nav .nav-left ul li a,
 #accountmanagement header nav .nav-left ul li a,
-#borrowwingmanagement header nav .nav-left ul li a {
+#borrowwingmanagement header nav .nav-left ul li a, #login header nav .nav-left ul li a {
   text-decoration: none;
   font-size: 18px;
   color: white;
@@ -638,7 +636,7 @@ html {
 #new header nav .nav-left ul li a:hover,
 #response header nav .nav-left ul li a:hover,
 #accountmanagement header nav .nav-left ul li a:hover,
-#borrowwingmanagement header nav .nav-left ul li a:hover {
+#borrowwingmanagement header nav .nav-left ul li a:hover, #login header nav .nav-left ul li a:hover {
   color: #131254;
   text-decoration: none;
 }
@@ -651,7 +649,7 @@ html {
 #new header nav .active,
 #response header nav .active,
 #accountmanagement header nav .active,
-#borrowwingmanagement header nav .active {
+#borrowwingmanagement header nav .active, #login header nav .active {
   color: #ffef2d !important;
 }
 
@@ -672,7 +670,8 @@ html {
 #accountmanagement header nav .nav-right #my-form input::-webkit-search-decoration,
 #accountmanagement header nav .nav-right #my-form input::-webkit-search-cancel-button,
 #borrowwingmanagement header nav .nav-right #my-form input::-webkit-search-decoration,
-#borrowwingmanagement header nav .nav-right #my-form input::-webkit-search-cancel-button {
+#borrowwingmanagement header nav .nav-right #my-form input::-webkit-search-cancel-button, #login header nav .nav-right #my-form input::-webkit-search-decoration,
+#login header nav .nav-right #my-form input::-webkit-search-cancel-button {
   display: none;
 }
 
@@ -684,7 +683,7 @@ html {
 #new header nav .nav-right #my-form input[type=search],
 #response header nav .nav-right #my-form input[type=search],
 #accountmanagement header nav .nav-right #my-form input[type=search],
-#borrowwingmanagement header nav .nav-right #my-form input[type=search] {
+#borrowwingmanagement header nav .nav-right #my-form input[type=search], #login header nav .nav-right #my-form input[type=search] {
   width: 15px;
   padding-left: 10px;
   color: transparent;
@@ -709,7 +708,7 @@ html {
 #new header nav .nav-right #my-form input[type=search]:hover,
 #response header nav .nav-right #my-form input[type=search]:hover,
 #accountmanagement header nav .nav-right #my-form input[type=search]:hover,
-#borrowwingmanagement header nav .nav-right #my-form input[type=search]:hover {
+#borrowwingmanagement header nav .nav-right #my-form input[type=search]:hover, #login header nav .nav-right #my-form input[type=search]:hover {
   background-color: #fff;
 }
 
@@ -721,7 +720,7 @@ html {
 #new header nav .nav-right #my-form input[type=search]:focus,
 #response header nav .nav-right #my-form input[type=search]:focus,
 #accountmanagement header nav .nav-right #my-form input[type=search]:focus,
-#borrowwingmanagement header nav .nav-right #my-form input[type=search]:focus {
+#borrowwingmanagement header nav .nav-right #my-form input[type=search]:focus, #login header nav .nav-right #my-form input[type=search]:focus {
   width: 200px;
   padding-left: 32px;
   color: #000;
@@ -737,7 +736,7 @@ html {
 #new header nav .nav-right #my-form input:-moz-placeholder,
 #response header nav .nav-right #my-form input:-moz-placeholder,
 #accountmanagement header nav .nav-right #my-form input:-moz-placeholder,
-#borrowwingmanagement header nav .nav-right #my-form input:-moz-placeholder {
+#borrowwingmanagement header nav .nav-right #my-form input:-moz-placeholder, #login header nav .nav-right #my-form input:-moz-placeholder {
   color: transparent;
 }
 
@@ -749,7 +748,7 @@ html {
 #new header nav .nav-right #my-form input::-webkit-input-placeholder,
 #response header nav .nav-right #my-form input::-webkit-input-placeholder,
 #accountmanagement header nav .nav-right #my-form input::-webkit-input-placeholder,
-#borrowwingmanagement header nav .nav-right #my-form input::-webkit-input-placeholder {
+#borrowwingmanagement header nav .nav-right #my-form input::-webkit-input-placeholder, #login header nav .nav-right #my-form input::-webkit-input-placeholder {
   color: transparent;
 }
 
@@ -761,7 +760,7 @@ html {
 #new header nav .nav-right .login-btn,
 #response header nav .nav-right .login-btn,
 #accountmanagement header nav .nav-right .login-btn,
-#borrowwingmanagement header nav .nav-right .login-btn {
+#borrowwingmanagement header nav .nav-right .login-btn, #login header nav .nav-right .login-btn {
   padding: 5px 15px;
   font-weight: bold;
   font-size: 16px;
@@ -779,7 +778,7 @@ html {
 #new header nav .nav-right .login-btn:hover,
 #response header nav .nav-right .login-btn:hover,
 #accountmanagement header nav .nav-right .login-btn:hover,
-#borrowwingmanagement header nav .nav-right .login-btn:hover {
+#borrowwingmanagement header nav .nav-right .login-btn:hover, #login header nav .nav-right .login-btn:hover {
   background-color: #5945FF;
 }
 
@@ -791,7 +790,7 @@ html {
 #new header .banner img,
 #response header .banner img,
 #accountmanagement header .banner img,
-#borrowwingmanagement header .banner img {
+#borrowwingmanagement header .banner img, #login header .banner img {
   max-width: 1172px;
 }
 
@@ -803,7 +802,7 @@ html {
 #new footer,
 #response footer,
 #accountmanagement footer,
-#borrowwingmanagement footer {
+#borrowwingmanagement footer, #login footer {
   height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,7 +826,7 @@ html {
 #new footer .content,
 #response footer .content,
 #accountmanagement footer .content,
-#borrowwingmanagement footer .content {
+#borrowwingmanagement footer .content, #login footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -27,7 +27,7 @@
                         <a class="dropdown-item" href="#">Mượn sách đã được duyệt.</a>
                     </div>
                 </div>
-                <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                {{#if isLoggedIn}}
                 <div class="dropdown hide account-btn">
                     <a class="btn  blue accent-4 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,8 +39,12 @@
                         <a class="log-out-btn dropdown-item" href="/">Đăng xuất</a>
                     </div>
                 </div>
+                {{else}}
+                <a href="/user/login" class="login-btn " >Đăng nhập</a>
+                {{}}
+                
             </div>
-            <div class="modal fade" id="formLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            {{!-- <div class="modal fade" id="formLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -68,13 +72,13 @@
                             <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button id="loginBtn" class="btn . btn-default">Login</button>
+                            <button id="loginBtn" class="btn . btn-default">Đăng nhập</button>
 
                         </div>
-                        <a href="#" class="text-right">Quên mật khẩu?</a>
+                        <a style="padding-bottom:20px; margin-right:20px" href="#" class="text-right">Quên mật khẩu?</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Modal -->
 
