@@ -20,7 +20,7 @@ userRouter.get('/login',(req,res)=>{
 userRouter.post('/login',(req,res,next)=>{
     let  username = req.body.username;
     let  password = req.body.password
-
+    console.log(username);
     userController
         .getUserByUsername(username)
         .then(user=>{
@@ -28,8 +28,17 @@ userRouter.post('/login',(req,res,next)=>{
                 if(userController.comparePassword(password,user.password))
                 {
                     req.session.user = user;
+                    if (user.username=='admin'){
+                        res.redirect('/admin')
+                    }
+                    else {
                     res.redirect('/');
+                    }
                 } else {
+                    res.locals.item = {
+                        id : "login",
+                        title :"Đăng nhập"
+                    }
                     res.render('login',{
                         message : 'Incorrect Password',
                         type : 'alert-danger'
@@ -37,6 +46,10 @@ userRouter.post('/login',(req,res,next)=>{
                 }
             }
             else {
+                res.locals.item = {
+                    id : "login",
+                    title :"Đăng nhập"
+                }
             res.render('login',{
                 message : 'Username does not exist!',
                 type : 'alert-danger'
@@ -44,6 +57,16 @@ userRouter.post('/login',(req,res,next)=>{
             }
         })
         .catch(err => next(err))
+})
+
+userRouter.get('/logout',(req,res,next)=>{
+    req.session.destroy(err=>{
+        console.log("Detroyed")
+        if (err){
+            return next(err)
+        }
+        return res.redirect('/user/login')
+    })
 })
 
 userRouter.get('/borrowwing',(req,res)=>{

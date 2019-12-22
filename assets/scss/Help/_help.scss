@@ -1,6 +1,7 @@
 #help {
+    
     .body {
-      
+        padding-top: 25px;
             .item {
                 h6 {
                     @include font(20px, bold, normal, normal);

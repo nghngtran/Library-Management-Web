@@ -1,104 +1,95 @@
+<style>
+    .md-outline.select-wrapper+label {
+        top: .5em !important;
+        z-index: 2 !important;
+    }
+    select {
+        width: 200px;
+        height: 36px;
+        margin: 0 10px;
+        box-shadow: 4px 4px #d4d2d2;
+        border-radius: 10px;
+        border: 2px solid black;
+        outline: none;
+    }
+    option {
+        text-align: center;
+    }
+</style>
 <section class="body container">
     <div class="content container-inner">
         <div class="top">
-            <h5 class="heading-title">Tìm kiếm </h5>
-            <form action="/search"   method="GET" class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" aria-label="Search">
-            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Tìm kiếm</button>
+            <h5 style="margin-top:20px" class="heading-title">Tìm kiếm </h5>
+            <form action="/search" method="GET" class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" id="search"
+                    aria-label="Search">
+                <button onclick="window.location.href = '/search?';" class="btn aqua-gradient btn-rounded btn-sm my-0"
+                    type="submit">Tìm kiếm</button>
             </form>
         </div>
         <div class="filter">
-            <div class="filter-btns btn-group d-flex justify-content-center" role="group" aria-label="Button group with nested dropdown">
+            <div class="filter-btns btn-group d-flex justify-content-center" >
                 <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn  dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sắp xếp theo
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                         <a class="dropdown-item" onclick="selectParam('sort','name')" >Tên sách</a>
-                        <a class="dropdown-item" onclick="selectParam('sort','ratings')" >Đánh giá</a>
-                        <a class="dropdown-item" onclick="selectParam('sort', 'available')" >Số lượng</a>
-                    </div>
+                    <select id="sort" onchange="selectParam('sort',this.value)">
+                        <option value="" selected>Sắp xếp theo</option>
+                        <option value="title">Tên sách</option>
+                        <option value="author">Đánh giá</option>
+                        <option value="available">Số lượng</option>
+                    </select>
+                    <select id="kind" onchange="selectParam('kind',this.value)">
+                        <option value="" selected>Thể loại</option>
+                        <option value="4">Truyện ngắn</option>
+                        <option value="1">Lập trình</option>
+                        <option value="2">Lịch sử</option>
+                        <option value="3">Địa chất</option>
+                        <option value="2">Đại cương</option>
+                    </select>
+                    <select id="language" onchange="selectParam('language',this.value)">
+                        <option value="" selected>Ngôn ngữ</option>
+                        <option value="en">Tiếng Anh</option>
+                        <option value="vn">Việt Nam</option>
+                    </select>
                 </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Thể loại
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" onclick="selectParam('kind','')" >Tất cả</a>
-                        <a class="dropdown-item" onclick="selectParam('kind','4')" >Truyện ngắn</a>
-                        <a class="dropdown-item" onclick="selectParam('kind','1')">Lập trình</a>
-                        <a class="dropdown-item" onclick="selectParam('kind','2')">Lịch sử</a>
-                        <a class="dropdown-item" onclick="selectParam('kind','3')">Địa chất</a>
-                        <a class="dropdown-item" onclick="selectParam('kind','5')">Đại cương</a>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Ngôn ngữ
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" onclick="selectParam('language','')" >Tất cả</a>
-                        <a class="dropdown-item" onclick="selectParam('language','vn')" >Tiếng Việt</a>
-                        <a class="dropdown-item" onclick="selectParam('language','en')">Tiếng Anh</a>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Khóa học
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="#">Nhập môn lập trình</a>
-                        <a class="dropdown-item" href="#">Trí tuệ nhân tạo</a>
-                    </div>
-                </div>
+
+
             </div>
         </div>
         <div class="list-books">
             {{#each books}}
-                <div class='book row'>
-                    <div class='col-4 book-img'>
-                        <img src={{imgID}}>
-                    </div>
-                    <div class='col-8 book-info'>
-                        <h1 class='book-title'>{{title}}</h1>
-                        <h3 class='book-author'>{{author}}</h3>
-                        <p class='book-des'>{{description}}</p>
-                        <a href="/search/{{id}}" class='borrowBookBtn' id ='borrow'>Mượn sách</a>
-                    </div>
+            <div class='book row'>
+                <div class='col-4 book-img'>
+                    <img src={{imgID}}>
                 </div>
+                <div class='col-8 book-info'>
+                    <h1 class='book-title'>{{title}}</h1>
+                    <h3 style="margin-bottom:15px" class='book-author'>{{author}}</h3>
+                    <p style="margin-bottom:20px" class='book-des'>{{description}}</p>
+                    <a href="/search/{{id}}" class='borrowBookBtn' id='borrow'>Mượn sách</a>
+                </div>
+            </div>
             {{/each}}
         </div>
         <nav aria-label="Page navigation example" id="pagination">
-        {{{createPagination  pagination }}}
+            {{{createPagination  pagination }}}
         </nav>
     </div>
-</section> 
+</section>
 <script src="/js/main.js"></script>
-
-<script> 
-        let urlParams = new URLSearchParams(location.search);
+<script>
+    let urlParams = new URLSearchParams(location.search);
     let params = {
         limit: 4,
-        page : 1,
-        language : '',
-        kind : '',
-        sort : ''
-    }   
+        page: 1,
+        language: '',
+        kind: '',
+        sort: ''
+    }
     $("#pagination li").addClass('page-item');
     $("#pagination li a").addClass('page-link');
-    $("#pagination li a").each((index,item)=>{
-        let page = $(item).attr('href').split('=')[1];
-        let savePage = urlParams.get('page');
-        urlParams.set('page',page);
-        let href = '/search?' + urlParams.toString();
-        $(item).attr('href',href);
-    })
 
-
+    $("#sort").val(urlParams.get('sort'));
+      $("#kind").val(urlParams.get('kind'));
+      $("#language").val(urlParams.get('language'));
     for (let key in params) {
         if (!urlParams.has(key)) {
             urlParams.append(key, params[key]);
@@ -106,7 +97,8 @@
     }
 
     function selectParam(key, value) {
-        urlParams.set(key,value)
+        console.log("Clicked")
+        urlParams.set(key, value)
         let url = '/search?' + urlParams.toString();
         location.href = url;
     }

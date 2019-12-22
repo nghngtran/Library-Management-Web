@@ -10,7 +10,7 @@ searchRouter.get("/:id", (req, res, next) => {
         .then(data=>{
             
             res.locals.item = {
-                id: "search",
+                id: "borrow",
                 title:"Mượn sách"
             };
             res.locals.book = data;
