@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alatsi|Heebo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Francois+One|Paytone+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        
+        .open-button {
+            background-color: #FFEC46;
+            color: black;
+            padding: 5px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+            font-size: 14px;
+            font-weight: 600;
+            height: 30px;
+        }
+        /* The popup chat - hidden by default */
+        
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+        /* Add styles to the form container */
+        
+        .email,
+        .name {
+            height: 40px;
+            width: 100%;
+        }
+        
+        .email :focus,
+        .name:focus {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+            -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+            outline: 0 none;
+            border-color: #66afe9;
+        }
+        
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+        /* Full-width textarea */
+        
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+        /* When the textarea gets focus, do something */
+        
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        /* Set a style for the submit/send button */
+        
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            width: 120px;
+            height: 40px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            border-radius: 15px;
+            margin-right: 20px;
+            margin-left: 15px;
+        }
+        /* Add a red background color to the cancel button */
+        
+        .form-container .cancel {
+            background-color: red;
+        }
+        /* Add some hover effects to buttons */
+        
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Popup Chat Window</h2>
+    <p>Click on the button at the bottom of this page to open the chat form.</p>
+    <p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser window.</p>
+
+    <button class="open-button" onclick="openForm()">Trợ giúp</button>
+
+    <div class="chat-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h6 style="
+            font-family: 'Source Sans Pro', sans-serif;color:#4B66EB ;text-align:left; font-size: 14px; font-weight: 600;">Gửi mail cho chúng tôi để được giải đáp yêu cầu</h6>
+            <p>
+                <input type="text" class="name" placeholder="Họ tên">
+            </p>
+            <p>
+                <input type="text" data-validation="number" name="number_chat" id="number_chat" class="email" placeholder="Email"></p>
+            <label for="msg"><b>Lời nhắn</b></label>
+            <textarea placeholder="Nhập lời nhắn.." name="msg" required></textarea>
+            <div class="row">
+
+                <button type="submit" class="btn">Gửi</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Huỷ</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
