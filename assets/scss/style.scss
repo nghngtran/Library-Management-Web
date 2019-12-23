@@ -8,6 +8,7 @@
 @import './Help/help';
 @import './form-style';
 @import './Account/borrowingmanagement';
+@import './Livechat/livechat';
 .container {
     max-width: 1366px !important;
 }
@@ -41,8 +42,6 @@ html {
     header {
         margin-bottom: 20px;
         background-image: linear-gradient(#7A00B3, #0E0EB3);
-        //#A543FF
-        // #7B00FF
         nav {
             padding: 10px 0px;
             margin-bottom: 15px;
@@ -80,7 +79,7 @@ html {
                 }
             }
             .active {
-                color: $blueDark;
+                color: #ffef2d !important;
             }
             .nav-right {
                 #my-form input::-webkit-search-decoration,
