@@ -71,6 +71,6 @@ app.post('/send', (req, res) => {
         // Preview only available when sending through an Ethereal account
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-        window.alert("Gửi yêu cầu thành công !");
+        // window.alert("Gửi yêu cầu thành công !");
     });
 });
