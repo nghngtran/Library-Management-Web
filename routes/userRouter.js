@@ -1,13 +1,57 @@
 let express = require('express');
 let userRouter = express.Router();
 let userController = require('../controllers/userController');
-var id = 1;
 userRouter.get('/',(req,res)=>{
     res.locals.item = {
         id : "accountmanagement",
         title :"Quản lý tài khoản"
     }
     res.render('accountmanagement');
+})
+
+userRouter.post('/',(req,res,next)=>{
+    res.locals.item = {
+        id : "accountmanagement",
+        title :"Quản lý tài khoản"
+    }
+    let updatedUser = {
+        phone : req.body.phone,
+        email : req.body.email,
+        address : req.body.address,
+        password : req.body.newpassword
+    }
+
+    let confirmNewPassword = req.body.confirmnewpassword;
+    let currentPassword = req.body.password;
+
+    // userController
+    //     .getUserByUsername()
+
+    // if (!userController.comparePassword(password,currentPassword)){
+    //     return res.render('accountmanagement',{
+    //         message : "Incorrect Password!",
+    //         type: 'alert-danger'
+    //     })
+    // }
+
+
+    if (confirmNewPassword != updatedUser.password){
+        return res.render('accountmanagement',{
+            message : "Confirm password does not match!",
+            type: 'alert-danger'
+        })
+    }
+
+    if (currentPassword != updatedUser.password){
+        return res.render('accountmanagement',{
+            message : "The current password and the new password are the same!",
+            type: 'alert-danger'
+        })
+    }
+
+    
+
+
 })
 
 userRouter.get('/register',(req,res)=>{
@@ -37,7 +81,6 @@ userRouter.post('/register',(req,res,next)=>{
         email : req.body.email,
         password : req.body.password
     }
-    id++;
     
     let confirmPassword = req.body.confirmPassword;
     let keepLoggedIn = (req.body.keepLoggedIn != undefined)
@@ -51,7 +94,6 @@ userRouter.post('/register',(req,res,next)=>{
     // User tồn tại
     userController.getUserByUsername(addeduser.username)
         .then(user=>{
-            console.log(user)
             if (user){
                 return res.render('register',{
                     message:'Username exists!',
@@ -122,7 +164,6 @@ userRouter.post('/login',(req,res,next)=>{
 
 userRouter.get('/logout',(req,res,next)=>{
     req.session.destroy(err=>{
-        console.log("Detroyed")
         if (err){
             return next(err)
         }

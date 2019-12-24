@@ -50,10 +50,8 @@ controller.createUser = (user) =>{
     return User.create(user)
 }
 
-controller.comparePassword = (password1, password2) =>{
-    if (password1 == password2)
-        return true;
-    return false;
+controller.comparePassword = (password, hash) =>{
+    return bcrypt.compareSync(password,hash)
     
 }
 
