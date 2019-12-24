@@ -45,7 +45,7 @@ searchRouter.get("/", (req, res, next) => {
             };
             res.locals.books = data.rows;
             res.locals.pagination = {
-                page : 1,
+                page : parseInt(req.query.page),
                 limit : 4,
                 totalRows : data.count
             }

@@ -37,7 +37,7 @@ html {
 #new,
 #response,
 #accountmanagement,
-#borrowwingmanagement, #login , #borrow ,#admin {
+#borrowwingmanagement, #login , #borrow ,#admin,#register {
     header {
         background-image: linear-gradient(#7A00B3, #0E0EB3);
         //#A543FF
@@ -45,7 +45,7 @@ html {
         nav {
             padding: 10px 0px;
             //margin-bottom: 15px;
-            background-image: linear-gradient(#7A00B3, #0E0EB3);
+            background-image: linear-gradient(rgb(62, 0, 119), #0E0EB3);
             .nav-left {
                 img {
                     height: 60px;
@@ -56,7 +56,10 @@ html {
                     list-style: none;
                     text-decoration: none;
                     li {
-                        margin-right: 20px;
+                        padding:0 15px;
+                        //border-right: 1px solid white;
+
+
                         a {
                             text-decoration: none;
                             font-size: 18px;
@@ -76,6 +79,10 @@ html {
                             // }
                         }
                     }
+
+                    li:nth-child(5){
+                        border-right:unset ;
+                    }
                 }
             }
             .active{
@@ -94,7 +101,7 @@ html {
                     background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
                     border: solid 1px #ccc;
                     padding: 9px 10px 9px 32px;
-                    width: 55px;
+                    //width: 55px;
                     -webkit-border-radius: 10em;
                     -moz-border-radius: 10em;
                     border-radius: 10em;
@@ -145,7 +152,7 @@ html {
     footer {
         height: 120px;
         @include flexCustom(flex, center, center);
-        background-image: linear-gradient(#7A00B3, #0E0EB3);
+        background-image: linear-gradient(rgb(62, 0, 119), #0E0EB3);
         color: white;
         .content {
             @include flexCustom(flex, center, center);

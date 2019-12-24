@@ -68,6 +68,7 @@ app.use(session({
 app.use((req,res,next)=>{
     console.log(req.session.user )
     res.locals.username = req.session.user ?  req.session.user.username : '';
+    console.log("Username",res.locals.username);
     res.locals.phone = req.session.user ?  req.session.user.phone : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
     next();

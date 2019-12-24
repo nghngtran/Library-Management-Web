@@ -1,7 +1,7 @@
 let express = require('express');
 let indexRouter = express.Router();
 
-indexRouter.get("/", (req, res) => {
+indexRouter.get("/", (req, res,next) => {
     let bookController = require('../controllers/bookController');
     bookController
         .getHotBooks()
@@ -20,6 +20,7 @@ indexRouter.get("/", (req, res) => {
             res.render("homepage");
         })
         .catch(err => next(err))
+
 
 })
 

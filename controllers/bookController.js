@@ -79,9 +79,6 @@ controller.getAll = (query)=>{
 		}
 		var Sequelize = require('sequelize');
 		if (query.search != ''){
-			// options.where.title  = {
-			// 	[Sequelize.Op.iLike] : `%${query.search}%`
-			// }
 			options.where = {
 				[Sequelize.Op.or]:[
 					{
@@ -129,6 +126,15 @@ controller.getAll = (query)=>{
 			.catch(error =>reject(new Error(error)))
 	})
 };
+
+controller.add = (book)=>{
+	return new Promise((resolve,reject)=>{
+		Comment
+			.create(book)
+			.then(data=>resolve(data))
+			.catch(err =>reject(new Error(err)))
+	})
+}
 
 
 

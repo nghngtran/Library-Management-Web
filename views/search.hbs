@@ -68,14 +68,15 @@
                 </div>
             </div>
             {{/each}}
-        </div>
-        <nav aria-label="Page navigation example" id="pagination">
-            {{{createPagination  pagination }}}
+                    <nav aria-label="Page navigation example" id="pagination">
+            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
         </nav>
+        </div>
+
     </div>
 </section>
-<script src="/js/main.js"></script>
 <script>
+
     let urlParams = new URLSearchParams(location.search);
     let params = {
         limit: 4,
@@ -84,12 +85,22 @@
         kind: '',
         sort: ''
     }
+
     $("#pagination li").addClass('page-item');
     $("#pagination li a").addClass('page-link');
+     let savePage = urlParams.get('page');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = '/search?' + urlParams.toString();
+            $(item).attr('href',href);
+            $(item).attr('href', href);
+        })
+    urlParams.set('page', savePage);
 
     $("#sort").val(urlParams.get('sort'));
-      $("#kind").val(urlParams.get('kind'));
-      $("#language").val(urlParams.get('language'));
+    $("#kind").val(urlParams.get('kind'));
+    $("#language").val(urlParams.get('language'));
     for (let key in params) {
         if (!urlParams.has(key)) {
             urlParams.append(key, params[key]);
@@ -102,4 +113,5 @@
         let url = '/search?' + urlParams.toString();
         location.href = url;
     }
+    
 </script>

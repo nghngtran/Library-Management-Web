@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     role:DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    User.hasMany(models.RequestBook);
+    User.hasMany(models.RequestBook,{foreignKey: 'id'});
     // associations can be defined here
   };
   return User;
-};
+}; 

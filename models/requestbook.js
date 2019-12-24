@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     comment : DataTypes.STRING
   }, {});
   RequestBook.associate = function(models) {
-    RequestBook.belongsTo(models.User);
+    RequestBook.belongsTo(models.User,{foreignKey:'userId'});
     //RequestBook.hasMany(models.Book);
     // associations can be defined here
   };
