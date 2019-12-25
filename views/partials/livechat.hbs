@@ -4,14 +4,14 @@
         <form class="form-container" method="POST" action="/send">
             <h4>{{{this.message}}}</h4>
             <h6 style="
-            font-family: 'Source Sans Pro', sans-serif;color:#4B66EB ;text-align:left; font-size: 14px; font-weight: 600;">Gửi mail cho chúng tôi để được giải đáp yêu cầu</h6>
+            color:#4B66EB ;text-align:left; font-size: 14px; font-weight: 600;">Gửi mail cho chúng tôi để được giải đáp yêu cầu</h6>
             <p>
                 <input type="text" name="name" class="name" style="
-                font-family: 'Source Sans Pro', sans-serif ;text-align:left; font-size: 16px; font-weight: 200;" placeholder="Họ tên">
+                text-align:left; font-size: 16px; font-weight: 200;" placeholder="Họ tên">
             </p>
             <p>
                 <input type="text" style="
-                font-family: 'Source Sans Pro', sans-serif ;text-align:left; font-size: 16px; font-weight: 200;" name="email" class="email" placeholder="Email"></p>
+                text-align:left; font-size: 16px; font-weight: 200;" name="email" class="email" placeholder="Email"></p>
             <label for="msg"><b>Lời nhắn</b></label>
             <textarea placeholder="Nhập lời nhắn.." name="msg" required></textarea>
             <div class="row">
@@ -28,6 +28,7 @@
         function confirm()
         {
             window.alert("Gửi yêu cầu thành công ✔");
+            closeForm();
         }
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
