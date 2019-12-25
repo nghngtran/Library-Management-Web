@@ -30,7 +30,7 @@ app.listen(app.get('port'), () => {
 });
 //Body Parser Middleware
 
-app.post('/', (req, res) => {
+app.post('', (req, res) => {
     const output = `
         <p>Yêu cầu giải đáp</p>
         <ul>
@@ -71,7 +71,7 @@ app.post('/', (req, res) => {
         // Preview only available when sending through an Ethereal account
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-        // window.alert("Gửi yêu cầu thành công !");
+
         res.locals.item = {
             id: "homepage",
             title: "Trang chủ"
