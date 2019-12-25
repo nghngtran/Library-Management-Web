@@ -30,7 +30,7 @@ app.listen(app.get('port'), () => {
 });
 //Body Parser Middleware
 
-app.post('/send', (req, res) => {
+app.post('/', (req, res) => {
     const output = `
         <p>Yêu cầu giải đáp</p>
         <ul>
@@ -52,8 +52,8 @@ app.post('/send', (req, res) => {
     });
 
     let mailOptions = {
-        from: '"Tri Nguyen 👻" <nhokbm113@gmail.com>', // sender address
-        to: "nhokbm13@gmail.com", // list of receivers
+        from: '"Độc giả thư viện 👻"<nhokbm113@gmail.com>', // sender address
+        to: "thuvien.fit.khtn@gmail.com", // list of receivers
         subject: "Lời nhắn", // Subject line
         // text: "Hello world?", // plain text body
         html: output // html body
@@ -72,5 +72,12 @@ app.post('/send', (req, res) => {
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
         // window.alert("Gửi yêu cầu thành công !");
+        res.locals.item = {
+            id: "homepage",
+            title: "Trang chủ"
+        };
+        res.render('homepage');
+
+        // });
     });
 });
