@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../assets/scss/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/images/flavicon.png' />
     <title>Tìm kiếm</title>
 </head>
 
@@ -15,29 +17,31 @@
     <header>
         <nav class="container">
             <div class="container-inner d-flex justify-content-between">
-                <div class="nav-left">
+                <div class="nav-left d-flex align-items-center">
+                        <a href="../home.html"><img src="../assets/images/homepage/logokhtn.png"></a>
                     <ul class="d-flex">
-                        <li><a href="../layouts/homepage.html">Trang chủ</a></li>
-                        <li><a>Thư viện</a></li>
-                        <li><a href="#">Tìm kiếm</a></li>
-                        <li><a href="../layouts/news.html">Tin tức</a></li>
-                        <li><a>Trợ giúp</a></li>
+                        <li class="active-class"><a href="../home.html">Trang chủ</a></li>
+                        <li class="active-class"><a href="./library.html">Thư viện</a></li>
+                        <li class="active-class"><a href="#" class="active">Tìm kiếm</a></li>
+                        <li class="active-class"><a href="../layouts/news.html">Tin tức</a></li>
+                        <li class="active-class"><a href="../layouts/help.html">Trợ giúp</a></li>
                     </ul>
                 </div>
 
+
                 <div class="nav-right">
-                    <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
-                    <div class="dropdown hide account-btn">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         1753014
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="#">Quan ly tai khoan</a>
-                          <a class="dropdown-item" href="#">Lich su muon sach</a>
-                          <a class="dropdown-item logout-btn" href="#">Dang xuat</a>
-                        </div>
-                      </div>
-                </div>
+                        <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                        <div class="dropdown hide account-btn">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             1753014
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="../layouts/accountmanagement.html">Quản lý tài khoản</a>
+                              <a class="dropdown-item" href="../layouts/borrowinghistory.html">Lịch sử mượn sách</a>
+                              <a class="dropdown-item log-out-btn" href="../home.html">Đăng xuất</a>
+                            </div>
+                          </div>
+                    </div>
                 <div class="modal fade" id="formLogin" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -70,7 +74,11 @@
             <div class="top">
                 <h6 class="heading-title">Tìm kiếm </h6>
                 <div class="d-flex justify-content-center">
-                    <input type="text" placeholder="Tên sách, tên tác giả, thể loại">
+                    <div class="search-box">
+                        <input type="text" placeholder="Tên sách, tên tác giả, thể loại">
+                        <a><i class="fa fa-search"></i>    </a>
+                    </div>
+                    
                 </div>
             </div>
             <div class="filter">

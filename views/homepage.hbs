@@ -1,0 +1,138 @@
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+<section class="body container">
+    <div class="banner container">
+        <div class=" text">
+            <h3
+                style="font-family: 'Paytone One', sans-serif;color:#5c0099;text-align: center; font-size: 42px;margin-top:50px">
+                Thư viện trực tuyến <br> Đại học Khoa Học Tự Nhiên
+            </h3>
+        </div>
+        <div class="container-inner">
+            <img style="width:70%; margin-top:50px; margin-left:250px;margin-bottom:50px;background-size:cover;"
+                src="/images/homepage/bg.png">
+        </div>
+    </div>
+    <div class="search-info container-inner">
+        <div class="row">
+            <div class="col-6 search">
+                <h6 class="heading-title">Tìm kiếm nhanh</h6>
+                <form action="/search"   method="GET" class="form-inline mr-auto">
+                    <input style="width:60%" class="form-control mr-sm-2" type="text" id="search" name="search"
+                        placeholder="Tên sách, tên tác giả, thể loại,..." aria-label="Tìm nhanh">
+                    <button class="btn blue-gradient btn-rounded btn-sm my-0" type="submit">Tìm kiếm</button>
+                </form>
+            </div>
+            <div class="col-6 info">
+                <h6 class="heading-title">Truy cập</h6>
+                <ul class="d-flex flex-wrap">
+                    <li><a href="/rule">Quy định chung</a></li>
+                    <li><a href="/response">Phản hồi</a></li>
+                    <li><a>Đề xuất dành cho bạn</a></li>
+                    <li><a>Liên hệ với chúng tôi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="margin-bottom:30px" class="news container-inner">
+        <h6 class="heading-title">Sách mới</h6>
+        <div class="row">
+            {{#each newbooks}}
+            <div class="col-3">
+                <div class="book flex-column d-flex align-items-center justify-content-center">
+                    <img style="width:90%;height:367px" src={{imgID}}>
+                    <p style="padding: 10px 20px;font-size:16px;font-weight:bold;color:black">{{title}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+            <div style="height:3px;width:50px;background-color:blue;margin-right:15px">
+
+            </div>
+            <a style="color: blue;font-weight:700;font-size:16px" href="/search">Xem thêm</a>
+        </div>
+    </div>
+    <div style="margin-bottom:30px" class="news container-inner">
+        <h6 class="heading-title">Sách nổi bật</h6>
+        <div class="row">
+            {{#each hotbooks}}
+            <div class="col-md-3 col-sm-6">
+                <div class="book flex-column d-flex align-items-center justify-content-center">
+                    <img style="width:90%;height:367px" src={{imgID}}>
+                    <p style="padding: 10px 20px;font-size:16px;font-weight:bold;color:black">{{title}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+            <div style="height:3px;width:50px;background-color:blue;margin-right:15px">
+
+            </div>
+            <a style="color: blue;font-weight:700;font-size:16px" href="/search">Xem thêm</a>
+        </div>
+    </div>
+    <div style="margin-bottom:30px" class="news container-inner">
+        <h6 class="heading-title">Dịch vụ và trợ giúp</h6>
+        <div class="row">
+            <div class="col-4">
+                <div class="book flex-column d-flex align-items-center justify-content-center">
+                    <img style="width:100%;" src='/images/study.jpg'>
+                    <p style="padding: 10px 20px;font-size:20px;font-weight:bold;color:black">Study</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="book flex-column d-flex align-items-center justify-content-center">
+                    <img style="width:100%;" src='/images/teach.jpg'>
+                    <p style="padding: 10px 20px;font-size:20px;font-weight:bold;color:black">Teach</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="book flex-column d-flex align-items-center justify-content-center">
+                    <img style="width:100%;" src='/images/research.jpg'>
+                    <p style="padding: 10px 20px;font-size:20px;font-weight:bold;color:black">Research</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+            <div style="height:3px;width:50px;background-color:blue;margin-right:15px">
+
+            </div>
+            <a style="color: blue;font-weight:700;font-size:16px" href="/search">Xem thêm</a>
+        </div>
+    </div>
+    <div class="news container-inner">
+        <h6 class="heading-title">Tin tức mới</h6>
+        <div class="row">
+            <div class='col-4'>
+                <div class="post">
+
+                    <img src="/images/homepage/post-image.png">
+                    <h6 class="title">Công nghệ mới, kỉ nguyên mới</h6>
+                    <div class="text-right">09/11/2019</div>
+                </div>
+            </div>
+            <div class='col-4'>
+                <div class="post">
+                    <img src="/images/homepage/post-image.png">
+                    <h6 class="title">Công nghệ mới, kỉ nguyên mới</h6>
+                    <div class="text-right">09/11/2019</div>
+                </div>
+            </div>
+            <div class='col-4'>
+                <div class="post">
+                    <img src="/images/homepage/post-image.png">
+                    <h6 class="title">Công nghệ mới, kỉ nguyên mới</h6>
+                    <div class="text-right">09/11/2019</div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 16px;" class="d-flex justify-content-end align-items-center">
+            <div style="height:3px;width:50px;background-color:blue;margin-right:15px">
+
+            </div>
+            <a style="color: blue;font-weight:700;font-size:16px" href="/search">Xem thêm</a>
+        </div>
+    </div>
+
+</section>
+<script src="/js/main.js"></script>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Quản lý sách mượn</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/scss/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/images/flavicon.png' />
+
+</head>
+
+<body id="borrowing-history">
+    <header>
+        <nav class="container">
+            <div class="container-inner d-flex justify-content-between">
+                <div class="nav-left d-flex align-items-center">
+                    <a href="../home.html"><img src="../assets/images/homepage/logokhtn.png"></a>
+                    <ul class="d-flex">
+                        <li class="active-class"><a href="../home.html">Trang chủ</a></li>
+                        <li class="active-class"><a href="./library.html">Thư viện</a></li>
+                        <li class="active-class"><a href="./search.html">Tìm kiếm</a></li>
+                        <li class="active-class"><a href="./news.html">Tin tức</a></li>
+                        <li class="active-class">
+                            <a href="../layouts/help.html">Trợ giúp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-right">
+                    <a href="#" class="login-btn " data-toggle="modal" data-target="#formLogin">Đăng nhập</a>
+                    <div class="dropdown hide account-btn">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            1753014
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="../layouts/accountmanagement.html">Quản lý tài khoản</a>
+                            <a class="dropdown-item" href="../layouts/borrowinghistory.html">Lịch sử mượn sách</a>
+                            <a class="dropdown-item log-out-btn" href="../home.html">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="formLogin" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center">Login</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input id="username" type="text" placeholder="Tên đăng nhập">
+                                <input id="password" type="password" placeholder="Mật khẩu">
+                                <input id="loginBtn" type="button" value="Đăng nhập">
+                                <a href="#" class="text-right">Quên mật khẩu?</a>
+                                <div style="display:none; color:red" class="noti-err">Đăng nhập thất bại</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="banner container-inner">
+            <img style="width : 100%" src="../assets//images/search/banner.png" alt="">
+        </div>
+    </header>
+    <div class="container-inner">
+        <h4 style="text-decoration: underline;">Quản lý sách mượn</h4>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true">Yêu cầu đang chờ xét duyệt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">Sách đã mượn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                    aria-controls="contact" aria-selected="false">Sách đang mượn</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane pending fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="book-pending row">
+                    <div class="col-4 book-img">
+                        <img src="../assets/images/search/book1.png"></div>
+                    <div class="col-8 book-info">
+                        <h1 class="book-title">Agile Principles, Pattern and Practices in C#</h1>
+                        <h3 class="book-author">Ahmedt-Aristizabal, David ; Fookes, Clinton</h3>
+                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
+                            domination. A computer ensures you do not waste your time"</p>
+                        <a class="cancelRequestBtn" id="borrow">Hủy yêu cầu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane borrowed fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            </div>
+            <div class="tab-pane borrowing fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="book-borrowing row">
+                    <div class="col-4 book-img"><img src="../assets/images/search/book2.png"></div>
+                    <div class="col-8 book-info">
+                        <h1 class="book-title">Introduction to Algorithms</h1>
+                        <h3 class="book-author">Thomas</h3>
+                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
+                            domination. A computer ensures you do not waste your time"</p>
+                        <a class="returnBookBtn" id="borrow" data-toggle="modal" data-target="#returnBookModal">Trả
+                            sách</a>
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="returnBookModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Return Book</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <h4>Ghi chú</h4>
+                                <textarea rows="4" cols="50">
+                                </textarea>
+                                <h4>Ngày hẹn trả</h4>
+                                <input id="datepicker" width="276" />
+                                <script>
+                                    $('#datepicker').datepicker({
+                                        uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                                <button style="margin-top: 15px" class="confirmReturn btn btn-primary">Xác nhận</button>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                            </div>
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <footer class="container">
+        <div>
+            <p class="text-center">Thư viện trường Đại Học Khoa Học Tự Nhiên</p>
+            <p class="text-center">227 Nguyễn Văn Cừ, phường 4, quận 5, thành phố Hồ Chí Minh</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/account.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <!-- Datepicker moment with locales -->
+    <script type="text/javascript" language="javascript" src="datetimepicker/js/moment-with-locales.js"></script>
+    <!-- Propeller textfield js --> 
+    <script type="text/javascript" src="dist/js/propeller.min.js"></script>
+    <!-- Propeller Bootstrap datetimepicker -->
+    <script type="text/javascript" language="javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
