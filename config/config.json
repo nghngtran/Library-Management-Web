@@ -16,11 +16,12 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "postgres",
-    "password": "postgre",
-    "database": "library-database",
-    "host": "127.0.0.1",
+    "username": "uxzoswqqhkiqdy",
+    "password": "f500e7e03d33e241ccffdb537fdff267fbb285c6c6de75f90a62c7aafdc27f95",
+    "database": "dasl7c9soj1ojh",
+    "host": "ec2-174-129-24-148.compute-1.amazonaws.com",
     "dialect": "postgres",
+    "port":5432,
     "operatorsAliases": false
   }
 }
