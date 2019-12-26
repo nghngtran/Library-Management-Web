@@ -68,6 +68,8 @@ app.use(session({
 app.use((req,res,next)=>{
     res.locals.username = req.session.user ?  req.session.user.username : '';
     res.locals.phone = req.session.user ?  req.session.user.phone : '';
+    res.locals.email = req.session.user ? req.session.user.email : '';
+    res.locals.address = req.session.user ? req.session.user.address : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
     next();
 })

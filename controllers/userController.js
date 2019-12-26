@@ -50,6 +50,18 @@ controller.createUser = (user) =>{
     return User.create(user)
 }
 
+controller.updateUser = (user) =>{
+    console.log("In controller, user:",user)
+    return new Promise((resolve,reject)=>{
+		User
+			.update(user,{
+				where: {username : user.username}
+			})
+			.then(data=>resolve(data))
+			.catch(error =>reject(new Error(error)))
+	})
+}
+
 controller.comparePassword = (password, hash) =>{
     return bcrypt.compareSync(password,hash)
     

@@ -9,7 +9,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fa fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
@@ -20,7 +20,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fa fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -288,20 +288,20 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/user/logout">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
@@ -314,53 +314,36 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">List accounts </p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables </h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Phone</th>
-                                            <th>Address</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        {{#each accounts}}
-                                        <tr>
-                                            <td><div contenteditable>{{username}}</div></td>
-                                            <td><div contenteditable>{{email}}</div></td>
-                                            <td><div contenteditable>{{role}}</div></td>
-                                            <td><div contenteditable>{{phone}}</div></td>
-                                            <td><div contenteditable>{{address}}</div></td>
-                                            <td class="d-flex align-items-center">
-                                                <a style="margin-right:5px" href="/admin/account/{{username}}"><i class="fa fa-edit"></i></a>
-                                                <a href="/admin/account/{{username}}"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        {{/each}}
-                                    </tbody>
-                                </table>
+                    <div class="container-inner">
+                        <form method="POST" action="/admin/account">
+                            <h4>Cập nhật tài khoản</h4>
+                            <div class="d-flex flex-column align-items-center">
+                                {{#with account}}
+                                <div class="md-form">
+                                    <i class="fa fa-user prefix"></i>
+                                    <input type="text" id="username" name="username" placeholder={{username}} class="form-control">
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="text" id="email" name="email" placeholder={{email}} class="form-control">
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-phone prefix"></i>
+                                    <input type="text" id="phone" name="phone" class="form-control" placeholder={{phone}} >
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-home prefix"></i>
+                                    <input type="text" id="address" name="address" class="form-control" placeholder={{address}} >
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-suitcase-rolling prefix"></i>
+                                    <input type="text" id="role" name="role" class="form-control" placeholder={{role}} >
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                {{/with}}
                             </div>
-                        </div>
-                        <nav aria-label="Page navigation example" id="pagination">
-                            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
-                        </nav>
+                        </form>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -376,7 +359,7 @@
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 
     <!-- Logout Modal-->
@@ -415,33 +398,42 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     </div>
-<script>
-    $(document).ready(function(){
-            $("#pagination li").click(function(){
-            $("#pagination li").removeClass('active');
-            //$(this).addClass('active');
-    })
-    });
-    let urlParams = new URLSearchParams(location.search);
-    let params = {
-        limit: 2,
-        page: 1,
-    }
-
-    $("#pagination li").addClass('page-item');
-    $("#pagination li a").addClass('page-link');
-
-
-    for (let key in params) {
-        if (!urlParams.has(key)) {
-            urlParams.append(key, params[key]);
+    <script>
+        let urlParams = new URLSearchParams(location.search);
+        let params = {
+            limit: 4,
+            page: 1,
+            language: '',
+            kind: '',
+            sort: ''
         }
-    }
 
-    function selectParam(key, value) {
-        urlParams.set(key, value)
-        let url = '/account?' + urlParams.toString();
-        location.href = url;
-    }
-    
-</script>
+        $("#pagination li").addClass('page-item');
+        $("#pagination li a").addClass('page-link');
+        let savePage = urlParams.get('page');
+        $("#pagination li a").each((index, item) => {
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = '/admin/book?' + urlParams.toString();
+            $(item).attr('href', href);
+            $(item).attr('href', href);
+        })
+        urlParams.set('page', savePage);
+
+        $("#sort").val(urlParams.get('sort'));
+        $("#kind").val(urlParams.get('kind'));
+        $("#language").val(urlParams.get('language'));
+        for (let key in params) {
+            if (!urlParams.has(key)) {
+                urlParams.append(key, params[key]);
+            }
+        }
+
+        function selectParam(key, value) {
+            console.log("Clicked")
+            urlParams.set(key, value)
+            let url = '/search?' + urlParams.toString();
+            location.href = url;
+        }
+
+    </script>

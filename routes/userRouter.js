@@ -1,5 +1,6 @@
 let express = require('express');
 let userRouter = express.Router();
+let bcrypt = require('bcryptjs');
 let userController = require('../controllers/userController');
 userRouter.get('/',(req,res)=>{
     res.locals.item = {
@@ -14,18 +15,37 @@ userRouter.post('/',(req,res,next)=>{
         id : "accountmanagement",
         title :"Quản lý tài khoản"
     }
+    var salt = bcrypt.genSaltSync(10)
     let updatedUser = {
+        username : req.body.uname,
         phone : req.body.phone,
         email : req.body.email,
-        address : req.body.address,
-        password : req.body.newpassword
+        address : req.body.address
+
     }
-
-    let confirmNewPassword = req.body.confirmnewpassword;
-    let currentPassword = req.body.password;
-
     // userController
-    //     .getUserByUsername()
+    //     .getUserByUsername(updatedUser.username)
+    //     .then(user=>{
+    //         if (!userController.comparePassword(updatedUser.password,user.password)){
+    //             res.render('accountmanagement',{
+    //                 message:'Incorrect Password',
+    //                 type: 'alert-danger'
+    //             })
+    //         }
+    //     })
+        
+    //let confirmNewPassword = req.body.confirmnewpassword;
+    //let currentPassword = req.body.password;
+
+    userController
+        .updateUser(updatedUser)
+        .then(user=>{
+            req.session.user = user;
+            res.render('accountmanagement', {
+                message : "Update account successfully!",
+                type:'alert-primary'
+            })
+        })
 
     // if (!userController.comparePassword(password,currentPassword)){
     //     return res.render('accountmanagement',{
@@ -35,22 +55,19 @@ userRouter.post('/',(req,res,next)=>{
     // }
 
 
-    if (confirmNewPassword != updatedUser.password){
-        return res.render('accountmanagement',{
-            message : "Confirm password does not match!",
-            type: 'alert-danger'
-        })
-    }
+    // if (confirmNewPassword != updatedUser.password){
+    //     return res.render('accountmanagement',{
+    //         message : "Confirm password does not match!",
+    //         type: 'alert-danger'
+    //     })
+    // }
 
-    if (currentPassword != updatedUser.password){
-        return res.render('accountmanagement',{
-            message : "The current password and the new password are the same!",
-            type: 'alert-danger'
-        })
-    }
-
-    
-
+    // if (currentPassword != updatedUser.password){
+    //     return res.render('accountmanagement',{
+    //         message : "The current password and the new password are the same!",
+    //         type: 'alert-danger'
+    //     })
+    // }
 
 })
 
