@@ -1,12 +1,9 @@
 //DECLARE
 const express = require('express');
-const bodyParse = require('body-parser');
-const hbs = require('express-handlebars');
+const expressHbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 var app = express();
 //SET FOLDER
-app.use(bodyParse.urlencoded({ extended: false }));
-app.use(bodyParse.json());
 app.use(express.static(__dirname + '/assets'));
 
 //SET VIEW
@@ -46,9 +43,6 @@ var hbs = expressHbs.create({
 });
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
-
-
-
 //Use body parser
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -72,6 +66,7 @@ app.use((req,res,next)=>{
     res.locals.email = req.session.user ? req.session.user.email : '';
     res.locals.address = req.session.user ? req.session.user.address : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
+    //console.log(req.session.user);
     next();
 })
 app.use("/user", require('./routes/userRouter'));
