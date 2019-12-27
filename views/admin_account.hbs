@@ -348,7 +348,9 @@
                                             <td><div contenteditable>{{address}}</div></td>
                                             <td class="d-flex align-items-center">
                                                 <a style="margin-right:5px" href="/admin/account/{{username}}"><i class="fa fa-edit"></i></a>
-                                                <a href="/admin/account/{{username}}"><i class="fa fa-trash"></i></a>
+                                                <form action="/admin/account/{{username}}" method="POST">
+                                                <button type="submit" ><i class="fa fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         {{/each}}

@@ -50,8 +50,18 @@ controller.createUser = (user) =>{
     return User.create(user)
 }
 
+controller.removeUser = (username) => {
+        return new Promise((resolve,reject)=>{
+		User
+			.destroy({
+				where : {username : username}
+            })
+			.then(data=>resolve(data))
+			.catch(error =>reject(new Error(error)))
+	})
+}
+
 controller.updateUser = (user) =>{
-    console.log("In controller, user:",user)
     return new Promise((resolve,reject)=>{
 		User
 			.update(user,{

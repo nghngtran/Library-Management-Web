@@ -32,10 +32,30 @@ adminRouter.post('/account/',(req,res,next)=>{
         address : req.body.address,
         role : req.body.role
     }
+    console.log(updatedUser)
     userController
         .updateUser(updatedUser)
         .then(user=>{
+            console.log("Type User update:",typeof(user))
+            res.locals.item = {
+                id : "admin",
+                title :"Quản lý tài khoản"
+            }
+            res.locals.account = updatedUser;
             res.render('admin_account_detail');
+        })
+})
+adminRouter.post('/account/:username',(req,res,next)=>{
+    let username = req.params.username
+
+    userController
+        .removeUser(username)
+        .then(user=>{
+            res.locals.item = {
+                id : "admin",
+                title :"Quản lý tài khoản"
+            }
+            res.redirect('/admin/account');
         })
 })
 adminRouter.get('/account',(req,res,next)=>{
