@@ -8,12 +8,11 @@
     "start": "nodemon index.js"
   },
   "engines": {
-    "node" :"^10.16.3"
+    "node": "^10.16.3"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "npm" : "^6.9.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
@@ -22,7 +21,9 @@
     "express-handlebars-paginate": "^1.0.3",
     "express-session": "^1.17.0",
     "mysql2": "^2.0.2",
+    "nodemailer": "^6.4.2",
     "nodemon": "^2.0.1",
+    "npm": "^6.9.0",
     "pg": "^7.14.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.3"

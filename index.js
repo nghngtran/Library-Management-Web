@@ -1,5 +1,8 @@
 //DECLARE
 const express = require('express');
+const expressHbs  = require('express-handlebars'); 
+const bodyParse = require('body-parser');
+const nodemailer = require('nodemailer');
 var app = express();
 const expressHbs  = require('express-handlebars');
 var models = require('./models');
@@ -71,6 +74,8 @@ app.use((req,res,next)=>{
     res.locals.email = req.session.user ? req.session.user.email : '';
     res.locals.address = req.session.user ? req.session.user.address : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
+    console.log("Session");
+    console.log("User:", res.locals.isLoggedIn);
     next();
 })
 app.use("/user", require('./routes/userRouter'));
@@ -84,6 +89,10 @@ app.get('/sync', function(req, res){
 		res.send('database sync completed!');
 	});
 });
+
+//Body Parser Middleware
+
+
 //ACTIVATE SERVER
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), () => {
