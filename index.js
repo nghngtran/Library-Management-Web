@@ -1,7 +1,5 @@
 //DECLARE
 const express = require('express');
-const expressHbs  = require('express-handlebars'); 
-const bodyParse = require('body-parser');
 const nodemailer = require('nodemailer');
 var app = express();
 const expressHbs  = require('express-handlebars');
