@@ -1,17 +1,13 @@
 #help {
     
     .body {
-        padding-top: 25px;
-            .item {
-                h6 {
-                    @include font(20px, bold, normal, normal);
-                }
-
-                p{
-                    @include font(16px, 300, normal, normal);
-                }
+        .item {
+            h6 {
+                @include font(20px, bold, normal, normal);
             }
-            
-        
+            p {
+                @include font(16px, 300, normal, normal);
+            }
+        }
     }
 }

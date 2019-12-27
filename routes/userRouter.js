@@ -26,7 +26,8 @@ userRouter.post('/',(req,res,next)=>{
     userController
         .updateUser(updatedUser)
         .then(user=>{
-            req.session.user = user;
+            console.log("Updated user",user)
+            //req.session.user = user;
             res.render('accountmanagement', {
                 message : "Update account successfully!",
                 type:'alert-primary'
