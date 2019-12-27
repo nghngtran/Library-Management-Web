@@ -1,6 +1,19 @@
 let express = require('express');
 let userRouter = express.Router();
 let userController = require('../controllers/userController');
+let mailer = require('nodemailer');
+let token = "";
+let email = "";
+var transporter = mailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'ldhan21101999@gmail.com',
+        pass: 'hoangan123'
+    }
+})
+
+
+//Trang chủ user
 userRouter.get('/', (req, res) => {
     res.locals.item = {
         id: "accountmanagement",
@@ -9,6 +22,7 @@ userRouter.get('/', (req, res) => {
     res.render('accountmanagement');
 })
 
+//Get form từ trang chủ user
 userRouter.post('/', (req, res, next) => {
     res.locals.item = {
         id: "accountmanagement",
@@ -177,24 +191,105 @@ userRouter.get('/borrowwing', (req, res) => {
 })
 
 userRouter.post('/forgotPassword', (req, res, next) => {
-    res.locals.item = {
-        id: "forgotPassword",
-        title: "Forgot Username/Password"
-    }
-    const email = req.body.email; //Lấy email từ form.
+    email = req.body.email; //Lấy email từ form. 
+
     console.log(email);
     userController.getUserByEmail(email)
-        .then(function(user) {
+        .then(user => {
             if (!user) {
                 res.render('forgotPassword', {
                     message: 'Email is not registered !',
                     type: 'alert-danger'
                 })
             } else {
-                let token = crypto.randomBytes(32).toString('hex');
+                token = '123456'
+                let mailOptions = {
+                    from: email,
+                    to: user.email,
+                    subject: 'Reset your account password',
+                    html: '<h4><b>Reset Password</b></h4>' +
+                        '<p><strong>Username: ' + user.username + '</strong></p>' +
+                        '<p>To reset your password please copy the token and complete the form: </p>' +
+                        '<p><strong>Token: ' + token + '</strong></p>' +
+                        '<br><br>' +
+                        '<p>--Team</p>'
+                }
+                transporter.sendMail(mailOptions, function(error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                })
+                res.locals.item = {
+                    id: "forgotPassword",
+                    title: "Forgot-Password",
+                }
 
+                res.render('forgotPassword', {
+                    message: 'Please check your email to get the token!',
+                    type: 'alert-primary'
+                })
             }
         })
+})
+
+
+userRouter.get('/resetPassword', (req, res) => {
+    res.locals.item = {
+        id: "resetPassword",
+        title: "Reset-Password"
+    }
+    res.render("resetPassword");
+})
+
+userRouter.post('/resetPassword', (req, res) => {
+
+
+
+    const u_token = req.body.token;
+    const password = req.body.password;
+    const cpassword = req.body.ConfirmPassword;
+
+    if (token != u_token) {
+
+        res.locals.item = {
+            id: "resetPassword",
+            title: "reset Password"
+        }
+        res.render("resetPassword", {
+            message: "Wrong token !! Try again !!",
+            type: "alert-danger"
+        })
+    }
+
+    if (password != cpassword) {
+
+        res.locals.item = {
+            id: "resetPassword",
+            title: "Reset Password"
+        }
+        res.render("resetPassword", {
+            message: "Confirm Password and Password are not the same !!",
+            type: "alert-danger"
+        })
+    }
+    userController.getUserByEmail(email).then(user => {
+        userController.updatePassword(user.username, password).then(data => {
+            res.locals.item = {
+                id: "login",
+                title: "Login"
+            }
+            email = "";
+            token = "";
+            res.render("login", {
+                message: "Update Password successfully !!",
+                type: "alert-primary"
+            })
+        });
+    })
+
+
 })
 
 userRouter.get('/forgotPassword', (req, res) => {

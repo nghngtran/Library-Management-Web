@@ -61,6 +61,17 @@ controller.comparePassword = (password, hash) => {
 
 }
 
+controller.updatePassword = (username, password) => {
+    return User.findOne({
+        where: { username: username }
+    }).then((user) => {
+        var salt = bcrypt.genSaltSync(saltRounds)
+        password = bcrypt.hashSync(password, salt)
+        console.log(user);
+        if (user)
+            user.update({ password: password });
+    })
+}
 
 
 
