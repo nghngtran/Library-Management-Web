@@ -24,11 +24,48 @@ controller.getAll = (query) =>{
 }
 
 controller.getAll = (query) =>{
+    var Sequelize = require('sequelize');
     return new Promise((resolve,reject)=>{
         let options = {
             attribute : ['id','username','email','phone','address','role'],
             where : {
 
+            }
+        }
+        if (query.limit > 0){
+            options.limit = query.limit,
+            options.offset = query.limit * (query.page -1)
+        }
+        
+        if (query.search != ''){
+            options.where = {
+                [Sequelize.Op.or]:[
+                    {
+                        username : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    },
+                    {
+                        role : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    },
+                    {
+                        phone : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    },
+                    {
+                        address : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    },
+                    {
+                        email : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    }
+                ]
             }
         }
         User    
@@ -38,11 +75,29 @@ controller.getAll = (query) =>{
     })
 }
 
+controller.updatePassword = (username, password) => {
+    return User.findOne({
+        where: { username: username }
+    }).then((user) => {
+        var salt = bcrypt.genSaltSync(saltRounds)
+        password = bcrypt.hashSync(password, salt)
+        console.log(user);
+        if (user)
+            user.update({ password: password });
+    })
+}
+
 controller.getUserByUsername = (username)=>{
     return User.findOne({
         where : {username : username} 
     })
 };
+
+controller.getUserByEmail = (email) => {
+    return User.findOne({
+        where: { email: email }
+    })
+}
 
 controller.createUser = (user) =>{
     var salt = bcrypt.genSaltSync(saltRounds)

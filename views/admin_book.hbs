@@ -20,7 +20,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/admin">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -261,7 +261,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -301,36 +301,46 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables </h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <form method="GET" action="/admin/account" class="active-purple-3 active-purple-4 d-flex justify-content-between align-items-center">
+                                    <input class="form-control" id="search" name="search" type="text" placeholder="Search" aria-label="Search">
+                                </form>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-user-plus"></i>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-upload"></i>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Phone</th>
-                                            <th>Address</th>
-                                            <th>Language</th>
-                                            <th>Edit</th>
+                                            <th class="text-center">Title</thclass="text-center">
+                                            <th class="text-center">Author</th>
+                                            <th class="text-center">Description</th>
+                                            <th class="text-center">Ratings</th>
+                                            <th class="text-center">Available</th>
+                                            <th class="text-center">Language</th>
+                                            <th class="text-center">Edit</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         {{#each books}}
                                         <tr>
-                                            <td><div contenteditable>{{title}}</div></td>
-                                            <td><div contenteditable>{{author}}</div></td>
-                                            <td><div contenteditable>{{description}}</div></td>
-                                            <td><div contenteditable>{{ratings}}</div></td>
-                                            <td><div contenteditable>{{available}}</div></td>
-                                            <td>{{language}}</td>
-                                            <td class="d-flex align-items-center">
-                                              <a href="/admin/account/{{username}}"><i class="fa fa-edit"></i></a>
-                                              <a href="/admin/account/{{username}}"><i class="fa fa-trash"></i></a>
+                                            <td class="text-center"><div contenteditable>{{title}}</div></td>
+                                            <td class="text-center"><div contenteditable>{{author}}</div></td>
+                                            <td class="text-center"><div contenteditable>{{description}}</div></td>
+                                            <td class="text-center"><div contenteditable>{{ratings}}</div></td>
+                                            <td class="text-center"><div contenteditable>{{available}}</div></td>
+                                            <td class="text-center"><div contenteditable>{{language}}</div></td>
+                                            <td class="text-center">
+                                                <a style="margin-right:5px" href="/admin/account/{{username}}"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <form action="/admin/account/{{username}}" method="POST">
+                                                    <button type="submit"><i class="fa fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         {{/each}}
@@ -359,43 +369,25 @@
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
+  <a class="scroll-to-top rounded" href="#">
+    <i class="fa fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript-->
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="/js/demo/chart-area-demo.js"></script>
+  <script src="/js/demo/chart-pie-demo.js"></script>
 
 </div>
 <script>
@@ -432,7 +424,7 @@
     function selectParam(key, value) {
         console.log("Clicked")
         urlParams.set(key, value)
-        let url = '/search?' + urlParams.toString();
+        let url = '/admin/account?' + urlParams.toString();
         location.href = url;
     }
     

@@ -59,7 +59,23 @@ adminRouter.post('/account/:username',(req,res,next)=>{
         })
 })
 adminRouter.get('/account',(req,res,next)=>{
-
+    if(req.query.limit == null || isNaN(req.query.limit))
+    {
+        req.query.limit = 3;
+    }
+    if(req.query.page == null || isNaN(req.query.page))
+    {
+        req.query.page = 1;
+    }
+    if (req.query.sort==null){
+        req.query.sort = 'ratings';
+    }
+    if (req.query.search == null){
+        req.query.search = '';
+    }
+    if (req.query.search == null){
+        req.query.search = '';
+    }
     userController
         .getAll(req.query)
         .then(data =>{
@@ -70,7 +86,7 @@ adminRouter.get('/account',(req,res,next)=>{
             res.locals.accounts = data.rows;
             res.locals.pagination = {
                 page : parseInt(req.query.page),
-                limit : 4,
+                limit : parseInt(req.query.limit),
                 totalRows : data.count
             }
             res.render('admin_account');

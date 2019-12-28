@@ -66,7 +66,7 @@ app.use((req,res,next)=>{
     res.locals.email = req.session.user ? req.session.user.email : '';
     res.locals.address = req.session.user ? req.session.user.address : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
-    //console.log(req.session.user);
+    console.log("isLogin",res.locals.isLoggedIn);
     next();
 })
 app.use("/user", require('./routes/userRouter'));

@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin">
                     <i class="fa fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -280,7 +280,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>
@@ -321,7 +321,8 @@
                                 {{#with account}}
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="username" name="username" value={{username}} class="form-control">
+                                    <input type="text" id="username" name="username" value={{username}}
+                                        class="form-control">
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix"></i>
@@ -329,20 +330,22 @@
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-phone prefix"></i>
-                                    <input type="text" id="phone" name="phone" class="form-control" value={{phone}} >
+                                    <input type="text" id="phone" name="phone" class="form-control" value={{phone}}>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-home prefix"></i>
-                                    <input type="text" id="address" name="address" class="form-control" value={{address}} >
+                                    <input type="text" id="address" name="address" class="form-control"
+                                        value={{address}}>
                                 </div>
                                 <div class="md-form">
-                                    <i class="fa fa-suitcase-rolling prefix"></i>
-                                    <input type="text" id="role" name="role" class="form-control" value={{role}} >
+                                    <i class="fa fa-address-card prefix"></i>
+                                    <input type="text" id="role" name="role" class="form-control" value={{role}}>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Cập nhật</button>
                                 {{/with}}
                             </div>
                         </form>
+
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -385,17 +388,17 @@
     <!-- Bootstrap core JavaScript-->
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
 
     </div>
     <script>

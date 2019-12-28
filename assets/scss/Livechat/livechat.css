@@ -8,11 +8,10 @@
   position: fixed;
   bottom: 23px;
   right: 28px;
-  width: 70px;
+  width: 280px;
   font-size: 14px;
   font-weight: 600;
-  height: 70px;
-  border-radius: 50%;
+  height: 30px;
 }
 
 /* The popup chat - hidden by default */

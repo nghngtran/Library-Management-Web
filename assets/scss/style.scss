@@ -84,9 +84,9 @@ html {
                     }
                 }
             }
-            .active {
-                color: #ffef2d !important;
-            }
+            // .active {
+            //     color: #ffef2d !important;
+            // }
             .nav-right {
                 #my-form input::-webkit-search-decoration,
                 #my-form input::-webkit-search-cancel-button {
@@ -162,4 +162,8 @@ html {
             color: white;
         }
     }
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 0 !important;
 }

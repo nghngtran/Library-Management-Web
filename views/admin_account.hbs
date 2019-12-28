@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -117,7 +117,8 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form method="POST"  class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form method="POST"
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
@@ -279,7 +280,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>
@@ -320,35 +321,54 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables </h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <form method="GET" action="/admin/account" class="active-purple-3 active-purple-4 d-flex justify-content-between align-items-center">
+                                    <input class="form-control" id="search" name="search" type="text" placeholder="Search" aria-label="Search">
+                                </form>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-user-plus"></i>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-upload"></i>
+                            </div>
                         </div>
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Phone</th>
-                                            <th>Address</th>
-                                            <th>Edit</th>
+                                            <th class="text-center">Username</th>
+                                            <th class="text-center">Email</th>
+                                            <th class="text-center">Role</th>
+                                            <th class="text-center">Phone</th>
+                                            <th class="text-center">Address</th>
+                                            <th class="text-center">Edit</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         {{#each accounts}}
                                         <tr>
-                                            <td><div contenteditable>{{username}}</div></td>
-                                            <td><div contenteditable>{{email}}</div></td>
-                                            <td><div contenteditable>{{role}}</div></td>
-                                            <td><div contenteditable>{{phone}}</div></td>
-                                            <td><div contenteditable>{{address}}</div></td>
-                                            <td class="d-flex align-items-center">
-                                                <a style="margin-right:5px" href="/admin/account/{{username}}"><i class="fa fa-edit"></i></a>
+                                            <td class="text-center">
+                                                <div contenteditable>{{username}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{email}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{role}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{phone}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{address}}</div>
+                                            </td>
+                                            <td class="d-flex align-items-center justify-content-around">
+                                                <a style="margin-right:5px" href="/admin/account/{{username}}"><i
+                                                        class="fa fa-edit"></i></a>
                                                 <form action="/admin/account/{{username}}" method="POST">
-                                                    <button type="submit" ><i class="fa fa-trash"></i></button>
+                                                    <button type="submit"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -394,7 +414,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/user/login">Logout</a>
                 </div>
             </div>
         </div>
@@ -417,31 +437,36 @@
 
     </div>
 <script>
-    $(document).ready(function(){
-            $("#pagination li").click(function(){
-            $("#pagination li").removeClass('active');
-            //$(this).addClass('active');
-    })
-    });
+
     let urlParams = new URLSearchParams(location.search);
     let params = {
-        limit: 2,
+        limit: 4,
         page: 1,
+        sort: ''
     }
-
+    for (let key in params) {
+    if (!urlParams.has(key)) {
+        urlParams.append(key, params[key]);
+    }
+    }
     $("#pagination li").addClass('page-item');
     $("#pagination li a").addClass('page-link');
+     let savePage = urlParams.get('page');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = 'account?' + urlParams.toString();
+            $(item).attr('href',href);
+            $(item).attr('href', href);
+        })
+    urlParams.set('page', savePage);
 
 
-    for (let key in params) {
-        if (!urlParams.has(key)) {
-            urlParams.append(key, params[key]);
-        }
-    }
 
     function selectParam(key, value) {
+        console.log("Clicked")
         urlParams.set(key, value)
-        let url = '/account?' + urlParams.toString();
+        let url = 'account?' + urlParams.toString();
         location.href = url;
     }
     

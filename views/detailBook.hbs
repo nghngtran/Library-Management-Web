@@ -22,14 +22,18 @@
                 <div style="margin-top: 20px;" class='certificate-container'>
                     <div class='note'><textarea rows='5' cols='30' placeholder='Ghi chú'></textarea></div>
                     <div class='appointment'><b>Ngày hẹn mượn:</b> <input type='date'></div>
-                    {{#if isLoggedIn}}
-                        <a class='confirmBookBtn btn btn-primary' href= '/user'>Mượn sách</a>
-                    {{else}}
-                        <a class='confirmBookBtn btn btn-primary' href= '/user/login'>Mượn sách</a>
-                    {{/if}}
+
                 </div>
-            </div>
+            
             {{/with}}
+            <div class="col-12">                         
+            {{#if isLoggedIn}}
+            <button type="submit" class="btn btn-primary">Mượn sách </button>
+            {{else}} 
+            <a href="/user/login" class="btn btn-primary">Mượn sách </a>
+            {{/if}}
+            </div>  
+            </div>
         </div>
     </form>
 </div>

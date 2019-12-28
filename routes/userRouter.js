@@ -2,6 +2,16 @@ let express = require('express');
 let userRouter = express.Router();
 let bcrypt = require('bcryptjs');
 let userController = require('../controllers/userController');
+let mailer = require('nodemailer');
+let token = "";
+let email = "";
+var transporter = mailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'ldhan21101999@gmail.com',
+        pass: 'hoangan123'
+    }
+})
 userRouter.get('/',(req,res)=>{
     res.locals.item = {
         id : "accountmanagement",
@@ -20,7 +30,6 @@ userRouter.post('/',(req,res,next)=>{
         phone : req.body.phone,
         email : req.body.email,
         address : req.body.address
-
     }
 
     userController
@@ -35,6 +44,8 @@ userRouter.post('/',(req,res,next)=>{
         })
 
 })
+
+
 
 userRouter.get('/register',(req,res)=>{
     res.locals.item = {
@@ -161,4 +172,113 @@ userRouter.get('/borrowwing',(req,res)=>{
     res.render('borrowwingmanagement');
 })
 
+userRouter.post('/forgotPassword', (req, res, next) => {
+    email = req.body.email; //Lấy email từ form. 
+
+    console.log(email);
+    userController.getUserByEmail(email)
+        .then(user => {
+            if (!user) {
+                res.render('forgotPassword', {
+                    message: 'Email is not registered !',
+                    type: 'alert-danger'
+                })
+            } else {
+                token = '123456'
+                let mailOptions = {
+                    from: email,
+                    to: user.email,
+                    subject: 'Reset your account password',
+                    html: '<h4><b>Reset Password</b></h4>' +
+                        '<p><strong>Username: ' + user.username + '</strong></p>' +
+                        '<p>To reset your password please copy the token and complete the form: </p>' +
+                        '<p><strong>Token: ' + token + '</strong></p>' +
+                        '<br><br>' +
+                        '<p>--Team</p>'
+                }
+                transporter.sendMail(mailOptions, function(error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                })
+                res.locals.item = {
+                    id: "forgotPassword",
+                    title: "Forgot-Password",
+                }
+
+                res.render('forgotPassword', {
+                    message: 'Please check your email to get the token!',
+                    type: 'alert-primary'
+                })
+            }
+        })
+})
+
+
+userRouter.get('/resetPassword', (req, res) => {
+    res.locals.item = {
+        id: "resetPassword",
+        title: "Reset-Password"
+    }
+    res.render("resetPassword");
+})
+
+userRouter.post('/resetPassword', (req, res) => {
+
+
+
+    const u_token = req.body.token;
+    const password = req.body.password;
+    const cpassword = req.body.ConfirmPassword;
+
+    if (token != u_token) {
+
+        res.locals.item = {
+            id: "resetPassword",
+            title: "reset Password"
+        }
+        res.render("resetPassword", {
+            message: "Wrong token !! Try again !!",
+            type: "alert-danger"
+        })
+    }
+
+    if (password != cpassword) {
+
+        res.locals.item = {
+            id: "resetPassword",
+            title: "Reset Password"
+        }
+        res.render("resetPassword", {
+            message: "Confirm Password and Password are not the same !!",
+            type: "alert-danger"
+        })
+    }
+    userController.getUserByEmail(email).then(user => {
+        userController.updatePassword(user.username, password).then(data => {
+            res.locals.item = {
+                id: "login",
+                title: "Login"
+            }
+            email = "";
+            token = "";
+            res.render("login", {
+                message: "Update Password successfully !!",
+                type: "alert-primary"
+            })
+        });
+    })
+
+
+})
+
+userRouter.get('/forgotPassword', (req, res) => {
+    res.locals.item = {
+        id: "forgotPassword",
+        title: "Forgot Password"
+    }
+    res.render('forgotPassword');
+})
 module.exports = userRouter;
