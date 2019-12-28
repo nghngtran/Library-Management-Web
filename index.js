@@ -1,9 +1,11 @@
 //DECLARE
 const express = require('express');
 var app = express();
-const expressHbs  = require('express-handlebars');
+const expressHbs = require('express-handlebars');
 var models = require('./models');
-
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
 //SET FOLDER
 app.use(express.static(__dirname + '/assets'));
@@ -15,9 +17,9 @@ var hbs = expressHbs.create({
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname + '/views/partials',
     defaultLayout: 'layout',
-    helpers : {
-        createPagination : paginateHelper.createPagination,
-        ifCond : function (v1, operator, v2, options) {
+    helpers: {
+        createPagination: paginateHelper.createPagination,
+        ifCond: function(v1, operator, v2, options) {
             switch (operator) {
                 case '==':
                     return (v1 == v2) ? options.fn(this) : options.inverse(this);
@@ -52,35 +54,62 @@ app.set('view engine', 'hbs');
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-// COokie parser
+    // COokie parser
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
-//Session 
+    //Session 
 let session = require('express-session')
 var MemoryStore = session.MemoryStore;
 app.use(session({
-    cookie : {maxAge : 30 * 24 * 60 * 60 * 1000},
-    secret : 'S3cret',
-    resave : false,
-    store : new MemoryStore(),
-    saveUninitialized : false
+    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 },
+    secret: 'S3cret',
+    resave: false,
+    store: new MemoryStore(),
+    saveUninitialized: false
 }))
-app.use((req,res,next)=>{
-    res.locals.username = req.session.user ?  req.session.user.username : '';
-    res.locals.phone = req.session.user ?  req.session.user.phone : '';
+app.use((req, res, next) => {
+    res.locals.username = req.session.user ? req.session.user.username : '';
+    res.locals.phone = req.session.user ? req.session.user.phone : '';
     res.locals.isLoggedIn = req.session.user ? true : false;
     next();
 })
 app.use("/user", require('./routes/userRouter'));
-app.use("/",require('./routes/indexRouter'));
+app.use("/", require('./routes/indexRouter'));
 app.use("/search", require('./routes/searchRouter'));
 app.use("/admin", require('./routes/adminRouter'));
 
 
-app.get('/sync', function(req, res){
-	models.sequelize.sync().then(function(){
-		res.send('database sync completed!');
-	});
+app.get('/sync', function(req, res) {
+    models.sequelize.sync().then(function() {
+        res.send('database sync completed!');
+    });
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + "/editprofile.html");
+})
+app.post('/upload', upload.single("myImage"), (req, res) => {
+    var img = fs.readFileSync(req.file.path);
+
+    var encode_image = img.toString('base64');
+
+    //define a JSON Object for the image
+    var finalImg = {
+        contentType: req.file.mimetype,
+        path: req.file.path,
+        image: new Buffer(encode_image, 'base64')
+    };
+    //Insert the image to database
+    db.collection('image').insertOne(finalImg, (err, result) => {
+        console.log(result);
+
+        if (err) return console.log(err);
+
+        res.contentType(finalImg.contentType);
+
+        res.send(finalImg.image);
+    })
 });
 //ACTIVATE SERVER
 app.set('port', process.env.PORT || 3000);
