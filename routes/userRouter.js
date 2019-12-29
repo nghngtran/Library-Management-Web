@@ -17,8 +17,11 @@ var transporter = mailer.createTransport({
 userRouter.get('/', (req, res) => {
     res.locals.item = {
         id: "accountmanagement",
-        title: "Quản lý tài khoản"
+        title: "Quản lý tài khoản",
+
     }
+
+    console.log(req.session.user);
     res.render('accountmanagement');
 })
 
@@ -29,44 +32,31 @@ userRouter.post('/', (req, res, next) => {
         title: "Quản lý tài khoản"
     }
     let updatedUser = {
+        username: req.body.uname,
         phone: req.body.phone,
         email: req.body.email,
-        address: req.body.address,
-        password: req.body.newpassword
+        address: req.body.address
     }
 
-    let confirmNewPassword = req.body.confirmnewpassword;
-    let currentPassword = req.body.password;
+    userController.updatePersonal(updatedUser.username, updatedUser.phone, updatedUser.address, updatedUser.email).then(data => {
+        req.session.user = data.dataValues;
 
-    // userController
-    //     .getUserByUsername()
+    })
 
-    // if (!userController.comparePassword(password,currentPassword)){
-    //     return res.render('accountmanagement',{
-    //         message : "Incorrect Password!",
-    //         type: 'alert-danger'
-    //     })
-    // }
+    res.locals.phone = req.session.user ? req.session.user.phone : '';
+    res.locals.email = req.session.user ? req.session.user.email : '';
+    res.locals.address = req.session.user ? req.session.user.address : '';
+    res.render('accountmanagement', {
+        message: "Update successfully !!",
+        type: "alert-primary",
 
-
-    if (confirmNewPassword != updatedUser.password) {
-        return res.render('accountmanagement', {
-            message: "Confirm password does not match!",
-            type: 'alert-danger'
-        })
-    }
-
-    if (currentPassword != updatedUser.password) {
-        return res.render('accountmanagement', {
-            message: "The current password and the new password are the same!",
-            type: 'alert-danger'
-        })
-    }
-
-
-
+    });
 
 })
+
+
+
+
 
 userRouter.get('/register', (req, res) => {
     res.locals.item = {

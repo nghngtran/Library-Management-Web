@@ -50,6 +50,12 @@ controller.getUserByEmail = (email) => {
     })
 }
 
+controller.getUserById = (id) => {
+    return User.findOne({
+        where: { id: id }
+    })
+}
+
 controller.createUser = (user) => {
     var salt = bcrypt.genSaltSync(saltRounds)
     user.password = bcrypt.hashSync(user.password, salt)
@@ -73,6 +79,16 @@ controller.updatePassword = (username, password) => {
     })
 }
 
+
+controller.updatePersonal = async function(username, phone, address, email) {
+
+    await User.update({ phone: phone, email: email, address: address }, { where: { username: username }, returning: true, plain: true });
+
+    return User.findOne({ where: { username: username } })
+
+
+
+}
 
 
 module.exports = controller;
