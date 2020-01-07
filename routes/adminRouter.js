@@ -9,6 +9,20 @@ adminRouter.get('/',(req,res)=>{
     }
     res.render('admin');
 })
+
+adminRouter.get('/book/:bookID',(req,res,next)=>{
+    let bookID = req.params.bookID;
+    bookController
+        .getById(bookID)
+        .then(data =>{
+            res.locals.item = {
+                id : "admin",
+                title : "Quan ly sach"
+            }
+            res.locals.book = data;
+            res.render('admin_book_detail')
+        })
+})
 adminRouter.get('/account/:username',(req,res,next)=>{
     let username = req.params.username
     userController

@@ -54,4 +54,34 @@ searchRouter.get("/", (req, res, next) => {
         .catch(err => next(err))
 })
 
+searchRouter.post("/:id",(req,res,next)=>{
+    let index = req.params.id;
+    let comment = req.body.note;
+    let date = (req.body.date).toString();
+    let requestController = require('../controllers/requestBookController');
+    let username = req.session.user.username;
+    let addedRequest = {
+        username  : username,
+        bookID : index,
+        BookId : index,
+        status : "Pending",
+        comment : comment,
+        borrowingDate : date
+    }
+    requestController
+        .getAll()
+        .then(data=>{
+            let DataRows = data.count; 
+            row = DataRows;
+            addedRequest.id = row + 1;
+            console.log(addedRequest)
+            requestController
+                .add(addedRequest)
+                .then(request=>{
+                    res.redirect("/user/borrowwing");
+                })
+            
+        })
+        .catch(err=>next(err))
+})
 module.exports = searchRouter;

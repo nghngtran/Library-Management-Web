@@ -15,10 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     imgID : DataTypes.STRING
   }, {});
   Book.associate = function(models) {
-    //Book.belongsTo(models.RequestBook);
-    //Book.hasOne(models.Image);
-    //Book.hasOne(models.Kind);
-    // associations can be defined here
+    Book.hasMany(models.RequestBook);
+
   };
   return Book;
 };

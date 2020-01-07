@@ -316,10 +316,11 @@
                 <div class="container-fluid">
                     <div class="container-inner">
                         <form method="POST" action="/admin/account">
-                            <h4>Cập nhật tài khoản</h4>
+                            <h4>Update Book Infomation</h4>
                             <div class="d-flex flex-column align-items-center">
-                                {{#with account}}
-                                <div class="md-form">
+                                {{#with book}}
+                                <img src={{imgID}}>
+                                {{!-- <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
                                     <input type="text" id="username" name="username" value={{username}}
                                         class="form-control">
@@ -341,7 +342,7 @@
                                     <i class="fa fa-address-card prefix"></i>
                                     <input type="text" id="role" name="role" class="form-control" value={{role}}>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button> --}}
                                 {{/with}}
                             </div>
                         </form>

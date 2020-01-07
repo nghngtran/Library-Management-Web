@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('RequestBooks', {
@@ -30,7 +31,14 @@ module.exports = {
       }
     });
   },
+
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('RequestBooks');
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */
   }
 };

@@ -1,92 +1,100 @@
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-<div class="container-inner">
-        <h4 style="margin-top:15px;color:black;font-weight:bold;text-align:center">Quản lý sách mượn</h4>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                    aria-selected="true">Yêu cầu đang chờ xét duyệt</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                    aria-controls="profile" aria-selected="false">Sách đã mượn</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                    aria-controls="contact" aria-selected="false">Sách đang mượn</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane pending fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="book-pending row">
-                    <div class="col-4 book-img">
-                        <img src="/images/search/book1.png"></div>
-                    <div class="col-8 book-info">
-                        <h1 class="book-title">Agile Principles, Pattern and Practices in C#</h1>
-                        <h3 class="book-author">Ahmedt-Aristizabal, David ; Fookes, Clinton</h3>
-                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
-                            domination. A computer ensures you do not waste your time"</p>
-                        <a class="cancelRequestBtn" id="borrow">Hủy yêu cầu</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane borrowed fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<div style="padding-top: 20px;" class="container-inner">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    <form action="/user/borrowwing" method="GET" class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" id="search"
+            aria-label="Search">
+        <button onclick="window.location.href = '/search?';" class="btn aqua-gradient btn-rounded btn-sm my-0"
+            type="submit">Tìm kiếm</button>
+    </form>
+    <div class="d-flex justify-content-center align-items-center">
+        <span style="font-size:20px;margin-right:20px;font-weight:bold">Show</span>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input onchange="selectParam('type','')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
+            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">All</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input onchange="selectParam('type','Pending')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
+            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">Pending Requests</label>
+        </div>
 
-            </div>
-            <div class="tab-pane borrowing fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="book-borrowing row">
-                    <div class="col-4 book-img"><img src="/images/search/book2.png"></div>
-                    <div class="col-8 book-info">
-                        <h1 class="book-title">Introduction to Algorithms</h1>
-                        <h3 class="book-author">Thomas</h3>
-                        <p class="book-des">"The solution is a laptop computer. The main purpose of a computer is
-                            domination. A computer ensures you do not waste your time"</p>
-                        <a class="returnBookBtn" id="borrow" data-toggle="modal" data-target="#returnBookModal">Trả
-                            sách</a>
-                        
-                        </div>
+        <!-- Default inline 2-->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input onchange="selectParam('type','Borrowing')" type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
+            <label style="color: rgb(204, 3, 20);font-weight:bold" class="custom-control-label" for="defaultInline2">Borrowing Books</label>
+        </div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="modal" id="returnBookModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Return Book</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <h4>Ghi chú</h4>
-                                <textarea rows="4" cols="50">
-                                </textarea>
-                                <h4>Ngày hẹn trả</h4>
-                                <input id="datepicker" width="276" />
-                                <script>
-                                    $('#datepicker').datepicker({
-                                        uiLibrary: 'bootstrap4'
-                                    });
-                                </script>
-                                <button style="margin-top: 15px" class="confirmReturn btn btn-primary">Xác nhận</button>
-                            </div>
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                            </div>
-
-                        </div>
-                    </div>
+        <!-- Default inline 3-->
+        <div class="custom-control custom-radio custom-control-inline">
+            <input onchange="selectParam('type','Returned')" type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
+            <label style="color: rgb(2, 70, 5);font-weight:bold" class="custom-control-label" for="defaultInline3">Returned Books</label>
         </div>
     </div>
-    <script src="/js/account.js"></script> 
-    <!-- Datepicker moment with locales -->
-    <script type="text/javascript" language="javascript" src="datetimepicker/js/moment-with-locales.js"></script>
-    <!-- Propeller textfield js --> 
-    <script type="text/javascript" src="dist/js/propeller.min.js"></script>
-    <!-- Propeller Bootstrap datetimepicker -->
-    <script type="text/javascript" language="javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    {{#each allBorrowingBook}}
+    <div style="margin:15px 0;padding:10px 10px;border: 2px solid black" class='book row '>
+        <div class='col-4 book-img'>
+            <img style="width:90%" src={{Book.imgID}}>
+        </div>
+        <div class='col-8 book-info'>
+            <h1 style="font-size: 35px;font-weight:bold" class='book-title'>{{Book.id}}.{{Book.title}}<span
+                    style="color: blueviolet;font-weight:bold;margin-left:7px">[{{status}}]</span></h1>
+            <h3 style="margin-bottom:15px;color:#131254;font-size:16px;font-weight:bold" class='book-author'>
+                {{Book.author}}</h3>
+            <span style="color: orange;" class="fa fa-star checked"></span>
+            <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
+            <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p style="margin-bottom:20px" class='book-des'>{{Book.description}}</p>
+            {{!-- <a href="/search/{{id}}" class='borrowBookBtn' id='borrow'>{{status}}</a> --}}
+        </div>
+    </div>
+    {{/each}}
+    <nav aria-label="Page navigation example" id="pagination">
+            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
+        </nav>
+</div>
+<script>
+
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+        limit: 4,
+        page: 1,
+        kine: ''
+    }
+
+    $("#pagination li").addClass('page-item');
+    $("#pagination li a").addClass('page-link');
+     let savePage = urlParams.get('page');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = '/user/borrowwing?' + urlParams.toString();
+            $(item).attr('href',href);
+            $(item).attr('href', href);
+        })
+    urlParams.set('page', savePage);
+
+    $("#sort").val(urlParams.get('sort'));
+    $("#kind").val(urlParams.get('kind'));
+    $("#language").val(urlParams.get('language'));
+    for (let key in params) {
+        if (!urlParams.has(key)) {
+            urlParams.append(key, params[key]);
+        }
+    }
+
+    function selectParam(key, value) {
+        console.log("Clicked")
+        urlParams.set(key, value)
+        let url = '/user/borrowwing?' + urlParams.toString();
+        location.href = url;
+    }
+    
+</script>
+<!-- Datepicker moment with locales -->
+<script type="text/javascript" language="javascript" src="datetimepicker/js/moment-with-locales.js"></script>
+<!-- Propeller textfield js -->
+<script type="text/javascript" src="dist/js/propeller.min.js"></script>
+<!-- Propeller Bootstrap datetimepicker -->
+<script type="text/javascript" language="javascript" src="datetimepicker/js/bootstrap-datetimepicker.js"></script>

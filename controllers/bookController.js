@@ -129,7 +129,7 @@ controller.getAll = (query)=>{
 
 controller.add = (book)=>{
 	return new Promise((resolve,reject)=>{
-		Comment
+		models.Book
 			.create(book)
 			.then(data=>resolve(data))
 			.catch(err =>reject(new Error(err)))

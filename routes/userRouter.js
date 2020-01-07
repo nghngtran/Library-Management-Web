@@ -2,6 +2,7 @@ let express = require('express');
 let userRouter = express.Router();
 let bcrypt = require('bcryptjs');
 let userController = require('../controllers/userController');
+
 let mailer = require('nodemailer');
 let token = "";
 let email = "";
@@ -31,21 +32,22 @@ userRouter.post('/',(req,res,next)=>{
         email : req.body.email,
         address : req.body.address
     }
-
     userController
-        .updateUser(updatedUser)
-        .then(user=>{
-            console.log("Updated user",user)
-            //req.session.user = user;
-            res.render('accountmanagement', {
-                message : "Update account successfully!",
-                type:'alert-primary'
-            })
-        })
-
+    .updatePersonal(updatedUser.username, updatedUser.phone, updatedUser.address, updatedUser.email)
+    .then(data => {
+        req.session.user = data.dataValues;
+        //res.session.save();
+        console.log("=================================")
+        console.log("Data value user", data.dataValues)
+    })
+    .then(()=>{
+        res.render('accountmanagement', {
+            message: "Update successfully !!",
+            type: "alert-primary",
+    
+        });
+    })
 })
-
-
 
 userRouter.get('/register',(req,res)=>{
     res.locals.item = {
@@ -94,6 +96,7 @@ userRouter.post('/register',(req,res,next)=>{
                 })
             }
     //Tạo TK
+            console.log(addeduser)
             userController
                 .createUser(addeduser)
                 .then(user=>{
@@ -164,12 +167,42 @@ userRouter.get('/logout',(req,res,next)=>{
     })
 })
 
-userRouter.get('/borrowwing',(req,res)=>{
+userRouter.get('/borrowwing',(req,res,next)=>{
     res.locals.item = {
         id : "borrowwingmanagement",
         title :"Quản lý sách mượn"
     }
-    res.render('borrowwingmanagement');
+
+    if(req.query.limit == null || isNaN(req.query.limit))
+    {
+        req.query.limit = 4;
+    }
+    if(req.query.page == null || isNaN(req.query.page))
+    {
+        req.query.page = 1;
+    }
+    if (req.query.sort==null){
+        req.query.sort = 'ratings';
+    }
+    if (req.query.search == null){
+        req.query.search = '';
+    }
+    let requestController = require('../controllers/requestBookController')
+    
+
+    requestController
+        .getByUsername(req.session.user.username,req.query)
+        .then(data =>{
+            res.locals.allBorrowingBook = data.rows;
+            res.locals.pagination = {
+                page : parseInt(req.query.page),
+                limit : 4,
+                totalRows : data.count
+            }
+            res.render('borrowwingmanagement');
+        })
+
+        .catch(err=>next(err))
 })
 
 userRouter.post('/forgotPassword', (req, res, next) => {
@@ -215,7 +248,6 @@ userRouter.post('/forgotPassword', (req, res, next) => {
             }
         })
 })
-
 
 userRouter.get('/resetPassword', (req, res) => {
     res.locals.item = {

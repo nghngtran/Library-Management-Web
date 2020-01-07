@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-  up:  (queryInterface, Sequelize) => {
+  up: (queryInterface, Sequelize) => {
     return Promise.all([
-    queryInterface.addColumn('Users','address',Sequelize.STRING)
-  ])
-  },  
+      queryInterface.addColumn('Books','bookID',Sequelize.INTEGER)
+    ])
+  },
 
   down: (queryInterface, Sequelize) => {
     /*

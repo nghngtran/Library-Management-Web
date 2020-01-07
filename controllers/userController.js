@@ -133,6 +133,17 @@ controller.comparePassword = (password, hash) =>{
 }
 
 
+controller.updatePersonal = async function(username, phone, address, email) {
+
+    await User.update({ phone: phone, email: email, address: address }, { where: { username: username }, returning: true, plain: true });
+
+    return User.findOne({ where: { username: username } })
+
+
+
+}
+
+
 
 
 module.exports = controller;
