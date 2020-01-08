@@ -2,32 +2,32 @@
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <div style="padding-top: 20px;" class="container-inner">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     <form action="/user/borrowwing" method="GET" class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" id="search"
+        <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" name="search" id="search"
             aria-label="Search">
         <button onclick="window.location.href = '/search?';" class="btn aqua-gradient btn-rounded btn-sm my-0"
             type="submit">Tìm kiếm</button>
     </form>
     <div class="d-flex justify-content-center align-items-center">
-        <span style="font-size:20px;margin-right:20px;font-weight:bold">Show</span>
+        <span style="font-size:20px;margin-right:20px;font-weight:bold">Hiển thị</span>
         <div class="custom-control custom-radio custom-control-inline">
             <input onchange="selectParam('type','')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">All</label>
+            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">Tất cả</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
             <input onchange="selectParam('type','Pending')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">Pending Requests</label>
+            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">Yêu cầu đang xử lý</label>
         </div>
 
         <!-- Default inline 2-->
         <div class="custom-control custom-radio custom-control-inline">
             <input onchange="selectParam('type','Borrowing')" type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(204, 3, 20);font-weight:bold" class="custom-control-label" for="defaultInline2">Borrowing Books</label>
+            <label style="color: rgb(204, 3, 20);font-weight:bold" class="custom-control-label" for="defaultInline2">Đang mượn</label>
         </div>
 
         <!-- Default inline 3-->
         <div class="custom-control custom-radio custom-control-inline">
             <input onchange="selectParam('type','Returned')" type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(2, 70, 5);font-weight:bold" class="custom-control-label" for="defaultInline3">Returned Books</label>
+            <label style="color: rgb(2, 70, 5);font-weight:bold" class="custom-control-label" for="defaultInline3">Đã trả</label>
         </div>
     </div>
     {{#each allBorrowingBook}}
@@ -51,7 +51,7 @@
     </div>
     {{/each}}
     <nav aria-label="Page navigation example" id="pagination">
-            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
+            {{{createPagination  pagination leftText="Trước" rightText="Sau" paginationClass="pagination"}}}
         </nav>
 </div>
 <script>

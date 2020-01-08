@@ -1,6 +1,6 @@
 <div class="container-inner">
-    <h4 style="margin-top:20px;text-align:center">Public profile</h4>
-    <h6 style="margin-top:5px;text-align:center">Add information about yourself</h6>
+    <h4 style="margin-top:20px;text-align:center">Hồ sơ</h4>
+    <h6 style="margin-top:5px;text-align:center">Thêm thông tin cá nhân</h6>
     <form action="/user" method="POST" style="margin-bottom : 20px">
         {{#if message}}
         <div class="alert {{type}}">
@@ -8,51 +8,51 @@
         </div>
         {{/if}}
         <div class="form-group">
-            <label for="uname">Username:</label>
+            <label for="uname">Tên đăng nhập</label>
             <input type="text" class="form-control" id="uname" value={{username}} readonly="readonly" name="uname">
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <div class="valid-feedback">Hợp lệ.</div>
+            <div class="invalid-feedback">Vui lòng nhập thông tin.</div>
         </div>
         <div class="form-group">
-            <label for="uname">Phone number:</label>
+            <label for="uname">Số điện thoại:</label>
             <input type="text" class="form-control change-phone" id="phone" name="phone" value={{phone}} >
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+             <div class="valid-feedback">Hợp lệ.</div>
+            <div class="invalid-feedback">Vui lòng nhập thông tin.</div>
         </div>
         <div class="form-group">
             <label for="uname">Email:</label>
             <input type="text" class="form-control change-phone" id="email" name="email" value={{email}} >
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <div class="valid-feedback">Hợp lệ.</div>
+            <div class="invalid-feedback">Vui lòng nhập thông tin.</div>
         </div>
         <div class="form-group">
-            <label for="uname">Address:</label>
+            <label for="uname">Địa chỉ:</label>
             <input type="text" class="form-control change-address" id="address" name="address"   value={{address}}>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+             <div class="valid-feedback">Hợp lệ.</div>
+            <div class="invalid-feedback">Vui lòng nhập thông tin.</div>
         </div>
         <div id="accordion">
             <div class="card">
                 <div class="card-header">
                     <a style="color: black;" class="card-link" data-toggle="collapse" href="#collapseOne">
-                        Change Password
+                        Đổi mật khẩu
                     </a>
                 </div>
                 <div id="collapseOne" class="collapse hide" data-parent="#accordion">
                     <div class="card-body">
                             <div class="form-group">
-                                <label for="email">Current Password:</label>
+                                <label for="email">Mật khẩu hiện tại:</label>
                                 <input type="password" class="form-control" id="password"
-                                    placeholder="Enter Current Password" name="password">
+                                    placeholder="Nhập mật khẩu hiện tại" name="password">
                             </div>
                             <div class="form-group">
-                                <label for="pwd">New Password:</label>
-                                <input type="password" class="form-control" id="newpassword" placeholder="Enter New Password"
+                                <label for="pwd">Mật khẩu mới:</label>
+                                <input type="password" class="form-control" id="newpassword" placeholder="Nhập mật khẩu mới"
                                     name="newpassword">
                             </div>
                             <div class="form-group">
-                                <label for="pwd">Comfirm Password:</label>
-                                <input type="password" class="form-control" id="confirmnewpassword" placeholder="Confirm Password"
+                                <label for="pwd">Xác nhận mật khẩu:</label>
+                                <input type="password" class="form-control" id="confirmnewpassword" placeholder="Xác nhận mật khẩu"
                                     name="confirmnewpassword">
                             </div>
                     </div>
