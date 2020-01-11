@@ -57,7 +57,6 @@ controller.getById = (id)=>{
 
 controller.getAll = (query)=>{
     return new Promise((resolve,reject)=>{
-		console.log("Vao get all quẻy")
 		let options = {
 			//include : [{model: models.Kind}],
 			attribute : ['id', 'title', 'description', 'kindid','author','quantity','available','ratings','imgID'],
@@ -136,6 +135,28 @@ controller.add = (book)=>{
 	})
 }
 
+controller.removeBook = (id)=>{
+    return new Promise((resolve,reject)=>{
+		models.Book
+			.destroy({
+				where: {id : id}
+			})
+			.then(data=>resolve(data))
+			.catch(error =>reject(new Error(error)))
+	})
+};
+
+
+controller.updateBook = (book) =>{
+    return new Promise((resolve,reject)=>{
+		models.Book
+			.update(book,{
+				where: {id : book.id}
+			})
+			.then(data=>resolve(data))
+			.catch(error =>reject(new Error(error)))
+	})
+}
 
 
 

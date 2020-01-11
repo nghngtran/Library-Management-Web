@@ -1,3 +1,4 @@
+{{#ifCond username "==" "admin"}}
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -47,7 +48,32 @@
                     <span>Book</span>
                 </a>
             </li>
+                        <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/request">
+                    <i class="fa fa-paper-plane"></i>
+                    <span>Pending Requests</span>
+                </a>
+            </li>
+            
+                  <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/approvedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Approved Requests</span>
+          </a>
+      </li>
 
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnrequest">
+              <i class="fa fa-undo"></i>
+              <span>Returning Requests</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Returned Requests</span>
+          </a>
+      </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -335,7 +361,7 @@
                                 <div class="md-form">
                                     <i class="fa fa-home prefix"></i>
                                     <input type="text" id="address" name="address" class="form-control"
-                                        value={{address}}>
+                                        value="{{address}}">
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-address-card prefix"></i>
@@ -440,3 +466,5 @@
         }
 
     </script>
+    {{else}}
+    {{/ifCond}}

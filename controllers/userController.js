@@ -93,6 +93,11 @@ controller.getUserByUsername = (username)=>{
     })
 };
 
+controller.getPasswordByUsername = (username)=>{
+    return User.findOne({
+        where : {username: username}
+    })
+}
 controller.getUserByEmail = (email) => {
     return User.findOne({
         where: { email: email }

@@ -1,4 +1,5 @@
 let express = require('express');
+let models = require('../models')
 let searchRouter = express.Router();
 searchRouter.get("/:id", (req, res, next) => {
     const index = req.params.id;
@@ -68,18 +69,37 @@ searchRouter.post("/:id",(req,res,next)=>{
         comment : comment,
         borrowingDate : date
     }
+    if (req.query.search == null){
+        req.query.search = '';
+    }
+    if(req.query.limit == null || isNaN(req.query.limit))
+    {
+        req.query.limit = 4;
+    }
+    if(req.query.page == null || isNaN(req.query.page))
+    {
+        req.query.page = 1;
+    }
+    if (req.query.sort==null){
+        req.query.sort = 'ratings';
+    }
     requestController
-        .getAll()
+        .getAll(req.query)
         .then(data=>{
             let DataRows = data.count; 
             row = DataRows;
-            addedRequest.id = row + 1;
-            console.log(addedRequest)
-            requestController
-                .add(addedRequest)
-                .then(request=>{
-                    res.redirect("/user/borrowwing");
-                })
+            models.RequestBook.max('id').then(max => {
+                
+                addedRequest.id = max + 1;
+            
+                console.log(addedRequest)
+                requestController
+                    .add(addedRequest)
+                    .then(request=>{
+                        res.redirect("/user/borrowwing");
+                    })
+                   
+            })
             
         })
         .catch(err=>next(err))

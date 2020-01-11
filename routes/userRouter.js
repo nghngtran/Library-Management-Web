@@ -22,6 +22,7 @@ userRouter.get('/',(req,res)=>{
 })
 
 userRouter.post('/',(req,res,next)=>{
+    console.log("Alloooooo")
     res.locals.item = {
         id : "accountmanagement",
         title :"Quản lý tài khoản"
@@ -205,6 +206,34 @@ userRouter.get('/borrowwing',(req,res,next)=>{
         .catch(err=>next(err))
 })
 
+userRouter.post('/borrowwing/cancel/:id',(req,res,next) =>{
+    let id = req.params.id;
+
+    let requestController = require("../controllers/requestBookController")
+    requestController
+        .removeRequest(id)
+        .then(request=>{
+            res.redirect('/user/borrowwing');
+        })
+ })
+ userRouter.post('/borrowwing/return/:id',(req,res,next) =>{
+    let id = parseInt(req.params.id);
+    
+    let updateRequest = {
+        id : id,
+        comment : req.body.comment,
+        returningDate : req.body.returningDate,
+        status:"Returning"
+    }
+    console.log(updateRequest)
+    let requestController = require("../controllers/requestBookController")
+    requestController
+        .updateRequest(updateRequest)
+        .then(request=>{
+            res.redirect('/user/borrowwing');
+        })
+ })
+const TokenGenerator = require('uuid-token-generator');
 userRouter.post('/forgotPassword', (req, res, next) => {
     email = req.body.email; //Lấy email từ form. 
 
@@ -217,7 +246,8 @@ userRouter.post('/forgotPassword', (req, res, next) => {
                     type: 'alert-danger'
                 })
             } else {
-                token = '123456'
+                const tokgen = new TokenGenerator();
+                token = tokgen.generate();
                 let mailOptions = {
                     from: email,
                     to: user.email,
@@ -312,5 +342,51 @@ userRouter.get('/forgotPassword', (req, res) => {
         title: "Forgot Password"
     }
     res.render('forgotPassword');
+})
+
+userRouter.get('/reset-password',(req,res)=>{
+    res.locals.item = {
+        id: "reset-password",
+        title: "reset-password"
+    }
+    res.render('reset-password');
+})
+
+userRouter.post('/reset-password',(req,res)=>{
+    
+    const password = req.body.password;
+    const new_password = req.body.newpassword;
+    const confirm_password = req.body.confirmnewpassword;
+    console.log(password);
+
+    //let userController = require("../controllers/requestBookController")
+    userController.getPasswordByUsername(req.session.user.username).then(user=>{
+        console.log("User",user)
+        if (!userController.comparePassword(password,user.password))
+        {
+            console.log("not matching")
+            res.locals.items = {
+                id: "reset-password",
+                title: "Reset Password"
+            }
+            res.render ("reset-password",{message: "Wrong current password !",type: "alert-primary"});
+        }
+
+        else if (new_password != confirm_password){
+            res.locals.items = {
+                id: "reset-password",
+                title: "reset-password"
+            }
+            res.render ("reset-password",{message: "New Password and Confirm new password are not the same!",type: "alert-primary"});
+        }
+        else{
+        userController.updatePassword(req.session.user.username,new_password).then(user=>{
+            res.render("reset-password",{
+                message: "Update Password successfully !",
+                type:"primary"
+            })
+        })
+    }
+})
 })
 module.exports = userRouter;

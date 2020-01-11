@@ -1,6 +1,8 @@
 let express = require('express');
 let indexRouter = express.Router();
 
+let nodemailer = require('nodemailer');
+
 indexRouter.get("/", (req, res,next) => {
     let bookController = require('../controllers/bookController');
     bookController
@@ -89,7 +91,7 @@ indexRouter.post('/', (req, res) => {
     });
 
     let mailOptions = {
-        from: '"Độc giả thư viện 👻"<nhokbm113@gmail.com>', // sender address
+        from: '"Độc giả thư viện 👻"', // sender address
         to: "thuvien.fit.khtn@gmail.com", // list of receivers
         subject: "Lời nhắn", // Subject line
         // text: "Hello world?", // plain text body
@@ -118,6 +120,7 @@ indexRouter.post('/', (req, res) => {
         // });
     });
 });
+
 
 
 module.exports = indexRouter;

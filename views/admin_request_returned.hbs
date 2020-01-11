@@ -1,6 +1,5 @@
-{{#ifCond username "==" "admin"}}
 <body id="page-top">
-
+{{#ifCond username "==" "admin"}}
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -8,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fa fa-laugh-wink"></i>
                 </div>
@@ -49,14 +48,13 @@
                 </a>
             </li>
 
-                        <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="/admin/request">
                     <i class="fa fa-paper-plane"></i>
-                    <span>Pending Requests</span>
+                    <span >Pending Requests</span>
                 </a>
             </li>
-
-                  <li class="nav-item">
+                              <li class="nav-item">
           <a class="nav-link collapsed" href="/admin/approvedrequest">
               <i class="fa fa-check-square"></i>
               <span>Approved Requests</span>
@@ -144,7 +142,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    <form method="POST"
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -285,7 +283,7 @@
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                <a class="dropdown-item d-flex align-items-center" href="#">    
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                                             alt="">
@@ -341,40 +339,82 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="container-inner">
-                        <form method="POST" action="/admin/book">
-                            <h4>Update Book Infomation</h4>
-                            <div class="d-flex flex-column align-items-center">
-                                {{#with book}}
-                                <img src='../{{imgID}}'>
-                                <div class="md-form">
-                                    <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="id" name="id" value={{id}}
-                                        class="form-control" readonly>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="title" name="title"  value="{{title}}" class="form-control">
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-phone prefix"></i>
-                                    <input type="text" id="author" name="author" class="form-control" value="{{author}}">
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-home prefix"></i>
-                                    <input type="text" id="quantity" name="quantity" class="form-control"
-                                        value="{{quantity}}">
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-address-card prefix"></i>
-                                    <input type="text" id="description" name="description" class="form-control" value="{{description}}">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Cập nhật</button> 
-                                {{/with}}
-                            </div>
-                        </form>
 
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <p class="mb-4">List accounts </p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables </h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <form method="GET" action="/admin/request"
+                                    class="active-purple-3 active-purple-4 d-flex justify-content-between align-items-center">
+                                    <input class="form-control" id="search" name="search" type="text"
+                                        placeholder="Search" aria-label="Search">
+                                </form>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-user-plus"></i>
+                                <i style="font-size: 22px;margin-left:10px" class="fa fa-upload"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">Username</th>
+                                            <th class="text-center">Title</th>
+                                            <th class="text-center">Returned Time</th>
+                                            <th class="text-center">Comment</th>
+                                            <th class="text-center">Status</th>
+                                            {{!-- <th class="text-center">Edit</th> --}}
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        {{#each requests}}
+                                        <tr>
+                                            <td class="text-center">
+                                                <div contenteditable>#{{id}}</div>
+                                            </td>
+                                            
+                                            <td class="text-center">
+                                                <div contenteditable>{{username}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{Book.title}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{updatedAt}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{comment}}</div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div contenteditable>{{status}}</div>
+                                            </td>
+                                            {{!-- <td class="d-flex align-items-center justify-content-around">
+                                                <form action="/admin/request/approve/{{id}}" method="POST">
+                                                    <button type="submit"><i class="fa fa-check"></i>
+                                                </form>
+                                                <form action="/admin/request/deny/{{id}}" method="POST">
+                                                    <button type="submit"><i class="fa fa-ban"></i></button>
+                                                </form> 
+                                            </td> --}}
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <nav aria-label="Page navigation example" id="pagination">
+                            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
+                        </nav>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -407,7 +447,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/user/login">Logout</a>
                 </div>
             </div>
         </div>
@@ -416,58 +456,53 @@
     <!-- Bootstrap core JavaScript-->
 
     <!-- Core plugin JavaScript-->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="/vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/js/demo/chart-area-demo.js"></script>
-    <script src="/js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
     </div>
     <script>
+
         let urlParams = new URLSearchParams(location.search);
         let params = {
-            limit: 4,
+            limit: 6,
             page: 1,
-            language: '',
-            kind: '',
             sort: ''
         }
-
+        for (let key in params) {
+            if (!urlParams.has(key)) {
+                urlParams.append(key, params[key]);
+            }
+        }
         $("#pagination li").addClass('page-item');
         $("#pagination li a").addClass('page-link');
         let savePage = urlParams.get('page');
         $("#pagination li a").each((index, item) => {
             let page = $(item).attr('href').split('=')[1];
             urlParams.set('page', page);
-            let href = '/admin/book?' + urlParams.toString();
+            let href = 'account?' + urlParams.toString();
             $(item).attr('href', href);
             $(item).attr('href', href);
         })
         urlParams.set('page', savePage);
 
-        $("#sort").val(urlParams.get('sort'));
-        $("#kind").val(urlParams.get('kind'));
-        $("#language").val(urlParams.get('language'));
-        for (let key in params) {
-            if (!urlParams.has(key)) {
-                urlParams.append(key, params[key]);
-            }
-        }
+
 
         function selectParam(key, value) {
             console.log("Clicked")
             urlParams.set(key, value)
-            let url = '/search?' + urlParams.toString();
+            let url = 'account?' + urlParams.toString();
             location.href = url;
         }
 
     </script>
     {{else}}
-
     {{/ifCond}}

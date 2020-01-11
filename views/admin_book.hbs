@@ -1,4 +1,4 @@
-
+{{#ifCond username "==" "admin"}}
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -47,6 +47,32 @@
           <i class="fa fa-fw fa-book"></i>
           <span>Book</span>
         </a>
+      </li>
+
+                  <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/request">
+                    <i class="fa fa-paper-plane"></i>
+                    <span>Pending Requests</span>
+                </a>
+            </li>
+                  <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/approvedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Approved Requests</span>
+          </a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnrequest">
+              <i class="fa fa-undo"></i>
+              <span>Returning Requests</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Returned Requests</span>
+          </a>
       </li>
 
       <!-- Divider -->
@@ -307,8 +333,13 @@
                                 <form method="GET" action="/admin/book" class="active-purple-3 active-purple-4 d-flex justify-content-between align-items-center">
                                     <input class="form-control" id="search" name="search" type="text" placeholder="Search" aria-label="Search">
                                 </form>
-                                <i style="font-size: 22px;margin-left:10px" class="fa fa-user-plus"></i>
-                                <i style="font-size: 22px;margin-left:10px" class="fa fa-upload"></i>
+                                <button data-toggle="modal" data-target="#updateModal"><i style="font-size: 22px;margin-left:10px" class="fa fa-user-plus"></i></button> 
+                              
+                                <form style="margin-left: 15px;" action="/admin/uploadFile" method="POST" enctype="multipart/form-data">
+                                  <input type="file" name="xlsx" />
+                                  <input type="submit" name='submit' value="submit"/>
+                                </form>
+                                
                             </div>
                         </div>
                         <div class="card-body">
@@ -393,7 +424,7 @@
 <script>
     let urlParams = new URLSearchParams(location.search);
     let params = {
-        limit: 4,
+        limit: 5,
         page: 1,
         language: '',
         kind: '',
@@ -429,3 +460,7 @@
     }
     
 </script>
+
+{{else}}
+
+{{/ifCond}}

@@ -1,3 +1,4 @@
+{{#ifCond username "==" "admin"}}
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -48,6 +49,32 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/request">
+                    <i class="fa fa-paper-plane"></i>
+                    <span>Pending Requests</span>
+                </a>
+            </li>
+            
+                  <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/approvedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Approved Requests</span>
+          </a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnrequest">
+              <i class="fa fa-undo"></i>
+              <span>Returning Requests</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/returnedrequest">
+              <i class="fa fa-check-square"></i>
+              <span>Returned Requests</span>
+          </a>
+      </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -440,7 +467,7 @@
 
     let urlParams = new URLSearchParams(location.search);
     let params = {
-        limit: 4,
+        limit: 6,
         page: 1,
         sort: ''
     }
@@ -471,3 +498,5 @@
     }
     
 </script>
+{{else}}
+{{/ifCond}}

@@ -1,7 +1,8 @@
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-<div style="padding-top: 20px;" class="container-inner">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-    <form action="/user/borrowwing" method="GET" class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
+<div style="padding-top: 20px;" class="container-inner">
+    <form action="/user/borrowwing" method="GET"
+        class="d-flex justify-content-center  form-inline md-form mr-auto mb-4">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" id="search"
             aria-label="Search">
         <button onclick="window.location.href = '/search?';" class="btn aqua-gradient btn-rounded btn-sm my-0"
@@ -10,24 +11,28 @@
     <div class="d-flex justify-content-center align-items-center">
         <span style="font-size:20px;margin-right:20px;font-weight:bold">Show</span>
         <div class="custom-control custom-radio custom-control-inline">
-            <input onchange="selectParam('type','')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">All</label>
+            <input name="category" type="radio" class="custom-control-input" id="type">
+            <label for="type" onclick="selectParam('type','')" style="color: rgb(8, 84, 199);font-weight:bold"
+                class="custom-control-label">All</labelfor="typeReturned">
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-            <input onchange="selectParam('type','Pending')" type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label" for="defaultInline1">Pending Requests</label>
+            <input name="category" type="radio" class="custom-control-input" id="typePending">
+            <label for="typePending" onclick="selectParam('type','Pending')"
+                style="color: rgb(8, 84, 199);font-weight:bold" class="custom-control-label">Pending Requests</label>
         </div>
 
         <!-- Default inline 2-->
         <div class="custom-control custom-radio custom-control-inline">
-            <input onchange="selectParam('type','Borrowing')" type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(204, 3, 20);font-weight:bold" class="custom-control-label" for="defaultInline2">Borrowing Books</label>
+            <input name="category" type="radio" class="custom-control-input" id="typeApproved">
+            <label for="typeApproved" onclick="selectParam('type','Approved')"
+                style="color: rgb(204, 3, 20);font-weight:bold" class="custom-control-label">Borrowing Books</label>
         </div>
 
         <!-- Default inline 3-->
         <div class="custom-control custom-radio custom-control-inline">
-            <input onchange="selectParam('type','Returned')" type="radio" class="custom-control-input" id="defaultInline3" name="inlineDefaultRadiosExample">
-            <label style="color: rgb(2, 70, 5);font-weight:bold" class="custom-control-label" for="defaultInline3">Returned Books</label>
+            <input type="radio" class="custom-control-input" id="typeReturned">
+            <label for="typeReturned" onclick="selectParam('type','Returned')"
+                style="color: rgb(2, 70, 5);font-weight:bold" class="custom-control-label">Returned Books</label>
         </div>
     </div>
     {{#each allBorrowingBook}}
@@ -40,40 +45,92 @@
                     style="color: blueviolet;font-weight:bold;margin-left:7px">[{{status}}]</span></h1>
             <h3 style="margin-bottom:15px;color:#131254;font-size:16px;font-weight:bold" class='book-author'>
                 {{Book.author}}</h3>
-            <span style="color: orange;" class="fa fa-star checked"></span>
-            <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
-            <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+            <div class="d-flex">
+                <span style="color: orange;" class="fa fa-star checked"></span>
+                <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
+                <span style="color: orange;" class="fa fa-star checked"></span style="color: orange;">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <br>
             <p style="margin-bottom:20px" class='book-des'>{{Book.description}}</p>
-            {{!-- <a href="/search/{{id}}" class='borrowBookBtn' id='borrow'>{{status}}</a> --}}
+            {{#ifCond status "=="'Pending'}}
+            <form action="/user/borrowwing/cancel/{{id}}" method="POST">
+                <button id="cancelBtn" class="btn btn-danger" type="submit">Cancel request</button>
+            </form>
+            {{/ifCond}}
+            {{#ifCond status "=="'Approved'}}
+            
+            <button id="returnBtn" class="btn btn-primary" type="submit" data-toggle="modal" data-target="#returnModal">Return now</button>
+            
+
+            {{/ifCond}}
+            <div class="modal fade" id="returnModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="/user/borrowwing/return/{{id}}" method="POST">
+                            <div class="modal-body">
+                                 <div class="md-form">
+                                    <input type="text" id="returningDate" name="returningDate" placeholder="Enter returning time" class="form-control">        
+                                    <input type="text" id="comment" name="comment" placeholder="Enter comment" class="form-control">        
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button  type="submit" class="btn btn-primary">Return now</button>
+                            </div>
+                        </form>
+
+                    </div>
+            </div>
+            
+        </div>
         </div>
     </div>
+    </div>
     {{/each}}
+    <div class="d-flex justify-content-center">
     <nav aria-label="Page navigation example" id="pagination">
-            {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
-        </nav>
+        {{{createPagination  pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
+    </nav></div>
 </div>
 <script>
+    $("#cancelBtn").click(() => {
+        console.log("ABC")
+        alert("Cancel request successfully !!!");
+    }
+    )
+    $("#returnlBtn").click(() => {
 
+        alert("Return book successfully !!!");
+    }
+    )
     let urlParams = new URLSearchParams(location.search);
     let params = {
         limit: 4,
         page: 1,
+        type: '',
         kine: ''
     }
 
     $("#pagination li").addClass('page-item');
     $("#pagination li a").addClass('page-link');
-     let savePage = urlParams.get('page');
-        $("#pagination li a").each((index,item)=>{
-            let page = $(item).attr('href').split('=')[1];
-            urlParams.set('page', page);
-            let href = '/user/borrowwing?' + urlParams.toString();
-            $(item).attr('href',href);
-            $(item).attr('href', href);
-        })
+    let savePage = urlParams.get('page');
+    $("#pagination li a").each((index, item) => {
+        let page = $(item).attr('href').split('=')[1];
+        urlParams.set('page', page);
+        let href = '/user/borrowwing?' + urlParams.toString();
+        $(item).attr('href', href);
+        $(item).attr('href', href);
+    })
     urlParams.set('page', savePage);
+
 
     $("#sort").val(urlParams.get('sort'));
     $("#kind").val(urlParams.get('kind'));
@@ -84,13 +141,15 @@
         }
     }
 
+
+
     function selectParam(key, value) {
         console.log("Clicked")
         urlParams.set(key, value)
         let url = '/user/borrowwing?' + urlParams.toString();
         location.href = url;
     }
-    
+
 </script>
 <!-- Datepicker moment with locales -->
 <script type="text/javascript" language="javascript" src="datetimepicker/js/moment-with-locales.js"></script>

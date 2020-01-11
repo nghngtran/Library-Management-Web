@@ -1,23 +1,26 @@
+
 <body>
     <button class="open-button" onclick="openForm()">Trợ giúp
     
 
     </button>
     <div class="chat-popup" id="myForm">
-        <form class="form-container" method="POST" action="">
+        <form class="form-container" method="POST" action="/">
             <h4>{{{this.message}}}</h4>
             <h6 style="
-            color:#4B66EB ;text-align:left; font-size: 14px; font-weight: 600;">Gửi mail cho chúng tôi để được giải đáp yêu cầu</h6>
+            color:#4B66EB ;text-align:left; font-size: 18px; font-weight: 600;margin-bottom:20px">Trợ giúp</h6>
             <p>
                 <input type="text" name="name" class="name" style="
-                text-align:left; font-size: 16px; font-weight: 200;" placeholder="Họ tên">
+                text-align:left; font-size: 16px; font-weight: 200;padding-left:15px" placeholder="Họ tên">
             </p>
             <p>
                 <input type="text" style="
-                text-align:left; font-size: 16px; font-weight: 200;" name="email" class="email" placeholder="Email"></p>
+                text-align:left; font-size: 16px; font-weight: 200;padding-left:15px" name="email" class="email" placeholder="Email"></p>
             <label for="msg"><b>Lời nhắn</b></label>
             <textarea placeholder="Nhập lời nhắn.." name="msg" required></textarea>
+            <div class="g-recaptcha" data-sitekey="6LdWN78UAAAAABZXi1XdQ0pA4KOmCRA5jIEdCg4a" data-callback="verifyCaptcha"></div>
             <div class="row">
+                <div id="g-recaptcha-error"></div>
                 <button type="submit" class="btn" onclick="confirm()">Gửi</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Huỷ</button>
             </div>
