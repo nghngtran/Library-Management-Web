@@ -2,8 +2,6 @@ let express = require('express');
 let adminRouter = express.Router()
 var multer  = require('multer')
 let models = require("../models")
-var crypto = require('crypto')
-const mime = require('mime');
 const xlsx =  require('xlsx');
 
 var storage = multer.diskStorage({
